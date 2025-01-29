@@ -8,21 +8,14 @@ public class ZoneWeapon : RangeTravelWeapon
 {
     public Collider zoneCollider;
 
-    public override void Shoot(InputAction.CallbackContext _callback)
+    public override void Shoot(Transform p)
     {
-        if (_callback.phase == InputActionPhase.Started)
-        {
-            zoneCollider.enabled = true;
-        }
-
-        if (_callback.phase == InputActionPhase.Canceled)
-        {
-            zoneCollider.enabled = false;
-        }
-        
-        Debug.Log(zoneCollider.enabled);
+        zoneCollider.enabled = true;
     }
-
+    public override void ShootFinished()
+    {
+        zoneCollider.enabled = false;
+    }
     private void OnTriggerStay(Collider _other)
     {
         if (_cooldown >= _stats.fireRate && currentBulletAmount > 0)

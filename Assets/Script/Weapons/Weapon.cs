@@ -24,7 +24,8 @@ public abstract class Weapon : MonoBehaviour
     public int currentBulletAmount;
     
     public abstract void Initialize(float _fireRange, float _fireRate, float _damage, Vector3 _aoeRange, float _bulletSpeed, GameObject _bullet, int _maxBulletAmount);
-    public abstract void Shoot(InputAction.CallbackContext _callback);
+    public abstract void Shoot(Transform playertransform);
+    public virtual void ShootFinished() { }
 
     public virtual void Reload(InputAction.CallbackContext _callback)
     {

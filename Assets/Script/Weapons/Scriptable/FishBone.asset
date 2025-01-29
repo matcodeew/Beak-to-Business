@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64127953c6312a74895d8bf762034045, type: 3}
   m_Name: FishBone
   m_EditorClassIdentifier: 
-  _fireRange: 4
-  _fireRate: 2
-  _damage: 20
-  _aoeRange: {x: 0, y: 0}
-  _bulletSpeed: 1
+  fireRange: 5
+  fireRate: 1
+  damage: 5
+  aoeRange: {x: 0, y: 0, z: 0}
+  bulletSpeed: 10
+  bulletPrefab: {fileID: 0}
+  maxBulletAmount: 100

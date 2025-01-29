@@ -1,7 +1,4 @@
-using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class RangeInstantWeapon : Weapon
 {
@@ -11,29 +8,26 @@ public class RangeInstantWeapon : Weapon
         _stats.fireRange = _fireRange;
         _stats.fireRate = _fireRate;
         _stats.damage = _damage;
-        
+
         _stats.maxBulletAmount = currentBulletAmount = _maxBulletAmount;
     }
 
-    public override void Shoot(InputAction.CallbackContext _callback)
+    public override void Shoot(Transform p)
     {
-        if (_callback.phase == InputActionPhase.Performed)
+        if (_cooldown >= _stats.fireRate && currentBulletAmount > 0)
         {
-            if (_cooldown >= _stats.fireRate && currentBulletAmount > 0)
+            Debug.DrawRay(p.transform.position, p.transform.forward * _stats.fireRange, Color.green, 1000);
+            if (Physics.Raycast(p.transform.position, p.transform.forward, _stats.fireRange, _playerMask))
             {
-                Debug.DrawRay(transform.position, transform.forward * _stats.fireRange, Color.green);
-                if (Physics.Raycast(transform.position, transform.forward, _stats.fireRange, _playerMask))
-                {
-                    Debug.Log("ennemi touché");
-                }
-
-                currentBulletAmount -= 1;
-                
-                if(_cooldown >= _stats.fireRate * 2)
-                    _cooldown = 0;
-                else
-                    _cooldown -= _stats.fireRate;
+                Debug.Log("ennemi touché");
             }
+
+            currentBulletAmount -= 1;
+
+            if (_cooldown >= _stats.fireRate * 2)
+                _cooldown = 0;
+            else
+                _cooldown -= _stats.fireRate;
         }
     }
 }

@@ -12,8 +12,6 @@ public class PlayerDamage : MonoBehaviour
 
     private void TakeDamage(float damage)
     {
-
-
         if (health <= 0)
         {
             Destroy(gameObject);
