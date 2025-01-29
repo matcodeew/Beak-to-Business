@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class MeleeWeapon : Weapon
 {
@@ -12,27 +11,31 @@ public class MeleeWeapon : Weapon
         _stats.aoeRange = _aoeRange;
     }
 
-    public override void Shoot(InputAction.CallbackContext _context)
+    public override void Shoot(Transform playerTransform)
     {
-        if (_context.performed)
+        if (_cooldown >= _stats.fireRate)
         {
-            if (_cooldown >= _stats.fireRate)
+            Vector3 _startPos = playerTransform.position + Vector3.forward * _stats.fireRange / 2;
+
+            RaycastHit[] _hit = Physics.BoxCastAll(_startPos, _stats.aoeRange, Vector3.forward, Quaternion.identity,
+                _stats.fireRange, _playerMask);
+
+            Debug.DrawRay(_startPos, Vector3.forward, Color.red, Mathf.Infinity);
+            foreach (RaycastHit _raycast in _hit)
             {
-                Vector3 _startPos = transform.position + Vector3.forward * _stats.fireRange / 2;
-
-                RaycastHit[] _hit = Physics.BoxCastAll(_startPos, _stats.aoeRange, Vector3.forward, Quaternion.identity,
-                    _stats.fireRange, _playerMask);
-
-                foreach (RaycastHit _raycast in _hit)
-                {
-                    Debug.Log(_raycast.collider.gameObject.name);
-                }
-                
-                if (_cooldown >= _stats.fireRate * 2)
-                    _cooldown = 0;
-                else
-                    _cooldown -= _stats.fireRate;
+                Debug.Log(_raycast.collider.gameObject.name);
             }
+
+            if (_cooldown >= _stats.fireRate * 2)
+                _cooldown = 0;
+            else
+                _cooldown -= _stats.fireRate;
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawCube(transform.position + Vector3.forward * _stats.fireRange / 2, _stats.aoeRange);
     }
 }
