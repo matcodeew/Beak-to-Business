@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerDamage : MonoBehaviour
 {
     private bool _isDestroy;
+    public float health;
 
     void Start()
     {
