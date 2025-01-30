@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2108828992075093990}
   - component: {fileID: 6370980117654463230}
   - component: {fileID: 4765203708723468611}
+  - component: {fileID: -1382009610338980941}
   - component: {fileID: 3320083647575527506}
   - component: {fileID: 8000308605210250987}
   m_Layer: 0
@@ -140,6 +141,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &-1382009610338980941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220365358987860366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3411190963
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &3320083647575527506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,11 +178,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab9c5ea97e9ad468837a0a1d8fee55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   stats:
     speed: 5
-    health: 100
-    XP: 0
-    score: 0
+    health:
+      m_InternalValue: 0
+    XP:
+      m_InternalValue: 0
+    score:
+      m_InternalValue: 0
+  _weaponEquipied: {fileID: 0}
 --- !u!114 &8000308605210250987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,5 +200,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3b13968dd90034e944c9ffc86fec4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 3320083647575527506}
-  _playerRigidbody: {fileID: 4765203708723468611}

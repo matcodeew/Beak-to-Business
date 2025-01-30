@@ -3,14 +3,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Vector3 _direction = Vector2.zero;
-    [SerializeField] private Player _player;
+    private Player _player;
 
-    [SerializeField] private Rigidbody _playerRigidbody;
-    private Camera _playerCamera;
+    private Rigidbody _playerRigidbody;
 
-    private void Awake()
+    private void Start()
     {
-        _playerCamera = Camera.main;
+        _playerRigidbody = GetComponent<Rigidbody>();
+        _player = GetComponent<Player>();
     }
 
     private void FixedUpdate()
@@ -23,8 +23,5 @@ public class PlayerMovement : MonoBehaviour
         _direction = new Vector3(_inputX, 0.0f, _inputY).normalized;
 
         _playerRigidbody.linearVelocity = _direction * _player.stats.speed;
-
-        _playerCamera.transform.position = transform.position + new Vector3(0, 10, 0);
-        _playerCamera.transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 }

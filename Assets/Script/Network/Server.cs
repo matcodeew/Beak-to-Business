@@ -26,7 +26,6 @@ public class Server : NetworkBehaviour
                 NetworkManager.Singleton.StartServer();
                
                 NetworkManager.Singleton.OnClientConnectedCallback += ClientConnectMessage;
-                StartCoroutine(PingClients());
             }
         }
     }
@@ -36,30 +35,12 @@ public class Server : NetworkBehaviour
         Debug.Log("----------" + connectionID + " connected----------");
     }
 
-    public IEnumerator PingClients()
-    {
-        yield return new WaitForSeconds(5f);
-
-        while(NetworkManager.Singleton.IsServer)
-        {
-            yield return new WaitForSeconds(5f);
-            Debug.Log("Sending pings...");
-            PingClientRpc();
-        }
-    }
-
-    [ClientRpc]
-    public void PingClientRpc()
-    {
-        Debug.Log("Got Ping From Server");
-    }
-
 
     void ConnectToServer()
     {
         if (NetworkManager.Singleton == null)
         {
-            Debug.LogError("NetworkManager non trouvé !");
+            Debug.LogError("NetworkManager not found !");
             return;
         }
 
@@ -70,11 +51,11 @@ public class Server : NetworkBehaviour
             transport.ConnectionData.Port = serverPort;
 
             NetworkManager.Singleton.StartClient();
-            Debug.Log("Tentative de connexion au serveur...");
+            Debug.Log("Connecting to server...");
         }
         else
         {
-            Debug.LogError("Transport Unity non trouvé !");
+            Debug.LogError("Unity Transport not found !");
         }
     }
 

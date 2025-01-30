@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,11 +7,11 @@ using UnityEngine.InputSystem;
 public struct PlayerStats
 {
     public float speed;
-    public float health;
-    public int XP;
-    public int score;
+    public NetworkVariable<float> health;
+    public NetworkVariable<int> XP;
+    public NetworkVariable<int> score;
 }
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     public PlayerStats stats;
     [SerializeField] private Weapon _weaponEquipied;
@@ -30,9 +31,9 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float _damage, Player _playerGivenDamage)
     {
-        stats.health = Mathf.Clamp(stats.health - _damage, 0, stats.health);
+        stats.health.Value = Mathf.Clamp(stats.health.Value - _damage, 0, stats.health.Value);
 
-        if (stats.health <= 0)
+        if (stats.health.Value <= 0)
         {
             Die(_playerGivenDamage);
         }
