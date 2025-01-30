@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 public class ObjectTest : InteractableObjects
@@ -6,4 +7,5 @@ public class ObjectTest : InteractableObjects
     {
         base.PlayerInteract(player);
     }
+    
 }

@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -8,8 +11,9 @@ public interface IInteractible
     void StartVfxAndSfx();
 }
 
-public class InteractableObjects : MonoBehaviour, IInteractible
+public class InteractableObjects : NetworkBehaviour, IInteractible
 {
+
     public virtual void PlayerInteract(Player player)
     {
         print($"{player.name} interact with {name}");
@@ -19,3 +23,4 @@ public class InteractableObjects : MonoBehaviour, IInteractible
     public virtual void StartAnim() { }
     public virtual void StartVfxAndSfx() { }
 }
+

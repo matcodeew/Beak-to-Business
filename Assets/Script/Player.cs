@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,8 +16,11 @@ public class Player : NetworkBehaviour
 {
     public PlayerStats stats;
     [SerializeField] private Weapon _weaponEquipied;
+
     private void OnTriggerEnter(Collider collider)
     {
+        if (!IsOwner) return;
+
         GetInteractibleObject(collider);
     }
 
@@ -25,9 +29,12 @@ public class Player : NetworkBehaviour
         if (collider.gameObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
             _interactibleObject.PlayerInteract(this);
-            Destroy(collider.gameObject);
+            //Destroy(collider.gameObject);
+            Server.instance.DestroyObjectServerRpc(collider.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
+
+    
 
     public void TakeDamage(float _damage, Player _playerGivenDamage)
     {
