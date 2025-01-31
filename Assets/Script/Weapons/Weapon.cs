@@ -16,10 +16,10 @@ public enum WeaponType
 
 public abstract class Weapon : MonoBehaviour
 {
-    protected WeaponsStats stats;
+    public WeaponsStats stats;
     protected WeaponType type;
     protected float cooldown;
-    protected LayerMask playerMask;
+    [SerializeField] protected LayerMask playerMask;
     public WeaponStats weaponData;
     public virtual void Initialize(WeaponStats data)
     {
@@ -33,11 +33,12 @@ public abstract class Weapon : MonoBehaviour
     }
     public virtual void Shoot(Transform playerTransform)
     {
+        if (!CanShoot()) { return; }
         cooldown = stats.fireRate;
     }
     public virtual void ShootFinished() { }
 
-    protected virtual void ShootHandler(float delta)
+    public virtual void ShootHandler(float delta)
     {
         if (cooldown > 0)
         {

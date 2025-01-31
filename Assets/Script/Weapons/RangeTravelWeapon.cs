@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class RangeTravelWeapon : Weapon
 {
-    private GameObject _currentBullet;
-    private Rigidbody2D _bulletRigidbody;
+    private GameObject _currentBullet = null;
     private GameObject _bulletPrefab;
+    private Vector2 _endPos;
+    private Vector2 _startPos;
     public override void Initialize(WeaponStats data)
     {
         base.Initialize(data);
@@ -12,17 +13,25 @@ public class RangeTravelWeapon : Weapon
     }
     public override void Shoot(Transform playerTransform)
     {
+        ResetData();
         base.Shoot(playerTransform);
-        if (_currentBullet is null)
+        _startPos = (playerTransform.position + playerTransform.up * playerTransform.localScale.x);
+        _endPos = _startPos + (Vector2)playerTransform.up * stats.fireRange;
+
+        if (_currentBullet == null)
         {
-            _currentBullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity); //do instead GetObjectFromPool(type Bulet);
-            _bulletRigidbody = _currentBullet.GetComponent<Rigidbody2D>();
+            _currentBullet = Instantiate(_bulletPrefab, _startPos, Quaternion.identity); //do instead GetObjectFromPool(type Bulet);
+            _currentBullet.GetComponent<Bullet>().InitializeBullet(_startPos, _endPos, stats.bulletSpeed, playerTransform.gameObject.GetComponent<Player>());
         }
-        else
+        else if (_currentBullet != null)
         {
-            _currentBullet.transform.position = transform.position;
+            _currentBullet.transform.position = playerTransform.position;
         }
-        _bulletRigidbody.linearVelocity = Vector3.zero;
-        _bulletRigidbody.AddForce(transform.forward * 20f);
+    }
+    private void ResetData()
+    {
+        _currentBullet = null;
+        _endPos = Vector2.zero;
+        _startPos = Vector2.zero;
     }
 }

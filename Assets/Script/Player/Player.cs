@@ -13,17 +13,28 @@ public class Player : MonoBehaviour
 {
     public PlayerStats stats;
     public Weapon weaponEquipied;
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        GetInteractibleObject(collider);
+        GetInteractibleObject(collision.gameObject);
+        if(collision.CompareTag("Bullet"))
+        {
+            Bullet bullet = collision.GetComponent<Bullet>();
+            TakeDamage(bullet.playerLuncher.weaponEquipied.stats.damage, bullet.playerLuncher);
+            Destroy(collision.gameObject);
+        }
+    }
+    private void Update()
+    {
+        if (weaponEquipied is null) return;
+        weaponEquipied.ShootHandler(Time.deltaTime);
     }
 
-    private void GetInteractibleObject(Collider collider)
+    private void GetInteractibleObject(GameObject interactibleObject)
     {
-        if (collider.gameObject.TryGetComponent(out InteractableObjects _interactibleObject))
+        if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
             _interactibleObject.PlayerInteract(this);
-            Destroy(collider.gameObject);
+            Destroy(interactibleObject);
         }
     }
 

@@ -10,8 +10,6 @@ public class ZoneWeapon : RangeTravelWeapon
 
     public override void Shoot(Transform playerTransform)
     {
-        if (!CanShoot()) return;
-
         base.Shoot(playerTransform);
         _isShooting = true;
         _zoneCollider.enabled = true;
