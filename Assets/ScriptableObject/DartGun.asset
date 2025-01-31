@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64127953c6312a74895d8bf762034045, type: 3}
-  m_Name: FoamKatana
+  m_Name: DartGun
   m_EditorClassIdentifier: 
-  _fireRange: 1.35
-  _fireRate: 1.25
-  _damage: 20
-  _aoeRange: {x: 1.5, y: 1.5}
+  fireRange: 6
+  fireRate: 4
+  damage: 90
+  aoeRange: {x: 0, y: 0}
+  bulletSpeed: 3
+  bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
+  type: 0
