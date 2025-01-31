@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64127953c6312a74895d8bf762034045, type: 3}
-  m_Name: LaserSaber
+  m_Name: PoolNoodle
   m_EditorClassIdentifier: 
-  _fireRange: 1
-  _fireRate: 1
-  _damage: 25
-  _aoeRange: {x: 1, y: 1}
+  fireRange: 3
+  fireRate: 0.1
+  damage: 2
+  aoeRange: {x: 0, y: 0}
+  bulletSpeed: 0
+  bulletPrefab: {fileID: 0}
+  type: 0

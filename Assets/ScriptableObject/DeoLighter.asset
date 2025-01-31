@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64127953c6312a74895d8bf762034045, type: 3}
-  m_Name: WaterGun
+  m_Name: DeoLighter
   m_EditorClassIdentifier: 
-  _fireRange: 5
-  _fireRate: 0.5
-  _damage: 7
-  _aoeRange: {x: 0, y: 0}
-  _bulletSpeed: 0
+  fireRange: 3
+  fireRate: 0.1
+  damage: 3
+  aoeRange: {x: 10, y: 10}
+  bulletSpeed: 0
+  bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
+  type: 0
