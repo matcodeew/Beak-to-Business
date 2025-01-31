@@ -2,32 +2,25 @@ using UnityEngine;
 
 public class RangeInstantWeapon : Weapon
 {
-    public override void Initialize(float _fireRange, float _fireRate, float _damage, Vector3 _aoeRange, float _bulletSpeed, GameObject _bullet, int _maxBulletAmount)
+    private RaycastHit2D _hit;
+    public override void Initialize(WeaponStats data)
     {
-        _stats = new _stats();
-        _stats.fireRange = _fireRange;
-        _stats.fireRate = _fireRate;
-        _stats.damage = _damage;
-
-        _stats.maxBulletAmount = currentBulletAmount = _maxBulletAmount;
+        base.Initialize(data);
     }
-
-    public override void Shoot(Transform p)
+    public override void Shoot(Transform playerTransform)
     {
-        if (_cooldown >= _stats.fireRate && currentBulletAmount > 0)
+        base.Shoot(playerTransform);
+
+        _hit = Physics2D.Raycast(playerTransform.position + playerTransform.up * playerTransform.localScale.x, playerTransform.up, stats.fireRange, playerMask);
+        Debug.DrawRay(playerTransform.position + playerTransform.up * playerTransform.localScale.x, playerTransform.up, Color.green, Mathf.Infinity);
+        if (_hit)
         {
-            Debug.DrawRay(p.transform.position, p.transform.forward * _stats.fireRange, Color.green, 1000);
-            if (Physics.Raycast(p.transform.position, p.transform.forward, _stats.fireRange, _playerMask))
+            print($"{_hit.collider.name} hitted");
+            if (_hit.collider.TryGetComponent(out Player player))
             {
-                Debug.Log("ennemi touché");
+                player.TakeDamage(stats.damage, playerTransform.gameObject.GetComponent<Player>());
+                print($"{player.name} take {stats.damage} by {playerTransform.gameObject.name}");
             }
-
-            currentBulletAmount -= 1;
-
-            if (_cooldown >= _stats.fireRate * 2)
-                _cooldown = 0;
-            else
-                _cooldown -= _stats.fireRate;
         }
     }
 }

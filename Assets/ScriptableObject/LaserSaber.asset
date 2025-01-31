@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64127953c6312a74895d8bf762034045, type: 3}
-  m_Name: DartGun
+  m_Name: LaserSaber
   m_EditorClassIdentifier: 
-  _fireRange: 7
-  _fireRate: 4
-  _damage: 45
-  _aoeRange: {x: 0, y: 0}
-  _bulletSpeed: 0
+  fireRange: 1
+  fireRate: 1
+  damage: 25
+  aoeRange: {x: 0, y: 0}
+  bulletSpeed: 0
+  bulletPrefab: {fileID: 0}
+  type: 0

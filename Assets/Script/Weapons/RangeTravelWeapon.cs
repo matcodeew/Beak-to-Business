@@ -2,44 +2,36 @@ using UnityEngine;
 
 public class RangeTravelWeapon : Weapon
 {
-    internal GameObject bulletPrefab;
-    private GameObject _currentBullet;
-
-    public override void Initialize(float _fireRange, float _fireRate, float _damage, Vector3 _aoeRange, float _bulletSpeed, GameObject _bullet, int _maxBulletAmount)
+    private GameObject _currentBullet = null;
+    private GameObject _bulletPrefab;
+    private Vector2 _endPos;
+    private Vector2 _startPos;
+    public override void Initialize(WeaponStats data)
     {
-        _stats = new _stats();
-        _stats.fireRange = _fireRange;
-        _stats.fireRate = _fireRate;
-        _stats.damage = _damage;
-        _stats.bulletSpeed = _bulletSpeed;
-        bulletPrefab = _bullet;
-
-        _stats.maxBulletAmount = currentBulletAmount = _maxBulletAmount;
+        base.Initialize(data);
+        _bulletPrefab = data.bulletPrefab;
     }
-
-    public override void Shoot(Transform p)
+    public override void Shoot(Transform playerTransform)
     {
-        if (_cooldown >= _stats.fireRate && currentBulletAmount > 0)
+        ResetData();
+        base.Shoot(playerTransform);
+        _startPos = (playerTransform.position + playerTransform.up * playerTransform.localScale.x);
+        _endPos = _startPos + (Vector2)playerTransform.up * stats.fireRange;
+
+        if (_currentBullet == null)
         {
-            if (_currentBullet == null)
-            {
-                _currentBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            }
-            else
-            {
-                _currentBullet.transform.position = transform.position;
-            }
-
-            currentBulletAmount -= 1;
-
-            _currentBullet.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-            _currentBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 20f, ForceMode.Impulse);
-
-
-            if (_cooldown >= _stats.fireRate * 2)
-                _cooldown = 0;
-            else
-                _cooldown -= _stats.fireRate;
+            _currentBullet = Instantiate(_bulletPrefab, _startPos, Quaternion.identity); //do instead GetObjectFromPool(type Bulet);
+            _currentBullet.GetComponent<Bullet>().InitializeBullet(_startPos, _endPos, stats.bulletSpeed, playerTransform.gameObject.GetComponent<Player>());
         }
+        else if (_currentBullet != null)
+        {
+            _currentBullet.transform.position = playerTransform.position;
+        }
+    }
+    private void ResetData()
+    {
+        _currentBullet = null;
+        _endPos = Vector2.zero;
+        _startPos = Vector2.zero;
     }
 }
