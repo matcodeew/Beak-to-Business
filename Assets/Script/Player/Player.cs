@@ -9,7 +9,6 @@ public struct PlayerStats
     public int XP;
     public int score;
 }
-[RequireComponent(typeof(PlayerController), typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
     public PlayerStats stats;

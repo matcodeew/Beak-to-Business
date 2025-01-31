@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4424ac9a-3379-47f5-96cd-831ba0942e04" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Script/InteractibleObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/InteractibleObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ObjectTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ObjectTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/MeleeWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/MeleeWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/RangeInstantWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/RangeInstantWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/RangeTravelWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/RangeTravelWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/Scriptable/DeoLighter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/Scriptable/DeoLighter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/Scriptable/FishBone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/Scriptable/FishBone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Bonus/Buff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Bonus/Buff.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/WeaponStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/WeaponStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Weapons/ZoneWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Weapons/ZoneWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +13,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2sJEF0KYTA3MRKA5YmGIdAM2dlB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,7 +24,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "DEV",
+    "git-widget-placeholder": "Merge",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -79,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738165170395</updated>
       <workItem from="1738165173365" duration="228000" />
+      <workItem from="1738326147815" duration="131000" />
     </task>
     <servers />
   </component>

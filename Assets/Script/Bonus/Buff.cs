@@ -10,6 +10,13 @@ struct baseStats
     public int baseFireRate;
 }
 
+public enum Stats
+{
+    health,
+    damage,
+    speed,
+    fireRate
+}
 public class Buff : MonoBehaviour
 {
     public static Dictionary<Stats, float> _statsDico = new();
@@ -83,12 +90,4 @@ public class Buff : MonoBehaviour
         
         _statsDico[_stat] = _duration;
     }
-}
-
-public enum Stats
-{
-    health,
-    damage,
-    speed,
-    fireRate
 }

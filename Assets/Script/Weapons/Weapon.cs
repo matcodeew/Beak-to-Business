@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public struct Stats
+public struct WeaponsStats
 {
     public float fireRange;
     public float fireRate;
@@ -16,7 +16,7 @@ public enum WeaponType
 
 public abstract class Weapon : MonoBehaviour
 {
-    protected Stats stats;
+    protected WeaponsStats stats;
     protected WeaponType type;
     protected float cooldown;
     protected LayerMask playerMask;
