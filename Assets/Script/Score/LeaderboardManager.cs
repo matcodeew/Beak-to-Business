@@ -47,6 +47,6 @@ public class LeaderboardManager : MonoBehaviour
         //    CreateText(namesContainer, playerScores[i].playerName);
         //    CreateText(scoresContainer, playerScores[i].score.ToString());
         //    CreateText(rankingContainer, (i + 1).ToString());
-        }
+        //}
     }
-
+}
