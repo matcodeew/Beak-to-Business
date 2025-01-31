@@ -1,30 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector3 _direction = Vector2.zero;
-    [SerializeField] private Player _player;
-
-    [SerializeField] private Rigidbody _playerRigidbody;
-    private Camera _playerCamera;
-
+    private Vector2 moveInput;
+    private Player _player;
     private void Awake()
     {
-        _playerCamera = Camera.main;
+        _player = GetComponent<Player>();
     }
-
     private void FixedUpdate()
     {
-        //if(gamePaused || playerDead) return;
+        transform.position += (Vector3)(moveInput * _player.stats.speed * Time.fixedDeltaTime);
+    }
 
-        float _inputX = Input.GetAxisRaw("Horizontal");
-        float _inputY = Input.GetAxisRaw("Vertical");
-       // print($"intputX {_inputX}, intputY {_inputY}");
-        _direction = new Vector3(_inputX, 0.0f, _inputY).normalized;
-
-        _playerRigidbody.linearVelocity = _direction * _player.stats.speed;
-
-        _playerCamera.transform.position = transform.position + new Vector3(0, 10, 0);
-        _playerCamera.transform.rotation = Quaternion.Euler(90, 0, 0);
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+        if (context.canceled)
+        {
+            this.enabled = false;
+        }
     }
 }

@@ -1,48 +1,48 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-struct _stats
+public struct Stats
 {
     public float fireRange;
     public float fireRate;
     public float bulletSpeed;
     public float damage;
-    public Vector3 aoeRange;
+    public Vector2 aoeRange;
+}
+public enum WeaponType
+{
 
-    public int maxBulletAmount;
 }
 
 public abstract class Weapon : MonoBehaviour
 {
-    public float _cooldown;
-    internal int _playerMask = 6;
-    
-    internal _stats _stats;
-    public WeaponStats WeaponStats;
-
-    public int currentBulletAmount;
-    
-    public abstract void Initialize(float _fireRange, float _fireRate, float _damage, Vector3 _aoeRange, float _bulletSpeed, GameObject _bullet, int _maxBulletAmount);
-    public abstract void Shoot(Transform playertransform);
+    protected Stats stats;
+    protected WeaponType type;
+    protected float cooldown;
+    protected LayerMask playerMask;
+    public WeaponStats weaponData;
+    public virtual void Initialize(WeaponStats data)
+    {
+        weaponData = data;
+        stats.aoeRange = data.aoeRange;
+        stats.damage = data.damage;
+        stats.fireRange = data.fireRange;
+        stats.fireRate = data.fireRate;
+        stats.bulletSpeed = data.bulletSpeed;
+        type = data.type;
+    }
+    public virtual void Shoot(Transform playerTransform)
+    {
+        cooldown = stats.fireRate;
+    }
     public virtual void ShootFinished() { }
 
-    public virtual void Reload(InputAction.CallbackContext _callback)
+    protected virtual void ShootHandler(float delta)
     {
-        if (_callback.started && currentBulletAmount < _stats.maxBulletAmount)
+        if (cooldown > 0)
         {
-            currentBulletAmount = _stats.maxBulletAmount;
-            Debug.Log(currentBulletAmount);
+            cooldown -= delta; 
         }
     }
-
-    public void Update()
-    {
-        _cooldown += Time.deltaTime;
-    }
-
-    enum WeaponType
-    {
-        
-    }
+    protected bool CanShoot() => cooldown <= 0;
 }

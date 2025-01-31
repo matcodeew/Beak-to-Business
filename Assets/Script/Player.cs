@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 [System.Serializable]
@@ -10,10 +9,11 @@ public struct PlayerStats
     public int XP;
     public int score;
 }
+[RequireComponent(typeof(PlayerController), typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
     public PlayerStats stats;
-    [SerializeField] private Weapon _weaponEquipied;
+    public Weapon weaponEquipied;
     private void OnTriggerEnter(Collider collider)
     {
         GetInteractibleObject(collider);
@@ -49,25 +49,8 @@ public class Player : MonoBehaviour
 
     public void SetWeapon(Weapon weapon, WeaponStats data)
     {
-        _weaponEquipied = weapon;
-        _weaponEquipied.Initialize(data.fireRange, data.fireRate, data.damage, data.aoeRange, data.bulletSpeed,
-            data.bulletPrefab, data.maxBulletAmount);
-    }
-    public void Shoot(InputAction.CallbackContext _callback)
-    {
-        if (_weaponEquipied is null) { return; }
-
-        if (_callback.started)
-        {
-            _weaponEquipied.Shoot(transform);
-            print($"{_weaponEquipied.name} Shoot");
-        }
-
-        if (_callback.canceled)
-        {
-            _weaponEquipied.ShootFinished();
-            print($"{_weaponEquipied.name} ShootFinished");
-        }
+        weaponEquipied = weapon;
+        weaponEquipied.Initialize(data);
     }
 }
 
