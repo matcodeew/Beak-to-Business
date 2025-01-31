@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZoneWeapon : RangeTravelWeapon
+public class ZoneWeapon : Weapon
 {
-    [SerializeField] private Collider2D _zoneCollider;
-    private List<Collider2D> _enemiesInZone = new List<Collider2D>();
+    private List<GameObject> _enemiesInZone = new List<GameObject>();
     private bool _isShooting = false;
     private Player _playerGivenDamage;
+    [SerializeField] float coolDownTimer;
+    private Vector2 _startPos;
 
     public override void Shoot(Transform playerTransform)
     {
         base.Shoot(playerTransform);
         _isShooting = true;
-        _zoneCollider.enabled = true;
         _playerGivenDamage = playerTransform.gameObject.GetComponent<Player>();
         InvokeRepeating(nameof(ApplyDamage), 0f, 0.1f);
     }
@@ -20,42 +20,32 @@ public class ZoneWeapon : RangeTravelWeapon
     public override void ShootFinished()
     {
         base.ShootFinished();
-       _isShooting = false;
-       _zoneCollider.enabled = false;
-
+        _isShooting = false;
         CancelInvoke(nameof(ApplyDamage));
     }
 
     private void ApplyDamage()
     {
         if (!_isShooting) return;
+        _enemiesInZone.Clear();
 
-        foreach (Collider2D enemy in _enemiesInZone)
+        _startPos = _playerGivenDamage.transform.position + _playerGivenDamage.transform.up *
+            ((_playerGivenDamage.transform.localScale.x / 2) + stats.aoeRange.y / 2);
+
+
+        RaycastHit2D[] _allHit = Physics2D.BoxCastAll(_startPos, stats.aoeRange, 0.0f, _playerGivenDamage.transform.up, 0.0f, playerMask);
+
+        foreach (var hit in _allHit)
+        {
+            _enemiesInZone.Add(hit.collider.gameObject);
+        }
+        foreach (GameObject enemy in _enemiesInZone)
         {
             if (enemy is not null && enemy.gameObject.TryGetComponent(out Player player))
             {
-                player.TakeDamage(stats.damage, _playerGivenDamage);
-                Debug.Log($"{enemy.name} take {stats.damage / 10} per seconds and {stats.damage} for all");
+                player.TakeDamage(stats.damage / 10, _playerGivenDamage);
+                Debug.Log($"{enemy.name} take {stats.damage / 10}  and {stats.damage} per second");
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (((1 << other.gameObject.layer) & playerMask) != 0)
-        {
-            if (!_enemiesInZone.Contains(other))
-            {
-                _enemiesInZone.Add(other);
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (_enemiesInZone.Contains(other))
-        {
-            _enemiesInZone.Remove(other);
         }
     }
 }

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     speed: 0
-    health: 0
+    health: 50
     XP: 0
     score: 0
   weaponEquipied: {fileID: 0}
@@ -272,7 +272,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
+    - - {x: 0, y: 0.59057105}
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 552468412}
   - component: {fileID: 552468415}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: weaponInteractible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
