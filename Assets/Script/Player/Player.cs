@@ -11,6 +11,7 @@ public struct PlayerStats
 }
 public class Player : MonoBehaviour
 {
+    [Header("Player stats")]
     public PlayerStats stats;
     public Weapon weaponEquipied;
     private void OnTriggerEnter2D(Collider2D collision)
