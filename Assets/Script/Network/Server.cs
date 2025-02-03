@@ -1,8 +1,14 @@
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
+[System.Serializable]
+public struct SpawnableObjectOnSpawnOnServer
+{
+    public GameObject spawnedObject;
+    public Vector2 spawnPosition;
+}
 
 public class Server : NetworkBehaviour
 {
@@ -12,20 +18,20 @@ public class Server : NetworkBehaviour
 
     [SerializeField] private Button connectButton;
 
-    [SerializeField] private List<NetworkObject> _objectsToSpawn;
-
     private NetworkList<NetworkObjectReference> _destroyedObjects = new NetworkList<NetworkObjectReference>();
 
     public static Server instance;
 
-    //test
-    public GameObject cubePrefab;
 
+    [SerializeField] private List<SpawnableObjectOnSpawnOnServer> spawnableObjectsOnSpawn;
+
+    private NetworkObject _objToSpawn;
 
     private void Awake()
     {
         instance = this;
     }
+
     void Start()
     {
         connectButton.onClick.AddListener(ConnectToServer);
@@ -43,6 +49,7 @@ public class Server : NetworkBehaviour
                 NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
                 //GameObject go = Instantiate(cubePrefab, new Vector3(2.88f, 0.15f, 2.92f), Quaternion.identity);
                 //go.GetComponent<NetworkObject>().Spawn();
+                SpawnObjectsOnServer();
             }
         }
 
@@ -50,22 +57,20 @@ public class Server : NetworkBehaviour
 
     private void SpawnObjectsOnServer()
     {
-        foreach (var obj in _objectsToSpawn)
+        foreach (SpawnableObjectOnSpawnOnServer obj in spawnableObjectsOnSpawn)
         {
-            //obj.Spawn();
-            if (obj.IsSpawned) obj.gameObject.SetActive(true);
+            GameObject gameObj = Instantiate(obj.spawnedObject, obj.spawnPosition, Quaternion.identity);
+            gameObj.GetComponent<NetworkObject>().Spawn();
         }
 
     }
 
-    //[ServerRpc(RequireOwnership = false)]
     [Rpc(SendTo.Server)]
-    public void DestroyObjectServerRpc(ulong objectId)
+    public void DestroyObjectOnServerRpc(ulong objectId)
     {
         if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(objectId, out var obj))
         {
             obj.Despawn();
-            //Destroy(obj.gameObject);
         }
     }
 

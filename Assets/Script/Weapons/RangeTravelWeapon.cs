@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 public class RangeTravelWeapon : Weapon
@@ -15,19 +16,34 @@ public class RangeTravelWeapon : Weapon
     {
         ResetData();
         base.Shoot(playerTransform);
+
         _startPos = (playerTransform.position + playerTransform.up * playerTransform.localScale.x);
         _endPos = _startPos + (Vector2)playerTransform.up * stats.fireRange;
 
-        if (_currentBullet == null)
+        if(NetworkManager.Singleton.IsClient)
         {
-            _currentBullet = Instantiate(_bulletPrefab, _startPos, Quaternion.identity); //do instead GetObjectFromPool(type Bulet);
-            _currentBullet.GetComponent<Bullet>().InitializeBullet(_startPos, _endPos, stats.bulletSpeed, playerTransform.gameObject.GetComponent<Player>());
-        }
-        else if (_currentBullet != null)
-        {
-            _currentBullet.transform.position = playerTransform.position;
+            RequestBulletSpawnServerRpc(_startPos, _endPos, playerTransform.GetComponent<NetworkObject>().OwnerClientId);
         }
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void RequestBulletSpawnServerRpc(Vector2 startPos, Vector2 endPos, ulong ownerClientId)
+    {
+        GameObject bullet = Instantiate(_bulletPrefab, startPos, Quaternion.identity);
+
+        NetworkObject bulletNetworkObject = bullet.GetComponent<NetworkObject>();
+        if (bulletNetworkObject != null)
+        {
+            bulletNetworkObject.SpawnWithOwnership(ownerClientId);
+
+            bullet.GetComponent<Bullet>().InitializeBullet(startPos, endPos, stats.bulletSpeed, NetworkManager.Singleton.ConnectedClients[ownerClientId].PlayerObject.GetComponent<Player>());
+        }
+        else
+        {
+            Debug.LogError("Le prefab de la balle doit avoir un NetworkObject !");
+        }
+    }
+
     private void ResetData()
     {
         _currentBullet = null;

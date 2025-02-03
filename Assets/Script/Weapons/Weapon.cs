@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public enum WeaponType
 
 }
 
-public abstract class Weapon : MonoBehaviour
+public abstract class Weapon : NetworkBehaviour
 {
     public WeaponsStats stats;
     protected WeaponType type;
@@ -31,6 +32,7 @@ public abstract class Weapon : MonoBehaviour
         stats.bulletSpeed = data.bulletSpeed;
         type = data.type;
     }
+
     public virtual void Shoot(Transform playerTransform)
     {
         if (!CanShoot()) { return; }

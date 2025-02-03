@@ -1,12 +1,18 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : NetworkBehaviour
 {
     private Vector2 _startPos;
     private Vector2 _endPos;
     private float _speed = 5f;
     private float _distTreshHold = 0.05f;
     public Player playerLuncher;
+
+    private void Start()
+    {
+        Debug.Log("---------- Bullet Spawned ----------");
+    }
 
     public void InitializeBullet(Vector2 startPos, Vector2 endPos, float speed, Player playerLuncher)
     {
@@ -22,7 +28,7 @@ public class Bullet : MonoBehaviour
 
         if (Vector2.Distance(transform.position, _endPos) < _distTreshHold)
         {
-            Destroy(gameObject);
+            Server.instance.DestroyObjectOnServerRpc(this.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
 }

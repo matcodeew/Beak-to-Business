@@ -25,7 +25,7 @@ public class Player : NetworkBehaviour
             Bullet bullet = collision.GetComponent<Bullet>();
             TakeDamage(bullet.playerLuncher.weaponEquipied.stats.damage, bullet.playerLuncher);
             //Destroy(collision.gameObject);
-            Server.instance.DestroyObjectServerRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
+            Server.instance.DestroyObjectOnServerRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
     private void Update()
@@ -39,7 +39,7 @@ public class Player : NetworkBehaviour
         if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
             _interactibleObject.PlayerInteract(this);
-            Server.instance.DestroyObjectServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
+            Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
 
