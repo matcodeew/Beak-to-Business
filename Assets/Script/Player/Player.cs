@@ -17,10 +17,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GetInteractibleObject(collision.gameObject);
+
         if(collision.CompareTag("Bullet"))
         {
-            Bullet bullet = collision.GetComponent<Bullet>();
-            TakeDamage(bullet.playerLuncher.weaponEquipied.stats.damage, bullet.playerLuncher);
+            Player bulletFiried = collision.GetComponent<Bullet>().playerLuncher;
+            TakeDamage(bulletFiried.weaponEquipied.stats.damage, bulletFiried);
             Destroy(collision.gameObject);
         }
     }

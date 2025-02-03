@@ -614,6 +614,8 @@ GameObject:
   m_Component:
   - component: {fileID: 634018050}
   - component: {fileID: 634018051}
+  - component: {fileID: 634018053}
+  - component: {fileID: 634018052}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -798,6 +800,32 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &634018052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634018049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70fefd5d8cf4e304da931db5268f1f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
+  value: 0.9
+--- !u!114 &634018053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634018049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a1c10783c399849b1e0488878779fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1422058650 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1495271844076063941, guid: 184bd200d914a424182d56d867a717b3, type: 3}
