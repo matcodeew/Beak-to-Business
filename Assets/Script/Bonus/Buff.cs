@@ -22,7 +22,7 @@ public class Buff : MonoBehaviour
 {
     public static Dictionary<Stats, float> _statsDico = new();
 
-    //public PlayerStats playerStats;
+    public PlayerStats playerStats;
 
     void Awake()
     {
