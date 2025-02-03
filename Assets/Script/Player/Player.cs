@@ -1,27 +1,31 @@
 using UnityEngine;
-
+using Unity.Netcode;
 
 [System.Serializable]
 public struct PlayerStats
 {
     public float speed;
-    public float health;
-    public int XP;
-    public int score;
+    public NetworkVariable<float> health;
+    public NetworkVariable<int> XP;
+    public NetworkVariable<int> score;
 }
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     [Header("Player stats")]
     public PlayerStats stats;
     public Weapon weaponEquipied;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!IsOwner) return;
+
         GetInteractibleObject(collision.gameObject);
         if(collision.CompareTag("Bullet"))
         {
             Bullet bullet = collision.GetComponent<Bullet>();
             TakeDamage(bullet.playerLuncher.weaponEquipied.stats.damage, bullet.playerLuncher);
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            Server.instance.DestroyObjectServerRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
     private void Update()
@@ -35,15 +39,15 @@ public class Player : MonoBehaviour
         if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
             _interactibleObject.PlayerInteract(this);
-            Destroy(interactibleObject);
+            Server.instance.DestroyObjectServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
 
     public void TakeDamage(float _damage, Player _playerGivenDamage)
     {
-        stats.health = Mathf.Clamp(stats.health - _damage, 0, stats.health);
+        stats.health.Value = Mathf.Clamp(stats.health.Value - _damage, 0, stats.health.Value);
 
-        if (stats.health <= 0)
+        if (stats.health.Value <= 0)
         {
             Die(_playerGivenDamage);
         }
