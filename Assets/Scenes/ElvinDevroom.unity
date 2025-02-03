@@ -666,7 +666,7 @@ MonoBehaviour:
   connectButton: {fileID: 531407200}
   _objectsToSpawn:
   - {fileID: 0}
-  cubePrefab: {fileID: 3825865729824617841, guid: 3bf797d3272ce4746a7f2c88337cfda9, type: 3}
+  cubePrefab: {fileID: 3825865729824617841, guid: e71df74850d778647b19faba8c14a0a0, type: 3}
 --- !u!1 &1114302109
 GameObject:
   m_ObjectHideFlags: 0
