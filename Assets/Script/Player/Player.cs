@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
         {
             _interactibleObject.PlayerInteract(this);
             Destroy(interactibleObject);
+            EventManager.IncreaseScore(this, 10);
         }
     }
 
