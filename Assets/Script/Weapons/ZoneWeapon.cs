@@ -1,44 +1,50 @@
-using System;
-using TMPro;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class ZoneWeapon : RangeTravelWeapon
+public class ZoneWeapon : Weapon
 {
-    public Collider zoneCollider;
+    private List<GameObject> _enemiesInZone = new List<GameObject>();
+    private bool _isShooting = false;
+    private Player _playerGivenDamage;
+    [SerializeField] float coolDownTimer;
+    private Vector2 _startPos;
 
-    public override void Shoot(InputAction.CallbackContext _callback)
+    public override void Shoot(Transform playerTransform)
     {
-        if (_callback.phase == InputActionPhase.Started)
-        {
-            zoneCollider.enabled = true;
-        }
-
-        if (_callback.phase == InputActionPhase.Canceled)
-        {
-            zoneCollider.enabled = false;
-        }
-        
-        Debug.Log(zoneCollider.enabled);
+        base.Shoot(playerTransform);
+        _isShooting = true;
+        _playerGivenDamage = playerTransform.gameObject.GetComponent<Player>();
+        InvokeRepeating(nameof(ApplyDamage), 0f, 0.1f);
     }
 
-    private void OnTriggerStay(Collider _other)
+    public override void ShootFinished()
     {
-        if (_cooldown >= _stats.fireRate && currentBulletAmount > 0)
-        {
-            if (_other.gameObject.layer == _playerMask)
-            {
-                Debug.Log("hit");
-            }
-            
-            currentBulletAmount -= 1;
+        base.ShootFinished();
+        _isShooting = false;
+        CancelInvoke(nameof(ApplyDamage));
+    }
 
-            if (_cooldown >= _stats.fireRate * 2)
+    private void ApplyDamage()
+    {
+        if (!_isShooting) return;
+        _enemiesInZone.Clear();
+
+        _startPos = _playerGivenDamage.transform.position + _playerGivenDamage.transform.up *
+            ((_playerGivenDamage.transform.localScale.x / 2) + stats.aoeRange.y / 2);
+
+
+        RaycastHit2D[] _allHit = Physics2D.BoxCastAll(_startPos, stats.aoeRange, 0.0f, _playerGivenDamage.transform.up, 0.0f, playerMask);
+
+        foreach (var hit in _allHit)
+        {
+            _enemiesInZone.Add(hit.collider.gameObject);
+        }
+        foreach (GameObject enemy in _enemiesInZone)
+        {
+            if (enemy is not null && enemy.gameObject.TryGetComponent(out Player player))
             {
-                _cooldown = 0;
-            } else {
-                _cooldown -= _stats.fireRate;
+                player.TakeDamage(stats.damage / 10, _playerGivenDamage);
+                Debug.Log($"{enemy.name} take {stats.damage / 10}  and {stats.damage} per second");
             }
         }
     }

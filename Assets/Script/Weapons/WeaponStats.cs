@@ -9,6 +9,6 @@ public class WeaponStats : ScriptableObject
     public float damage;
     public Vector2 aoeRange;
     public float bulletSpeed;
-
-    public int maxBulletAmount;
+    public GameObject bulletPrefab;
+    public WeaponType type;
 }

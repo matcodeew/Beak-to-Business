@@ -10,9 +10,7 @@ public class LeaderboardManager : MonoBehaviour
     public Transform namesContainer;
     public Transform scoresContainer;
     public Transform rankingContainer;
-
     public GameObject textPrefab;
-
     void Start()
     {
         // Exemple de données (tu peux remplacer cela par des scores récupérés d'une base de données)
@@ -48,6 +46,6 @@ public class LeaderboardManager : MonoBehaviour
         //    CreateText(namesContainer, playerScores[i].playerName);
         //    CreateText(scoresContainer, playerScores[i].score.ToString());
         //    CreateText(rankingContainer, (i + 1).ToString());
-        }
+        //}
     }
-
+}

@@ -1,44 +1,25 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector3 direction = Vector3.zero;
-    [SerializeField] Player player;
-
-    [SerializeField] private ScoreManager scoreManager;
-
-    [SerializeField] private Rigidbody _playerRigidbody;
-    [SerializeField] private Camera _playerCamera;
-
-    [System.Obsolete]
-    private void Start()
+    private Vector2 moveInput;
+    private Player _player;
+    private void Awake()
     {
-        _playerRigidbody = GetComponent<Rigidbody>();
+        _player = GetComponent<Player>();
     }
-
     private void FixedUpdate()
     {
-       
-        float _inputX = Input.GetAxisRaw("Horizontal");
-        float _inputY = Input.GetAxisRaw("Vertical");
-
-        Vector3 _direction = new Vector3(_inputX, 0f, _inputY).normalized;
-
-        _playerRigidbody.linearVelocity = _direction * player.speed;
-
-        _playerCamera.transform.position = transform.position + new Vector3(0, 10, 0);
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.position += (Vector3)(moveInput * _player.stats.speed * Time.fixedDeltaTime);
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        if(other.CompareTag("Opponents"))
+        moveInput = context.ReadValue<Vector2>();
+        if (context.canceled)
         {
-            scoreManager.IncreaseScore(player, 10);
-            Destroy(other.gameObject);
+            this.enabled = false;
         }
     }
 }

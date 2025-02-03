@@ -11,12 +11,12 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseScore(Player _player, int _amount)
     {
-        _player.score += _amount;
+        _player.stats.score += _amount;
         UpdateScore(_player);
     }
 
     public void UpdateScore(Player _player)
     {
-        scoreText.text = _player.score.ToString();
+        scoreText.text = _player.stats.score.ToString();
     }
 }
