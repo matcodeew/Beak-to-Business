@@ -22,7 +22,8 @@ public class LeaderboardManager : MonoBehaviour
 
         //UpdateLeaderboard();
 
-        list[0].transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "sdtfd";
+        list[0].transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = "Bengy";
+        list[0].transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = "200000";
     }
 
     public void AddScore(string name, int score)
