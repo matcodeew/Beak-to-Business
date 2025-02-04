@@ -23,11 +23,12 @@ public class Player : NetworkBehaviour
         if (!IsOwner) return;
 
         GetInteractibleObject(collision.gameObject);
+
         if(collision.CompareTag("Bullet"))
         {
             Bullet bullet = collision.GetComponent<Bullet>();
-            TakeDamage(bullet.playerLuncher.weaponEquipied.stats.damage, bullet.playerLuncher);
-            //Destroy(collision.gameObject);
+            Player bulletFiried = collision.GetComponent<Bullet>().playerLuncher;
+            TakeDamage(bulletFiried.weaponEquipied.stats.damage, bulletFiried);
             Server.instance.DestroyObjectOnServerRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
@@ -42,7 +43,8 @@ public class Player : NetworkBehaviour
         if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
             _interactibleObject.PlayerInteract(this);
-            //Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
+            Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
+            EventManager.IncreaseScore(this, 10);
         }
     }
 

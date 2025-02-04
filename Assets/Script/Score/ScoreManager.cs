@@ -5,18 +5,21 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
 
-    
-
-    public void IncreaseScore(Player _player, int _amount)
+    private void Awake()
     {
-        _player.stats.score.Value += _amount;
-        UpdateScore(_player);
+        EventManager.OnIncreaseScore += IncreaseScore;
     }
 
     public void UpdateScore(Player _player)
     {
         scoreText.text = _player.stats.score.ToString();
+    }
+
+    public void IncreaseScore(Player _player, int _amount)
+    {
+        _player.stats.score += _amount;
+        UpdateScore(_player);
     }
 }
