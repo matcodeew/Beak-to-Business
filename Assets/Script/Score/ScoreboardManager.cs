@@ -13,8 +13,6 @@ public class ScoreboardManager : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private Player _player2;
 
-    private int _maxPlayer = 10;
-
     private void Awake()
     {
         EventManager.OnIncreaseScore += UpdatePlayerScore;

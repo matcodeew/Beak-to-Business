@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GeneralBuff : InteractableObjects
 {
@@ -9,6 +10,7 @@ public class GeneralBuff : InteractableObjects
     public override void PlayerInteract(Player player)
     {
         base.PlayerInteract(player);
-        Buff.ApplyBuff(stats, duration, value);
+        EventManager.ApplyBuff(stats, duration, value);
     }
+
 }
