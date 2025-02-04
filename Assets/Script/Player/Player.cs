@@ -6,7 +6,6 @@ public struct PlayerStats
 {
     public float speed;
     public float health;
-    public int XP;
     public int score;
 }
 public class Player : MonoBehaviour
