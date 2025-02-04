@@ -1,40 +1,83 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
+using Unity.Netcode;
 using UnityEngine;
-using Unity;
-using UnityEngine.Events;
 
 public class ScoreboardManager : MonoBehaviour
 {
+    public static ScoreboardManager instance;
+
     [SerializeField] private Transform _container;
     [SerializeField] private GameObject _scoreboardItemPrefab;
     [SerializeField] private Dictionary<Player, ScoreboardItem> _scoreboardItem = new();
     [SerializeField] private List<ScoreboardItem> _itemList;
-    [SerializeField] private Player _player;
-    [SerializeField] private Player _player2;
 
     private int _maxPlayer = 10;
 
     private void Awake()
     {
+        instance = this;
+
         EventManager.OnIncreaseScore += UpdatePlayerScore;
         EventManager.OnScoreChanged += SortScoreboardItem;
     }
 
-    public void OnPlayerEnteredRoom(Player newPlayer)
+    public void OnPlayerEnteredRoom(ulong connectionID)
     {
-        AddScoreboardItem(newPlayer);
+        
+
+        AddScoreboardItem(connectionID);
         SortScoreboardItem();
     }
 
-    public void OnPlayerLeavedRoom(Player playerLeaved)
+    public void OnPlayerLeavedRoom(ulong connectionID)
     {
+        Player playerLeaved = null;
+
+        if (NetworkManager.Singleton.ConnectedClients.ContainsKey(connectionID))
+        {
+            var networkObject = NetworkManager.Singleton.ConnectedClients[connectionID].PlayerObject;
+            playerLeaved = networkObject.GetComponent<Player>();
+        }
+        else
+        {
+            Debug.Log($"{connectionID} not contained in Connection Client list");
+        }
+
+        if (playerLeaved == null)
+        {
+            Debug.Log("Player not found");
+            return;
+        }
+
         RemoveScoreboardItem(playerLeaved);
     }
 
-    public void AddScoreboardItem(Player player)
+    [ServerRpc(RequireOwnership = false)]
+    public void AddScoreboardItem(ulong connectionID)
     {
+        Player player = null;
+
+        if (NetworkManager.Singleton.ConnectedClients.ContainsKey(connectionID))
+        {
+            NetworkObject networkObject = NetworkManager.Singleton.ConnectedClients[connectionID].PlayerObject;
+            player = networkObject.gameObject.GetComponent<Player>();
+        }
+
+        if (player == null)
+        {
+            Debug.Log("Player not found");
+            return;
+        }
+
+        Debug.Log("Create object");
+
         GameObject newPrefab = Instantiate(_scoreboardItemPrefab, _container);
+        NetworkObject newNetworkObject = newPrefab.GetComponent<NetworkObject>();
+
+        newNetworkObject.Spawn();
+        newNetworkObject.TrySetParent(_container, true);
+
         newPrefab.GetComponent<ScoreboardItem>().Initialize(player);
         _scoreboardItem.Add(player, newPrefab.GetComponent<ScoreboardItem>());
     }
@@ -61,11 +104,6 @@ public class ScoreboardManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        OnPlayerEnteredRoom(_player);
-        OnPlayerEnteredRoom(_player2);
-    }
 
     public void UpdatePlayerScore(Player player, int amount)
     {

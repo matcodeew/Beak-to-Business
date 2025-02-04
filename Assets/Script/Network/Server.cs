@@ -47,6 +47,7 @@ public class Server : NetworkBehaviour
                 Debug.Log("--------------------Running as server--------------------");
                 NetworkManager.Singleton.StartServer();
                 NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
+                NetworkManager.Singleton.OnClientDisconnectCallback += ClientDisconnect;
                 //GameObject go = Instantiate(cubePrefab, new Vector3(2.88f, 0.15f, 2.92f), Quaternion.identity);
                 //go.GetComponent<NetworkObject>().Spawn();
                 SpawnObjectsOnServer();
@@ -77,7 +78,13 @@ public class Server : NetworkBehaviour
     public void ClientConnect(ulong connectionID)
     {
         Debug.Log("----------" + connectionID + " connected----------");
+        ScoreboardManager.instance.OnPlayerEnteredRoom(connectionID);
 
+    }
+
+    public void ClientDisconnect(ulong connectionID)
+    {
+        ScoreboardManager.instance.OnPlayerLeavedRoom(connectionID);
     }
 
 

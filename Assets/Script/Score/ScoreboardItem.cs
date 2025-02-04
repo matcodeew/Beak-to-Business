@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
+using UnityEditor.MemoryProfiler;
+using UnityEngine.Scripting;
 
 public class ScoreboardItem : MonoBehaviour
 {
@@ -11,7 +14,8 @@ public class ScoreboardItem : MonoBehaviour
 
     public void UpdateScore(Player player)
     {
-        _playerScore.text = player.stats.score.ToString();
+
+        _playerScore.text = player.stats.score.Value.ToString();
         EventManager.UpdateScore();
     }
 

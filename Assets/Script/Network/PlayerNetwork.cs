@@ -5,6 +5,7 @@ public class PlayerNetwork : NetworkBehaviour
 {
     [Header("References")]
     [SerializeField] private Camera _playerCamera;
+    [SerializeField] private GameObject _playerUI;
 
 
     private float _moveSpeed = 5f;
@@ -14,25 +15,8 @@ public class PlayerNetwork : NetworkBehaviour
         if (IsOwner)
         {
             _playerCamera.gameObject.SetActive(true);
+            _playerUI.SetActive(true);
         }
-    }
-
-    private void Update()
-    {
-        if (!IsOwner) return;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Call test Server Rpc ?  ");
-            TestServerRpc();
-        }
-    }
-
-
-    [ServerRpc]
-    public void TestServerRpc()
-    {
-        Debug.Log("TestServerRpc called!");
     }
 
 }

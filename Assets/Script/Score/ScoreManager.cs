@@ -1,7 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -19,7 +17,7 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseScore(Player _player, int _amount)
     {
-        _player.stats.score += _amount;
+        _player.stats.score.Value += _amount;
         UpdateScore(_player);
     }
 }
