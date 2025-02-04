@@ -24,6 +24,11 @@ public class ZoneWeapon : Weapon
         CancelInvoke(nameof(ApplyDamage));
     }
 
+    public override GameObject GetBulletPrefab()
+    {
+        return null;
+    }
+
     private void ApplyDamage()
     {
         if (!_isShooting) return;

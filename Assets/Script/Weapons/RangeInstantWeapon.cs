@@ -7,6 +7,12 @@ public class RangeInstantWeapon : Weapon
     {
         base.Initialize(data);
     }
+
+    public override GameObject GetBulletPrefab()
+    {
+        return null;
+    }
+
     public override void Shoot(Transform playerTransform)
     {
         base.Shoot(playerTransform);

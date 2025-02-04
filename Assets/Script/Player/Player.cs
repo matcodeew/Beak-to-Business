@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Netcode;
+using Unity.VisualScripting;
 
 [System.Serializable]
 public struct PlayerStats
@@ -14,6 +15,8 @@ public class Player : NetworkBehaviour
     [Header("Player stats")]
     public PlayerStats stats;
     public Weapon weaponEquipied;
+
+    [SerializeField] private GameObject _bulletPrefab;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,7 +42,7 @@ public class Player : NetworkBehaviour
         if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
             _interactibleObject.PlayerInteract(this);
-            Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
+            //Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
 
@@ -67,5 +70,36 @@ public class Player : NetworkBehaviour
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
     }
+
+    public void Shoot()
+    {
+        if (weaponEquipied != null)
+        {
+            weaponEquipied.Shoot(this.transform);
+        }
+    }
+
+    
+
+    public void RequestSpawnBullet(Vector2 spawnPosition, Vector2 direction)
+    {
+        Debug.Log("Request To spawn bullet");
+
+        if (IsOwner)
+        {
+            Debug.Log($"Calling SpawnBulletServerRpc from Client ID: {NetworkManager.Singleton.LocalClientId}");
+            SpawnBulletServerRpc(spawnPosition, direction);
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void SpawnBulletServerRpc(Vector2 spawnPosition, Vector2 direction)
+    {
+        Debug.Log($"SpawnBulletServerRpc triggered on Server! Sender: {OwnerClientId}");
+        GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+        bullet.GetComponent<NetworkObject>().Spawn();
+        bullet.GetComponent<Bullet>().InitializeBullet(spawnPosition, direction, weaponEquipied.stats.bulletSpeed, this);
+    }
+
 }
 

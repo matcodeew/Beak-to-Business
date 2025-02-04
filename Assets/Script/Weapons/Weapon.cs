@@ -33,6 +33,8 @@ public abstract class Weapon : NetworkBehaviour
         type = data.type;
     }
 
+    public abstract GameObject GetBulletPrefab();
+
     public virtual void Shoot(Transform playerTransform)
     {
         if (!CanShoot()) { return; }

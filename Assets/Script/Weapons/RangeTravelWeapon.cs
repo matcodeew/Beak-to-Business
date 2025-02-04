@@ -20,10 +20,23 @@ public class RangeTravelWeapon : Weapon
         _startPos = (playerTransform.position + playerTransform.up * playerTransform.localScale.x);
         _endPos = _startPos + (Vector2)playerTransform.up * stats.fireRange;
 
-        if(NetworkManager.Singleton.IsClient)
-        {
-            RequestBulletSpawnServerRpc(_startPos, _endPos, playerTransform.GetComponent<NetworkObject>().OwnerClientId);
-        }
+        playerTransform.GetComponent<Player>().RequestSpawnBullet(_startPos, Vector2.right);
+
+        //if (playerTransform.GetComponent<Player>().IsOwner)
+        //{
+        //    Vector2 direction = Vector2.right;
+        //    playerTransform.GetComponent<Player>().SpawnBulletServerRpc(playerTransform.position, direction, _bulletPrefab);
+        //}
+
+        //if (NetworkManager.Singleton.IsClient)
+        //{
+        //    RequestBulletSpawnServerRpc(_startPos, _endPos, playerTransform.GetComponent<NetworkObject>().OwnerClientId);
+        //}
+    }
+
+    public override GameObject GetBulletPrefab()
+    {
+        return _bulletPrefab;
     }
 
     [ServerRpc(RequireOwnership = false)]

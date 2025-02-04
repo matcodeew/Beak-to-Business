@@ -17,6 +17,12 @@ public class MeleeWeapon : Weapon
             }
         }
     }
+
+    public override GameObject GetBulletPrefab()
+    {
+        return null;
+    }
+
     public override void Initialize(WeaponStats data)
     {
         base.Initialize(data);

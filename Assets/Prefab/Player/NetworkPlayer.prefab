@@ -236,6 +236,7 @@ MonoBehaviour:
     score:
       m_InternalValue: 0
   weaponEquipied: {fileID: 0}
+  _bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
 --- !u!114 &1495271844076063941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
 --- !u!61 &3606248101773672234
 BoxCollider2D:
   m_ObjectHideFlags: 0

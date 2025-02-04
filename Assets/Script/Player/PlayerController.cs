@@ -20,13 +20,13 @@ public class PlayerController : NetworkBehaviour
         {
             player.weaponEquipied.Shoot(transform);
             //TestServerRpc(transform.position + new Vector3(0, 2,0));    
-            print($"{player.weaponEquipied.name} Shoot");
+            //print($"{player.weaponEquipied.name} Shoot");
         }
 
         if (_callback.canceled)
         {
             player.weaponEquipied.ShootFinished();
-            print($"{player.weaponEquipied.name} ShootFinished");
+            //print($"{player.weaponEquipied.name} ShootFinished");
         }
     }
 
