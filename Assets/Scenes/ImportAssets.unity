@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rouge
       objectReference: {fileID: 0}
+    - target: {fileID: 4253465465696894378, guid: 4d27c463bf142fd46905b332c1376fd1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6117553040834099259, guid: 4d27c463bf142fd46905b332c1376fd1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
