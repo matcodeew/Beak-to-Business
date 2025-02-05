@@ -11,7 +11,7 @@
                     "id": "7b781c01-3a10-4a5f-b6f6-5ce5015bfd38",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": true
                 }
             ],
@@ -20,7 +20,7 @@
                     "name": "2D Vector",
                     "id": "43f5ebcd-ca97-404d-828b-786831a01a61",
                     "path": "2DVector",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "Moving",
