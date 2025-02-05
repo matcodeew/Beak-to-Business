@@ -18,14 +18,20 @@ public class Server : NetworkBehaviour
 
     [SerializeField] private Button connectButton;
 
-    private NetworkList<NetworkObjectReference> _destroyedObjects = new NetworkList<NetworkObjectReference>();
-
     public static Server instance;
-
 
     [SerializeField] private List<SpawnableObjectOnSpawnOnServer> spawnableObjectsOnSpawn;
 
-    private NetworkObject _objToSpawn;
+    [Header("Item Random Spawn")]
+    [SerializeField] private List<GameObject> spawnableRandomItems;
+    [SerializeField] private Rect _spawnZone;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(_spawnZone.center, _spawnZone.size);
+    }
+
 
     private void Awake()
     {
@@ -50,11 +56,21 @@ public class Server : NetworkBehaviour
                 //GameObject go = Instantiate(cubePrefab, new Vector3(2.88f, 0.15f, 2.92f), Quaternion.identity);
                 //go.GetComponent<NetworkObject>().Spawn();
                 SpawnObjectsOnServer();
+                RandomSpawnObjectsOnServer();
             }
         }
 
     }
 
+    private void RandomSpawnObjectsOnServer()
+    {
+        foreach (GameObject obj in spawnableRandomItems)
+        {
+            Vector2 position = new Vector2(Random.Range(_spawnZone.xMin, _spawnZone.xMax), Random.Range(_spawnZone.yMin, _spawnZone.yMax));
+            GameObject gameObj = Instantiate(obj, position, Quaternion.identity);
+            gameObj.GetComponent<NetworkObject>().Spawn();
+        }
+    }
     private void SpawnObjectsOnServer()
     {
         foreach (SpawnableObjectOnSpawnOnServer obj in spawnableObjectsOnSpawn)
