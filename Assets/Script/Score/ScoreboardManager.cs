@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class ScoreboardManager : MonoBehaviour
+public class ScoreboardManager : NetworkBehaviour
 {
     public static ScoreboardManager instance;
 
@@ -26,7 +25,7 @@ public class ScoreboardManager : MonoBehaviour
     {
         
 
-        AddScoreboardItem(connectionID);
+        AddScoreboardItemServerRpc(connectionID);
         SortScoreboardItem();
     }
 
@@ -54,32 +53,37 @@ public class ScoreboardManager : MonoBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void AddScoreboardItem(ulong connectionID)
+    public void AddScoreboardItemServerRpc(ulong connectionID)
     {
+        Debug.Log("---------- 1 ----------");
         Player player = null;
+        Debug.Log("---------- 2 ----------");
 
         if (NetworkManager.Singleton.ConnectedClients.ContainsKey(connectionID))
         {
             NetworkObject networkObject = NetworkManager.Singleton.ConnectedClients[connectionID].PlayerObject;
             player = networkObject.gameObject.GetComponent<Player>();
         }
-
-        if (player == null)
-        {
-            Debug.Log("Player not found");
-            return;
-        }
-
-        Debug.Log("Create object");
+        Debug.Log("---------- 3 ----------");
 
         GameObject newPrefab = Instantiate(_scoreboardItemPrefab, _container);
         NetworkObject newNetworkObject = newPrefab.GetComponent<NetworkObject>();
 
+        Debug.Log("---------- 4 ----------");
+
+
         newNetworkObject.Spawn();
         newNetworkObject.TrySetParent(_container, true);
 
-        newPrefab.GetComponent<ScoreboardItem>().Initialize(player);
+        Debug.Log("---------- 5 ----------");
+
+
+        newPrefab.GetComponent<ScoreboardItem>().SetPlayer(connectionID);
         _scoreboardItem.Add(player, newPrefab.GetComponent<ScoreboardItem>());
+
+        Debug.Log("---------- 6 ----------");
+
+
     }
 
     public void RemoveScoreboardItem(Player player)

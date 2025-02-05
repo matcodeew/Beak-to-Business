@@ -24,7 +24,7 @@ public class Player : NetworkBehaviour
 
         GetInteractibleObject(collision.gameObject);
 
-        if(collision.CompareTag("Bullet"))
+        if(collision.CompareTag("Bullet") && collision.transform != transform)
         {
             Bullet bullet = collision.GetComponent<Bullet>();
             Player bulletFiried = collision.GetComponent<Bullet>().playerLuncher;
@@ -44,7 +44,8 @@ public class Player : NetworkBehaviour
         {
             _interactibleObject.PlayerInteract(this);
             Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
-            EventManager.IncreaseScore(this, 10);
+            //EventManager.IncreaseScore(this, 10);
+            GetComponent<PlayerData>().IncreaseScoreServerRpc(10);
         }
     }
 
