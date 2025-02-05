@@ -10,6 +10,8 @@ public enum ObjectType
 }
 public class PoolObject : MonoBehaviour
 {
+    public static PoolObject Instance;
+
     [Header("TEST")]
     [SerializeField] private GameObject BulletPrefab;
     [SerializeField] private int BulletPoolSize;
@@ -18,6 +20,10 @@ public class PoolObject : MonoBehaviour
 
     public Dictionary<ObjectType, List<GameObject>> poolObject = new();
 
+    private void Awake()
+    {
+        if (Instance == null) { Instance = this; }
+    }
     private void Start()
     {
         InitializePool(ObjectType.Bullet, BulletPrefab, BulletPoolSize, parent);
@@ -38,7 +44,7 @@ public class PoolObject : MonoBehaviour
         ReturnToPool(BulletSpawned, ObjectType.Bullet);
     }
     #endregion
-    private void InitializePool(ObjectType poolType, GameObject ObjectPrefab, int poolSize, Transform parent)
+    public void InitializePool(ObjectType poolType, GameObject ObjectPrefab, int poolSize, Transform parent)
     {
         if (poolType == ObjectType.NULL) throw new ArgumentNullException(nameof(poolType), "Pool Type cannot be NULL.");
         if (ObjectPrefab is null) throw new ArgumentNullException(nameof(ObjectPrefab), "ObjectPrefab cannot be null.");

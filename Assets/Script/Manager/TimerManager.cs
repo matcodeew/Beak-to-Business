@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TimerManager : MonoBehaviour
@@ -35,7 +36,8 @@ public class TimerManager : MonoBehaviour
     /// <exception cref="ArgumentOutOfRangeException">Thrown if the duration is negative.</exception>
     /// <exception cref="ArgumentNullException">Thrown if the callback function is null.</exception>
     #endregion
-    public static string StartTimer<T>(float duration, Action<T> callback, T parameter) //call the timer with a parameter function
+
+    public static string StartTimer<T1>(float duration, Action<T1> callback, T1 parameter) //call the timer with a parameter function
     {
         if (duration < 0) throw new ArgumentOutOfRangeException(nameof(duration), "Duration must be positive.");
         if (callback == null) throw new ArgumentNullException(nameof(callback));
@@ -46,7 +48,7 @@ public class TimerManager : MonoBehaviour
         _activeTimers[timerId] = routine; //Add this timer to the activeTimer dictionary
         return timerId;
     }
-    private static IEnumerator TimerCoroutineWithParam<T>(float duration, Action<T> callback, T parameter, string timerId)
+    private static IEnumerator TimerCoroutineWithParam<T1>(float duration, Action<T1> callback, T1 parameter, string timerId)
     {
         yield return new WaitForSeconds(duration);
         callback?.Invoke(parameter);

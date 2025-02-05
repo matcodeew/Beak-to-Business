@@ -10,6 +10,7 @@ public struct BasePlayerStats
 }
 public enum Stats
 {
+    NONE,
     health,
     damage,
     speed,
@@ -69,6 +70,9 @@ public class BuffManager : MonoBehaviour
             case Stats.fireRate:
                 _weaponStats.fireRate *= _value;
                 break;
+
+            case Stats.NONE:
+                break;
         }
         SetStatsToPlayer(player);
 
@@ -79,14 +83,20 @@ public class BuffManager : MonoBehaviour
                      case Stats.health:
                          _playerStats.health = _baseStats.baseHealth;
                          break;
+
                      case Stats.damage:
                          _weaponStats.damage = _baseStats.baseDamage;
                          break;
+
                      case Stats.speed:
                          _playerStats.speed = _baseStats.baseSpeed;
                          break;
+
                      case Stats.fireRate:
                          _weaponStats.fireRate = _baseStats.baseFireRate;
+                         break;
+
+                     case Stats.NONE:
                          break;
                  }
                  SetStatsToPlayer(player);

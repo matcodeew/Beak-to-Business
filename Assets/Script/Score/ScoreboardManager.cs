@@ -6,12 +6,14 @@ using UnityEngine.Events;
 
 public class ScoreboardManager : MonoBehaviour
 {
+    [Header("TEST")]
+    [SerializeField] private Player _player;
+    [SerializeField] private Player _player2;
+    [Space(5)]
     [SerializeField] private Transform _container;
     [SerializeField] private GameObject _scoreboardItemPrefab;
     [SerializeField] private Dictionary<Player, ScoreboardItem> _scoreboardItem = new();
     [SerializeField] private List<ScoreboardItem> _itemList;
-    [SerializeField] private Player _player;
-    [SerializeField] private Player _player2;
 
     private void Awake()
     {
