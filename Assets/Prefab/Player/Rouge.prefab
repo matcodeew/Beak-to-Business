@@ -146,6 +146,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6345508777506814598}
   sr: {fileID: 4253465465696894378}
+  _lastFrameDirection:
+    Up: {fileID: 2098487463, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
+    Down: {fileID: -794165200, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
+    Left: {fileID: 40461233, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
+    Right: {fileID: 806418798, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
 --- !u!114 &8491097713982578972
 MonoBehaviour:
   m_ObjectHideFlags: 0
