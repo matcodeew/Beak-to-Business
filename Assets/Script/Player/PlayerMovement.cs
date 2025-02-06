@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector2 moveInput;
+    private Vector2 _moveInput;
     private Player _player;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer sr;
@@ -20,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.position += (Vector3)(moveInput * _player.stats.speed * Time.fixedDeltaTime);
-        animator.SetFloat("Speed", Mathf.Abs(moveInput.x));
+        transform.position += (Vector3)(_moveInput * _player.stats.speed * Time.fixedDeltaTime);
+        animator.SetFloat("Speed", Mathf.Abs(_moveInput.x));
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -33,9 +34,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsMoving", true);
         }
 
-        moveInput = context.ReadValue<Vector2>();
-        animator.SetFloat("DirectionX", moveInput.x);
-        animator.SetFloat("DirectionY", moveInput.y);
+        _moveInput = context.ReadValue<Vector2>();
+        SetBoolAnimation(_moveInput);
+        animator.SetFloat("DirectionX", _moveInput.x);
+        animator.SetFloat("DirectionY", _moveInput.y);
 
         if (context.canceled)
         {
@@ -61,5 +63,69 @@ public class PlayerMovement : MonoBehaviour
         animator.enabled = false;
         sr.sprite = _lastFrame;
         _lastFrame = null;
+    }
+
+    public void SetBoolAnimation(Vector2 _moveInput)
+    {
+        if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut droite
+        {
+            print("haut droite");
+            animator.SetBool("MoveUp", true);
+            animator.SetBool("MoveRight", true);
+            animator.SetBool("MoveDown", false);
+            animator.SetBool("MoveLeft", false);
+        }
+        else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut gauche
+        {
+            print("haut Gauche");
+            animator.SetBool("MoveUp", true);
+            animator.SetBool("MoveLeft", true);
+            animator.SetBool("MoveDown", false);
+            animator.SetBool("MoveRight", false);
+        }
+        else if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas droite
+        {
+            print("bas droite");
+            animator.SetBool("MoveDown", true);
+            animator.SetBool("MoveRight", true);
+            animator.SetBool("MoveUp", false);
+            animator.SetBool("MoveLeft", false);
+        }
+        else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas gauche
+        {
+            print("bas Gauche");
+            animator.SetBool("MoveDown", true);
+            animator.SetBool("MoveLeft", true);
+            animator.SetBool("MoveUp", false);
+            animator.SetBool("MoveRight", false);
+        }
+        else if (_moveInput == Vector2.up)
+        {
+            animator.SetBool("MoveDown", false);
+            animator.SetBool("MoveLeft", false);
+            animator.SetBool("MoveUp", true);
+            animator.SetBool("MoveRight", false);
+        }
+        else if ( _moveInput == Vector2.down)
+        {
+            animator.SetBool("MoveDown", true);
+            animator.SetBool("MoveLeft", false);
+            animator.SetBool("MoveUp", false);
+            animator.SetBool("MoveRight", false);
+        }
+        else if ( _moveInput == Vector2.right)
+        {
+            animator.SetBool("MoveDown", false);
+            animator.SetBool("MoveLeft", false);
+            animator.SetBool("MoveUp", false);
+            animator.SetBool("MoveRight", true);
+        }
+        else if ( _moveInput == Vector2.left)
+        {
+            animator.SetBool("MoveDown", false);
+            animator.SetBool("MoveLeft", true);
+            animator.SetBool("MoveUp", false);
+            animator.SetBool("MoveRight", false);
+        }
     }
 }
