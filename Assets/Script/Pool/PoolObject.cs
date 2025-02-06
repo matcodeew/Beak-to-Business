@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 [System.Serializable]
@@ -71,12 +72,13 @@ public class PoolObject : MonoBehaviour
             return null;
         }
 
-        foreach (GameObject enemy in poolObject[type])
+        foreach (GameObject _object in poolObject[type])
         {
-            if (!enemy.activeInHierarchy)
+            if (!_object.activeInHierarchy)
             {
-                enemy.SetActive(true);
-                return enemy;
+                _object.SetActive(true);
+                _object.transform.parent = null;
+                return _object;
             }
         }
         return null;
@@ -88,6 +90,7 @@ public class PoolObject : MonoBehaviour
 
         objects.SetActive(false);
         objects.transform.position = Vector3.zero;
+        objects.transform.parent = parent;
 
     }
 }
