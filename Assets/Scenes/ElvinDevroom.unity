@@ -1604,6 +1604,11 @@ MonoBehaviour:
   - {fileID: 59200519895895491, guid: 2e8a7bc03121605438b969881dacf7ef, type: 3}
   - {fileID: 59200519895895491, guid: e0c85827a897f9e428475a2abc358b7f, type: 3}
   - {fileID: 59200519895895491, guid: 3ffbdfe59ef37cf44a7da0d7cfd167b5, type: 3}
+  - {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
+  - {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
+  - {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
+  - {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
+  - {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
   _spawnZone:
     serializedVersion: 2
     x: -12

@@ -48,7 +48,7 @@ public class ZoneWeapon : Weapon
         {
             if (enemy is not null && enemy.gameObject.TryGetComponent(out Player player))
             {
-                player.TakeDamage(stats.damage / 10, _playerGivenDamage);
+                player.TakeDamage(stats.damage / 10);
                 Debug.Log($"{enemy.name} take {stats.damage / 10}  and {stats.damage} per second");
             }
         }

@@ -13,7 +13,7 @@ public class MeleeWeapon : Weapon
         {
             if (hit.collider.gameObject.TryGetComponent(out Player player))
             {
-                player.TakeDamage(stats.damage, playerTransform.GetComponent<Player>());
+                player.TakeDamage(stats.damage);
             }
         }
     }
