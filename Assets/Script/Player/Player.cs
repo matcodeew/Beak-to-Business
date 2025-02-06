@@ -1,6 +1,7 @@
-using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public struct PlayerStats
@@ -18,6 +19,26 @@ public class Player : NetworkBehaviour
 
     [SerializeField] private GameObject _bulletPrefab;
 
+    public TextMeshProUGUI lifeText;
+    public NetworkVariable<float> health;
+
+    [HideInInspector] public NetworkVariable<bool> isDead;
+
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        lifeText.text = health.Value.ToString();
+        health.OnValueChanged += OnHealthChanged;
+        OnHealthChanged(0f, health.Value);
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+        health.OnValueChanged -= OnHealthChanged;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!IsOwner) return;
@@ -27,14 +48,17 @@ public class Player : NetworkBehaviour
         if(collision.CompareTag("Bullet") && collision.GetComponent<Bullet>().throwerID != OwnerClientId)
         {
             Bullet bullet = collision.GetComponent<Bullet>();
-            //Player bulletFiried = collision.GetComponent<Bullet>().playerLuncher;
-            //TakeDamage(bulletFiried.weaponEquipied.stats.damage);
+            TakeDamage(bullet.Damages, bullet.throwerID);
             Server.instance.DestroyObjectOnServerRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+            TakeDamage(50, OwnerClientId);
+
+
         if (weaponEquipied is null) return;
         weaponEquipied.ShootHandler(Time.deltaTime);
     }
@@ -50,19 +74,40 @@ public class Player : NetworkBehaviour
         }
     }
 
-    public void TakeDamage(float _damage)
-    {
-        stats.health.Value = Mathf.Clamp(stats.health.Value - _damage, 0, stats.health.Value);
 
-        if (stats.health.Value <= 0)
+    public void TakeDamage(float damage, ulong throwerID = 0)
+    {
+        float copy = health.Value - damage;
+        TakeDamageServerRpc(damage);
+        NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(20);
+
+        if (copy <= 0)
         {
-            Die();
+            Die(throwerID);
         }
     }
 
-    private void Die()
+    [ServerRpc]
+    private void TakeDamageServerRpc(float damage)
     {
-        Destroy(gameObject); //mettre returnToPool a la place.
+        health.Value -= damage;
+    }
+
+    private void OnHealthChanged(float previousValue, float newValue)
+    {
+        lifeText.text = newValue.ToString();
+    }
+
+
+    private void Die(ulong throwerID)
+    {
+        NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(100);
+        //isDead.Value = true;
+
+        //GetComponent<SpriteRenderer>().enabled = false;
+        //GetComponent<BoxCollider2D>().enabled = false;
+
+
 
         //return to main menus.
         //add le score au joueur qui a tuer
@@ -93,16 +138,17 @@ public class Player : NetworkBehaviour
                 weaponEquipied.stats.bulletSpeed, 
                 weaponEquipied.stats.fireRange, 
                 direction, 
-                OwnerClientId);
+                OwnerClientId,
+                weaponEquipied.stats.damage);
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void SpawnBulletServerRpc(Vector2 spawnPosition, float bulletSpeed, float fireRange, Vector2 direction, ulong throwerID)
+    public void SpawnBulletServerRpc(Vector2 spawnPosition, float bulletSpeed, float fireRange, Vector2 direction, ulong throwerID, float damages)
     {
         GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
         bullet.GetComponent<NetworkObject>().Spawn();
-        bullet.GetComponent<Bullet>().InitializeBulletClientRpc(bulletSpeed, fireRange, direction, throwerID);
+        bullet.GetComponent<Bullet>().InitializeBulletClientRpc(bulletSpeed, fireRange, direction, throwerID, damages);
     }
 
 }

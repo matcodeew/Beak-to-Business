@@ -43,7 +43,7 @@ public class PlayerData : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void IncreaseScoreServerRpc(int value)
     {
         Score.Value += value;

@@ -8,13 +8,16 @@ public class Bullet : NetworkBehaviour
     private float _speed = 5f;
     private float _distTreshHold = 0.05f;
     public ulong throwerID = 0;
+    private float _damages = 0;
+    public float Damages { get { return _damages; } private set { _damages = value; } }
 
     [ClientRpc(RequireOwnership = false)]
-    public void InitializeBulletClientRpc(float speed, float range, Vector2 direction, ulong throwerID)
+    public void InitializeBulletClientRpc(float speed, float range, Vector2 direction, ulong throwerID, float damages)
     {
         _startPos = transform.position;
         _endPos = _startPos + direction * range;
         _speed = speed;
+        _damages = damages;
         this.throwerID = throwerID;
     }
 
