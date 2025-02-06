@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
             sr.sprite = _lastFrame;
         }
     }
+
+
     private Sprite SetPlayerIdleSprite(Vector2 moveInput)
     {
         if (moveInput == Vector2.up)
@@ -74,5 +76,17 @@ public class PlayerMovement : MonoBehaviour
     public void SaveLastFrame()
     {
         _lastFrame = sr.sprite;
+        print(_lastFrame);
+    }
+
+    public void SetSprite()
+    {
+        Debug.Log(_lastFrame);
+        if(_lastFrame == null)
+        {
+            return;
+        }
+        gameObject.GetComponent<SpriteRenderer>().sprite = _lastFrame;
+        _lastFrame = null;
     }
 }
