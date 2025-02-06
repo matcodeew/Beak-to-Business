@@ -146,12 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6345508777506814598}
   sr: {fileID: 4253465465696894378}
-  _lastFrameDirection:
-    Up: {fileID: 2098487463, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
-    Down: {fileID: -794165200, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
-    Left: {fileID: 40461233, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
-    Right: {fileID: 806418798, guid: c8f5b9333e836cf409ae593627aaeb72, type: 3}
   _lastFrame: {fileID: 0}
+  _defaultSprite: {fileID: 0}
 --- !u!114 &8491097713982578972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +248,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4065404887427185522}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_ActionId: 7b781c01-3a10-4a5f-b6f6-5ce5015bfd38
     m_ActionName: 'Move/Moving[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'

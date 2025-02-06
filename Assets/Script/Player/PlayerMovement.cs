@@ -2,13 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [System.Serializable]
-public struct LastFrameDirection
-{
-   public Sprite Up;
-   public Sprite Down;
-   public Sprite Left;
-   public Sprite Right;
-}
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
     private Player _player;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer sr;
-    [SerializeField] private LastFrameDirection _lastFrameDirection;
     private Vector2 _playerDirection;
+
+    [Header("Sprite")]
     [SerializeField] private Sprite _lastFrame;
+    [SerializeField] private Sprite _defaultSprite;
     private void Awake()
     {
         _player = GetComponent<Player>();
@@ -33,9 +28,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started)
         {
-            print("Action started");
+            sr.sprite = _defaultSprite;
+            animator.enabled = true;
             animator.SetBool("IsMoving", true);
-           // _playerDirection = context.ReadValue<Vector2>();
         }
 
         moveInput = context.ReadValue<Vector2>();
@@ -44,49 +39,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (context.canceled)
         {
-            print("Action canceled");
             this.enabled = false;
             animator.SetBool("IsMoving", false);
-            sr.sprite = _lastFrame;
         }
     }
-
-
-    private Sprite SetPlayerIdleSprite(Vector2 moveInput)
-    {
-        if (moveInput == Vector2.up)
-        {
-            return _lastFrameDirection.Up;
-        }
-        else if (moveInput == Vector2.down)
-        {
-            return _lastFrameDirection.Down;
-        }
-        else if (moveInput == Vector2.left)
-        {
-            return _lastFrameDirection.Left;
-        }
-        else if (moveInput == Vector2.right)
-        {
-            return _lastFrameDirection.Right;
-        }
-        return null;
-    }
-
     public void SaveLastFrame()
     {
         _lastFrame = sr.sprite;
-        print(_lastFrame);
+
+        print($"save {_lastFrame} for {sr.sprite}");
     }
 
     public void SetSprite()
     {
-        Debug.Log(_lastFrame);
-        if(_lastFrame == null)
+        print($"set {_lastFrame} to {sr.sprite}");
+        if (_lastFrame == null)
         {
+            sr.sprite = null;
             return;
         }
-        gameObject.GetComponent<SpriteRenderer>().sprite = _lastFrame;
+        animator.enabled = false;
+        sr.sprite = _lastFrame;
         _lastFrame = null;
     }
 }
