@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -8,10 +9,23 @@ public class TestAPICall : MonoBehaviour
     [SerializeField] private TextMeshProUGUI debugText;
     [SerializeField] private string url = "http://192.168.1.238/api/api.php?endpoint=users";
     [SerializeField] private string userid = "22";
+    private User _testUser;
 
     void Start()
     {
-        StartCoroutine(GetUserFromId());
+        StartCoroutine(InitUser());
+    }
+
+    private IEnumerator InitUser()
+    {
+        var task = TestApiCaller();
+        yield return new WaitUntil(() => task.IsCompleted);
+        _testUser = task.Result;
+        Debug.Log("ID:" + _testUser.id + ", Name:" + _testUser.nickname + ", Email:" + _testUser.email + ", Password:" + _testUser.password);
+    }
+    private async Task<User> TestApiCaller()
+    {
+      return await APICaller.GetUserById(22);
     }
     
     IEnumerator GetUsers(){
@@ -66,34 +80,4 @@ public class TestAPICall : MonoBehaviour
 }
 
 
-
-[System.Serializable]
-public class User
-{
-    public int id;
-    public string nickname;
-    public string email;
-    public string password;
-}
-
-public static class JsonHelper
-{
-    public static T[] FromJson<T>(string json)
-    {
-        string newJson = "{\"items\":" + json + "}";
-        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(newJson);
-        return wrapper.items;
-    }
-  
-    [System.Serializable]
-    private class Wrapper<T>
-    {
-        public T[] items;
-    }
-    
-    public static T FromSingleJson<T>(string json)
-    {
-        return JsonUtility.FromJson<T>(json);
-    }
-}
 
