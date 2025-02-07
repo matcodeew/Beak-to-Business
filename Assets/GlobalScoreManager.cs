@@ -29,7 +29,10 @@ public class GlobalScoreManager : MonoBehaviour
     public void UpdateOrder()
     {
         playerTemplates = playerTemplates.OrderByDescending(obj => ConvertScore(obj)).ToList();
-        for (int i = 0; i < playerTemplates.Count; i++)
+
+        int a = playerTemplates.Count > 10 ? 10 : playerTemplates.Count;
+
+        for (int i = 0; i < a; i++)
         {
             playerTemplates[i].transform.SetSiblingIndex(i);
             playerTemplates[i].GetComponent<PlayerScore>().ChangePosition(i + 1);

@@ -1,13 +1,15 @@
+using Newtonsoft.Json.Bson;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct PlayerStats
 {
     public float speed;
-    public NetworkVariable<float> health;
+    public NetworkVariable<float> defaultHealth;
     public NetworkVariable<int> XP;
     public NetworkVariable<int> score;
 }
@@ -20,17 +22,48 @@ public class Player : NetworkBehaviour
     [SerializeField] private GameObject _bulletPrefab;
 
     public TextMeshProUGUI lifeText;
-    public NetworkVariable<float> health;
+    //private NetworkVariable<float> health;
+    private NetworkVariable<float> health = new NetworkVariable<float>(100,
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
-    [HideInInspector] public NetworkVariable<bool> isDead;
 
 
+    [Header("Death")]
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private BoxCollider2D _collider;
+    [SerializeField] private GameObject _healthBar;
+    [SerializeField] private PlayerInput _playerInputs;
+    [SerializeField] private GameObject _deathUI;
+    [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private Button _playAgainButton;
+    [SerializeField] private Button _quitButton;
+    private PlayerData _playerData;
+
+    NetworkVariable<bool> _isDead = new NetworkVariable<bool>(false);
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+
+
+        _playerData = GetComponent<PlayerData>();
+
         lifeText.text = health.Value.ToString();
+
         health.OnValueChanged += OnHealthChanged;
-        OnHealthChanged(0f, health.Value);
+
+        OnHealthChanged(0f, stats.defaultHealth.Value);
+
+        _isDead.OnValueChanged += OnDeathStatusChanged;
+        if (_isDead.Value)
+            OnDeathStatusChanged(false, _isDead.Value);
+
+    }
+
+    void OnDeathStatusChanged(bool previousValue, bool newValue)
+    {
+        _spriteRenderer.enabled = !newValue;
+        _collider.enabled = !newValue;
+        _healthBar.SetActive(!newValue);
     }
 
     public override void OnNetworkDespawn()
@@ -56,7 +89,9 @@ public class Player : NetworkBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
+        {
             TakeDamage(50, OwnerClientId);
+        }
 
 
         if (weaponEquipied is null) return;
@@ -79,10 +114,11 @@ public class Player : NetworkBehaviour
     {
         float copy = health.Value - damage;
         TakeDamageServerRpc(damage);
-        NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(20);
+        //NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(20);
 
         if (copy <= 0)
         {
+            SetHealthValueServerRpc(0);
             Die(throwerID);
         }
     }
@@ -93,26 +129,50 @@ public class Player : NetworkBehaviour
         health.Value -= damage;
     }
 
+    [ServerRpc]
+    private void SetHealthValueServerRpc(float value)
+    {
+        health.Value = value;
+    }
+
     private void OnHealthChanged(float previousValue, float newValue)
     {
         lifeText.text = newValue.ToString();
     }
 
-
     private void Die(ulong throwerID)
     {
         NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(100);
-        //isDead.Value = true;
 
-        //GetComponent<SpriteRenderer>().enabled = false;
-        //GetComponent<BoxCollider2D>().enabled = false;
+        DieServerRpc();
 
+        //_spriteRenderer.enabled = false;
+        //_collider.enabled = false;
+        //_healthBar.SetActive(false);
+        _playerInputs.enabled = false;
+        _deathUI.SetActive(true);
+        _scoreText.text = _playerData.Score.Value.ToString();
+        _playerData.SetScoreServerRpc(0);
 
-
-        //return to main menus.
-        //add le score au joueur qui a tuer
-        //drop l'arme equiper
+        //Désactiver sprite - SERVEUR 
+        //Désactiver collider - SERVEUR
+        //Désactiver barre de vie / vie - SERVEUR
+        //Désactiver Inputs - LOCAL
+        //Poser l'arme - SERVER
+        //Afficher UI - LOCAL
+        //Score
+        //Play Again
+        //Quit -> Redirige vers le site
+        //Score à 0 - SERVEUR
+        //Supprimer du scoreboard - SERVEUR
     }
+
+    [ServerRpc]
+    private void DieServerRpc()
+    {
+        _isDead.Value = true;
+    }
+
 
     public void SetWeapon(Weapon weapon, WeaponStats data)
     {

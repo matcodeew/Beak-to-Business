@@ -12,8 +12,11 @@ public class PlayerData : NetworkBehaviour
 
     [SerializeField] private TextMeshProUGUI _personalScore;
 
+    
+
     public override void OnNetworkSpawn()
     {
+        
         Score.OnValueChanged += UpdateScore;
 
         base.OnNetworkSpawn();
@@ -47,6 +50,12 @@ public class PlayerData : NetworkBehaviour
     public void IncreaseScoreServerRpc(int value)
     {
         Score.Value += value;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void SetScoreServerRpc(int value)
+    {
+        Score.Value = value;
     }
 
 
