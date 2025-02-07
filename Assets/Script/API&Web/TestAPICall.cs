@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 
 public class TestAPICall : MonoBehaviour
 {
+    //This class contains various example of how to call the API
     [SerializeField] private TextMeshProUGUI debugText;
     [SerializeField] private string url = "http://192.168.1.238/api/api.php?endpoint=users";
     [SerializeField] private string userid = "22";
@@ -18,7 +19,7 @@ public class TestAPICall : MonoBehaviour
 
     private IEnumerator InitUser()
     {
-        var task = TestApiCaller();
+        var task = APICaller.GetUserById(22); // This is better as it makes implementation easier, if problem ever rise you can just change it to TestApiCaller() to test
         yield return new WaitUntil(() => task.IsCompleted);
         _testUser = task.Result;
         Debug.Log("ID:" + _testUser.id + ", Name:" + _testUser.nickname + ", Email:" + _testUser.email + ", Password:" + _testUser.password);

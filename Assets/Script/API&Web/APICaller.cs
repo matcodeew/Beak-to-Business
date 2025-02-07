@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 
 public static class APICaller
 {
+    //We make the class static so it can be accessed everywhere at any times
+    //It is also asynchronous since static classes do not support Coroutines
     private static string api_url = "http://192.168.1.238/api/api.php?endpoint=";
 
     public static async Task<User> GetUserById(int id)
@@ -12,6 +14,7 @@ public static class APICaller
         return await GetUserByIdRequest(id);
     }
 
+    //This is just like the coroutine example in the TestAPICall script, except made to be used in a static class
     private static async Task<User> GetUserByIdRequest(int id)
     {
         using (UnityWebRequest request = UnityWebRequest.Get(api_url + "users/" + id))
@@ -36,6 +39,7 @@ public static class APICaller
     }
 }
 
+//These classes are used to format the Json from the api into a User object
 [System.Serializable]
 public class User
 {
