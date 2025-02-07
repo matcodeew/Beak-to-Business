@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.position += (Vector3)(_moveInput * _player.stats.speed * Time.fixedDeltaTime);
-        animator.SetFloat("Speed", Mathf.Abs(_moveInput.x));
+        GetComponent<Rigidbody2D>().linearVelocity = _moveInput * _player.stats.speed * Time.fixedDeltaTime;
+        //animator.SetFloat("Speed", Mathf.Abs(_moveInput.x));
     }
 
     public void OnMove(InputAction.CallbackContext context)
