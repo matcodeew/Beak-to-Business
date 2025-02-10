@@ -22,7 +22,11 @@ public abstract class Weapon : NetworkBehaviour
     protected float cooldown;
     [SerializeField] protected LayerMask playerMask;
     public WeaponStats weaponData;
+
     public GameObject spawnableObject;
+
+    [SerializeField] private Animator _animator;
+
     public virtual void Initialize(WeaponStats data)
     {
         weaponData = data;
@@ -40,6 +44,7 @@ public abstract class Weapon : NetworkBehaviour
     {
         if (!CanShoot()) { return; }
         cooldown = stats.fireRate;
+        StartAnim();
     }
     public virtual void ShootFinished() { }
 
@@ -51,4 +56,9 @@ public abstract class Weapon : NetworkBehaviour
         }
     }
     protected bool CanShoot() => cooldown <= 0;
+
+    public virtual void StartAnim()
+    {
+        _animator.StartPlayback();
+    }
 }
