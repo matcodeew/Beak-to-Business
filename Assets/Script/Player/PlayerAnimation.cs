@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerAnimation : MonoBehaviour
 {
@@ -6,9 +7,6 @@ public class PlayerAnimation : MonoBehaviour
     private Sprite _lastFrame;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
-
-    
-
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -22,8 +20,9 @@ public class PlayerAnimation : MonoBehaviour
 
     public void SetSprite()
     {
-        print($"last frame {_lastFrame}");
-        if (_lastFrame == null)
+        print($"last frame {_lastFrame?.name ?? "null"}");
+
+        if (_lastFrame is null)
         {
             _spriteRenderer.sprite = null;
             return;

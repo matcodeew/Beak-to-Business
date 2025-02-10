@@ -3,6 +3,7 @@ using Unity.Netcode;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public struct PlayerStats
@@ -34,6 +35,8 @@ public class Player : NetworkBehaviour
     [SerializeField] private int _playerSkinIndex = -1;
     private GameObject _choosenSkin;
     #endregion
+    
+    public static event UnityAction OnSkinChanged;
 
     public override void OnNetworkSpawn()
     {
@@ -92,6 +95,7 @@ public class Player : NetworkBehaviour
         _choosenSkin = _skinParent.GetChild(_playerSkinIndex).gameObject;
         _choosenSkin.SetActive(true);
         GetComponent<PlayerMovement>().SetRightAnimator(_choosenSkin);
+        OnSkinChanged?.Invoke();
     }
 
     private void ResetSkinVisibility()
