@@ -4,7 +4,6 @@ using UnityEngine;
 public class RangeTravelWeapon : Weapon
 {
     private GameObject _bulletPrefab;
-    private Vector2 _endPos;
     private Vector2 _startPos;
 
     private Vector3 direction = Vector2.up;
@@ -17,7 +16,7 @@ public class RangeTravelWeapon : Weapon
 
     public override void Shoot(Transform playerTransform)
     {
-        ResetData();
+        //ResetData();
         base.Shoot(playerTransform);
 
         direction = playerTransform.GetComponent<PlayerMovement>().direction;
@@ -33,7 +32,6 @@ public class RangeTravelWeapon : Weapon
 
     private void ResetData()
     {
-        _endPos = Vector2.zero;
         _startPos = Vector2.zero;
     }
 }

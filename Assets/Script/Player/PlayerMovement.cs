@@ -1,10 +1,11 @@
 using System.IO;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [System.Serializable]
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     private Vector2 _moveInput;
     private Player _player;
@@ -44,23 +45,23 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            sr.sprite = _defaultSprite;
-            animator.enabled = true;
-            animator.SetBool("IsMoving", true);
-        }
+        //if (context.started)
+        //{
+        //    sr.sprite = _defaultSprite;
+        //    animator.enabled = true;
+        //    animator.SetBool("IsMoving", true);
+        //}
 
         _moveInput = context.ReadValue<Vector2>();
-        SetBoolAnimation(_moveInput);
+        //SetBoolAnimation(_moveInput);
         animator.SetFloat("DirectionX", _moveInput.x);
         animator.SetFloat("DirectionY", _moveInput.y);
 
-        if (context.canceled)
-        {
-            this.enabled = false;
-            animator.SetBool("IsMoving", false);
-        }
+        //if (context.canceled)
+        //{
+        //    this.enabled = false;
+        //    animator.SetBool("IsMoving", false);
+        //}
     }
 
     public void SaveLastFrame()
@@ -81,68 +82,68 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #region  ouvrepaspls
-    public void SetBoolAnimation(Vector2 _moveInput)
-    {
-        if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut droite
-        {
-            print("haut droite");
-            animator.SetBool("MoveUp", true);
-            animator.SetBool("MoveRight", true);
-            animator.SetBool("MoveDown", false);
-            animator.SetBool("MoveLeft", false);
-        }
-        else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut gauche
-        {
-            print("haut Gauche");
-            animator.SetBool("MoveUp", true);
-            animator.SetBool("MoveLeft", true);
-            animator.SetBool("MoveDown", false);
-            animator.SetBool("MoveRight", false);
-        }
-        else if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas droite
-        {
-            print("bas droite");
-            animator.SetBool("MoveDown", true);
-            animator.SetBool("MoveRight", true);
-            animator.SetBool("MoveUp", false);
-            animator.SetBool("MoveLeft", false);
-        }
-        else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas gauche
-        {
-            print("bas Gauche");
-            animator.SetBool("MoveDown", true);
-            animator.SetBool("MoveLeft", true);
-            animator.SetBool("MoveUp", false);
-            animator.SetBool("MoveRight", false);
-        }
-        else if (_moveInput == Vector2.up)
-        {
-            animator.SetBool("MoveDown", false);
-            animator.SetBool("MoveLeft", false);
-            animator.SetBool("MoveUp", true);
-            animator.SetBool("MoveRight", false);
-        }
-        else if ( _moveInput == Vector2.down)
-        {
-            animator.SetBool("MoveDown", true);
-            animator.SetBool("MoveLeft", false);
-            animator.SetBool("MoveUp", false);
-            animator.SetBool("MoveRight", false);
-        }
-        else if ( _moveInput == Vector2.right)
-        {
-            animator.SetBool("MoveDown", false);
-            animator.SetBool("MoveLeft", false);
-            animator.SetBool("MoveUp", false);
-            animator.SetBool("MoveRight", true);
-        }
-        else if ( _moveInput == Vector2.left)
-        {
-            animator.SetBool("MoveDown", false);
-            animator.SetBool("MoveLeft", true);
-            animator.SetBool("MoveUp", false);
-            animator.SetBool("MoveRight", false);
-        }
-    }
+    //public void SetBoolAnimation(Vector2 _moveInput)
+    //{
+    //    if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut droite
+    //    {
+    //        print("haut droite");
+    //        animator.SetBool("MoveUp", true);
+    //        animator.SetBool("MoveRight", true);
+    //        animator.SetBool("MoveDown", false);
+    //        animator.SetBool("MoveLeft", false);
+    //    }
+    //    else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut gauche
+    //    {
+    //        print("haut Gauche");
+    //        animator.SetBool("MoveUp", true);
+    //        animator.SetBool("MoveLeft", true);
+    //        animator.SetBool("MoveDown", false);
+    //        animator.SetBool("MoveRight", false);
+    //    }
+    //    else if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas droite
+    //    {
+    //        print("bas droite");
+    //        animator.SetBool("MoveDown", true);
+    //        animator.SetBool("MoveRight", true);
+    //        animator.SetBool("MoveUp", false);
+    //        animator.SetBool("MoveLeft", false);
+    //    }
+    //    else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas gauche
+    //    {
+    //        print("bas Gauche");
+    //        animator.SetBool("MoveDown", true);
+    //        animator.SetBool("MoveLeft", true);
+    //        animator.SetBool("MoveUp", false);
+    //        animator.SetBool("MoveRight", false);
+    //    }
+    //    else if (_moveInput == Vector2.up)
+    //    {
+    //        animator.SetBool("MoveDown", false);
+    //        animator.SetBool("MoveLeft", false);
+    //        animator.SetBool("MoveUp", true);
+    //        animator.SetBool("MoveRight", false);
+    //    }
+    //    else if ( _moveInput == Vector2.down)
+    //    {
+    //        animator.SetBool("MoveDown", true);
+    //        animator.SetBool("MoveLeft", false);
+    //        animator.SetBool("MoveUp", false);
+    //        animator.SetBool("MoveRight", false);
+    //    }
+    //    else if ( _moveInput == Vector2.right)
+    //    {
+    //        animator.SetBool("MoveDown", false);
+    //        animator.SetBool("MoveLeft", false);
+    //        animator.SetBool("MoveUp", false);
+    //        animator.SetBool("MoveRight", true);
+    //    }
+    //    else if ( _moveInput == Vector2.left)
+    //    {
+    //        animator.SetBool("MoveDown", false);
+    //        animator.SetBool("MoveLeft", true);
+    //        animator.SetBool("MoveUp", false);
+    //        animator.SetBool("MoveRight", false);
+    //    }
+    //}
     #endregion
 }

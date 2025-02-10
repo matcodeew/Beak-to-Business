@@ -60,6 +60,7 @@ public class Player : NetworkBehaviour
 
         if (collision.CompareTag("Bullet") && collision.GetComponent<Bullet>().throwerID != OwnerClientId)
         {
+            Debug.Log("BUllet");
             Bullet bullet = collision.GetComponent<Bullet>();
             TakeDamage(bullet.Damages, bullet.throwerID);
             Server.instance.DestroyObjectOnServerRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
@@ -194,6 +195,7 @@ public class Player : NetworkBehaviour
     {
         if (IsOwner)
         {
+            Debug.Log(spawnPosition + " " + direction);
             SpawnBulletServerRpc(spawnPosition,
                 weaponEquipied.stats.bulletSpeed,
                 weaponEquipied.stats.fireRange,
