@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void SetRightAnimator(GameObject choosenSkin)
+    {
+        animator = choosenSkin.GetComponent<Animator>();
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
         if (context.started)
