@@ -22,6 +22,7 @@ public abstract class Weapon : NetworkBehaviour
     protected float cooldown;
     [SerializeField] protected LayerMask playerMask;
     public WeaponStats weaponData;
+    public GameObject spawnableObject;
     public virtual void Initialize(WeaponStats data)
     {
         weaponData = data;

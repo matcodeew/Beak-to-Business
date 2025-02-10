@@ -30,12 +30,21 @@ public class Player : NetworkBehaviour
         lifeText.text = health.Value.ToString();
         health.OnValueChanged += OnHealthChanged;
         OnHealthChanged(0f, stats.defaultHealth.Value);
+        SetPlayerAtRandomPosition();
+
     }
 
     public override void OnNetworkDespawn()
     {
         base.OnNetworkDespawn();
         health.OnValueChanged -= OnHealthChanged;
+    }
+
+    public void SetPlayerAtRandomPosition()
+    {
+        Rect zone = Server.instance.spawnZone;
+        Vector2 position = new Vector2(Random.Range(zone.xMin, zone.xMax), Random.Range(zone.yMin, zone.yMax));
+        transform.position = position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,6 +63,10 @@ public class Player : NetworkBehaviour
 
     private void Update()
     {
+        //if (Input.GetKeyDown(KeyCode.K))
+        //    TakeDamage(40, OwnerClientId);
+
+
         if (weaponEquipied is null) return;
         weaponEquipied.ShootHandler(Time.deltaTime);
 
@@ -65,7 +78,7 @@ public class Player : NetworkBehaviour
         {
             _interactibleObject.PlayerInteract(this);
             Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
-            GetComponent<PlayerData>().IncreaseScoreServerRpc(10);
+            //GetComponent<PlayerData>().IncreaseScoreServerRpc(10);
         }
     }
 

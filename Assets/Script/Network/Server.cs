@@ -24,12 +24,12 @@ public class Server : NetworkBehaviour
 
     [Header("Item Random Spawn")]
     [SerializeField] private List<GameObject> spawnableRandomItems;
-    [SerializeField] private Rect _spawnZone;
+    public Rect spawnZone;
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(_spawnZone.center, _spawnZone.size);
+        Gizmos.DrawWireCube(spawnZone.center, spawnZone.size);
     }
 
 
@@ -66,7 +66,7 @@ public class Server : NetworkBehaviour
     {
         foreach (GameObject obj in spawnableRandomItems)
         {
-            Vector2 position = new Vector2(Random.Range(_spawnZone.xMin, _spawnZone.xMax), Random.Range(_spawnZone.yMin, _spawnZone.yMax));
+            Vector2 position = new Vector2(Random.Range(spawnZone.xMin, spawnZone.xMax), Random.Range(spawnZone.yMin, spawnZone.yMax));
             GameObject gameObj = Instantiate(obj, position, Quaternion.identity);
             gameObj.GetComponent<NetworkObject>().Spawn();
         }
@@ -78,7 +78,6 @@ public class Server : NetworkBehaviour
             GameObject gameObj = Instantiate(obj.spawnedObject, obj.spawnPosition, Quaternion.identity);
             gameObj.GetComponent<NetworkObject>().Spawn();
         }
-
     }
 
     [Rpc(SendTo.Server)]

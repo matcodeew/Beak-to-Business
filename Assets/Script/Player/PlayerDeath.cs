@@ -3,6 +3,9 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using System.Linq;
 
 public class PlayerDeath : NetworkBehaviour
 {
@@ -13,17 +16,23 @@ public class PlayerDeath : NetworkBehaviour
     [SerializeField] private PlayerInput _playerInputs;
     [SerializeField] private GameObject _deathUI;
     [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private TextMeshProUGUI _respawnTimerText;
     [SerializeField] private Button _playAgainButton;
     [SerializeField] private Button _quitButton;
     private PlayerData _playerData;
 
-    NetworkVariable<bool> _isDead = new NetworkVariable<bool>(false);
+    public NetworkVariable<bool> _isDead = new NetworkVariable<bool>(false);
 
-    #region Netcode Functions
+    [SerializeField] List<GameObject> _weaponPrefabs = new List<GameObject>();
+
+    private bool _isRespawning = false;
+    [SerializeField] private float _respawnTime = 2f;
+    private float _currentTimer = 0f;
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+
 
         _playerData = GetComponent<PlayerData>();
         _playAgainButton.onClick.AddListener(PlayAgain);
@@ -31,6 +40,25 @@ public class PlayerDeath : NetworkBehaviour
         _isDead.OnValueChanged += OnDeathStatusChanged;
         if (_isDead.Value)
             OnDeathStatusChanged(false, _isDead.Value);
+    }
+
+    #region Unity Functions
+
+    private void Update()
+    {
+        if(_isRespawning)
+        {
+            if(_currentTimer >= 0)
+            {
+                _currentTimer -= Time.deltaTime;
+                _respawnTimerText.text = ((int)_currentTimer).ToString();
+            }
+            else
+            {
+                _isRespawning = false;
+                _respawnTimerText.gameObject.SetActive(false);
+            }
+        }
     }
 
     #endregion
@@ -50,6 +78,7 @@ public class PlayerDeath : NetworkBehaviour
     {
         NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(100);
 
+        DropGunOnMap();
         DieServerRpc(true);
 
         _playerInputs.enabled = false;
@@ -57,7 +86,6 @@ public class PlayerDeath : NetworkBehaviour
         _scoreText.text = _playerData.Score.Value.ToString();
         _playerData.SetScoreServerRpc(0);
 
-        //Poser l'arme - SERVER
         //Play Again
         //Quit -> Redirige vers le site
         //Supprimer du scoreboard - SERVEUR
@@ -65,10 +93,21 @@ public class PlayerDeath : NetworkBehaviour
 
     public void PlayAgain()
     {
+        GetComponent<Player>().SetPlayerAtRandomPosition();
+        _isRespawning = true;
+        _respawnTimerText.gameObject.SetActive(true);
+        _currentTimer = _respawnTime;
+
+        Invoke("PerformRespawn", _respawnTime);
+    }
+
+    private void PerformRespawn()
+    {
         _playerInputs.enabled = true;
         _deathUI.SetActive(false);
 
         Player player = GetComponent<Player>();
+
 
         player.SetHealthValueServerRpc(player.stats.defaultHealth.Value);
 
@@ -76,7 +115,31 @@ public class PlayerDeath : NetworkBehaviour
     }
 
 
+    private void DropGunOnMap()
+    {
+        if (GetComponent<Player>().weaponEquipied == null) return;
+
+        GameObject weapon = GetComponent<Player>().weaponEquipied.spawnableObject;
+        GetComponent<Player>().weaponEquipied = null;
+
+
+        int prefabIndex = _weaponPrefabs.IndexOf(weapon);
+        //int prefabIndex = _weaponPrefabs.FindIndex(obj => obj.name == weapon.name);
+
+        Debug.Log(prefabIndex);
+        SpawnGunOnServerRpc(prefabIndex, transform.position);
+    }
+
+
+
     #region RPC Functions
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SpawnGunOnServerRpc(int prefabIndex, Vector3 position)
+    {
+        GameObject weapon = Instantiate(_weaponPrefabs[prefabIndex], position, Quaternion.identity);
+        weapon.GetComponent<NetworkObject>().Spawn();
+    }
 
     [ServerRpc(RequireOwnership = false)]
     private void DieServerRpc(bool value)

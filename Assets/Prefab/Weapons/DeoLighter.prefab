@@ -75,3 +75,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponData: {fileID: 11400000, guid: a664256f4c98c26438aa00d7e2a5de33, type: 2}
+  spawnableObject: {fileID: 59200519895895491, guid: 2e8a7bc03121605438b969881dacf7ef, type: 3}

@@ -14,10 +14,10 @@ public class GlobalScoreManager : MonoBehaviour
         PlayerNetwork.OnPlayerSpawn += OnPlayerSpawned;
     }
 
-    private void OnPlayerSpawned(GameObject player)
+    private void OnPlayerSpawned(GameObject player, ulong connectionID)
     {
         GameObject playerUI = Instantiate(playerScoreTemplate, scoreBoard);
-        playerUI.GetComponent<PlayerScore>().TrackPlayer(player);
+        playerUI.GetComponent<PlayerScore>().TrackPlayer(player, connectionID);
         playerTemplates.Add(playerUI);
     }
 
@@ -34,6 +34,15 @@ public class GlobalScoreManager : MonoBehaviour
 
         for (int i = 0; i < a; i++)
         {
+            if (NetworkManager.Singleton.ConnectedClients[playerTemplates[i].GetComponent<PlayerScore>().connectionID].PlayerObject.GetComponent<PlayerDeath>()._isDead.Value)
+            {
+                playerTemplates[i].SetActive(false);
+            }
+            else
+            {
+                playerTemplates[i].SetActive(true);
+            }
+
             playerTemplates[i].transform.SetSiblingIndex(i);
             playerTemplates[i].GetComponent<PlayerScore>().ChangePosition(i + 1);
         }

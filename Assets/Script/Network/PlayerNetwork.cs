@@ -11,7 +11,7 @@ public class PlayerNetwork : NetworkBehaviour
     [SerializeField] private PlayerInput _playerInputs;
 
 
-    public static event Action<GameObject> OnPlayerSpawn;
+    public static event Action<GameObject, ulong> OnPlayerSpawn;
     public static event Action<GameObject> OnPlayerDespawn;
 
     private float _moveSpeed = 5f;
@@ -29,7 +29,7 @@ public class PlayerNetwork : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        OnPlayerSpawn?.Invoke(this.gameObject);
+        OnPlayerSpawn?.Invoke(this.gameObject, OwnerClientId);
     }
 
     public override void OnNetworkDespawn()
