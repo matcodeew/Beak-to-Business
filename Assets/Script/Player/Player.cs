@@ -81,6 +81,8 @@ public class Player : NetworkBehaviour
         if(_playerSkinIndex > 4 || _playerSkinIndex < -1) {
             throw new ArgumentOutOfRangeException(nameof(_playerSkinIndex), "Skin index must be between 0 and 4 includes");
         }
+        
+        ResetSkinVisibility();
         if (_playerSkinIndex == -1) { 
             _playerSkinIndex = PickRandomSkin(); 
             print("Choose Random Skin ");
@@ -89,7 +91,15 @@ public class Player : NetworkBehaviour
         _choosenSkin = _skinParent.GetChild(_playerSkinIndex).gameObject;
         _choosenSkin.SetActive(true);
         GetComponent<PlayerMovement>().SetRightAnimator(_choosenSkin);
-    } 
+    }
+
+    private void ResetSkinVisibility()
+    {
+        for(int i = 0 ; i < _skinParent.childCount; i++)
+        {
+            _skinParent.GetChild(i).gameObject.SetActive(false);
+        }
+    }
     #endregion
 
     #region Player Interaction

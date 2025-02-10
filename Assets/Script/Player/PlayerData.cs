@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class PlayerData : NetworkBehaviour
 {
+    
+    [Header("ScoreBoard")]
     public NetworkVariable<int> Score = new NetworkVariable<int>();
     public NetworkVariable<int> Position = new NetworkVariable<int>();
-    
     public NetworkVariable<FixedString128Bytes> Name = new NetworkVariable<FixedString128Bytes>();
-
     [SerializeField] private TextMeshProUGUI _personalScore;
-
-    
 
     public override void OnNetworkSpawn()
     {
@@ -63,7 +61,7 @@ public class PlayerData : NetworkBehaviour
     [ClientRpc]
     public void GetNameClientRPC(ClientRpcParams clientRpcParams = default)
     {
-        //Mettre le nom récupéré dans la BDD a la place de "Player"
+        //Mettre le nom rï¿½cupï¿½rï¿½ dans la BDD a la place de "Player"
         GetNameServerRPC("Player");
     }
 

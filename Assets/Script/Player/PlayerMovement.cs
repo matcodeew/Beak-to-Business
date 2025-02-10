@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _mousePosition;
     private void Awake()
     {
-        _player = GetComponent<Player>();
-        _rb = GetComponent<Rigidbody2D>();
+        _player = GetComponentInParent<Player>();
+        _rb = GetComponentInParent<Rigidbody2D>();
     }
     private void FixedUpdate()
     { 
@@ -66,13 +66,10 @@ public class PlayerMovement : MonoBehaviour
     public void SaveLastFrame()
     {
         _lastFrame = sr.sprite;
-
-        print($"save {_lastFrame} for {sr.sprite}");
     }
 
     public void SetSprite()
     {
-        print($"set {_lastFrame} to {sr.sprite}");
         if (_lastFrame == null)
         {
             sr.sprite = null;

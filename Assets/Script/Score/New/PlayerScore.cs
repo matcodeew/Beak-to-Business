@@ -10,12 +10,16 @@ public class PlayerScore : MonoBehaviour
     public TextMeshProUGUI positionUI;
     public ulong connectionID;
 
+    private PlayerData _playerData;
     public void TrackPlayer(GameObject player, ulong connectionID)
     {
-        player.GetComponent<PlayerData>().Name.OnValueChanged += OnNameChanged;
-        player.GetComponent<PlayerData>().Score.OnValueChanged += OnScoreChanged;
-        OnScoreChanged(0, player.GetComponent<PlayerData>().Score.Value);
-        OnNameChanged("", player.GetComponent<PlayerData>().Name.Value);
+        _playerData = player.GetComponent<PlayerData>();
+        if (_playerData is null) return;
+        
+        _playerData.Name.OnValueChanged += OnNameChanged;
+        _playerData.Score.OnValueChanged += OnScoreChanged;
+        OnScoreChanged(0, _playerData.Score.Value);
+        OnNameChanged("", _playerData.Name.Value);
         this.connectionID = connectionID;
     }
 
