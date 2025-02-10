@@ -19,13 +19,13 @@ public class GlobalScoreManager : MonoBehaviour
         GameObject playerUI = Instantiate(playerScoreTemplate, scoreBoard);
         playerUI.GetComponent<PlayerScore>().TrackPlayer(player, connectionID);
         playerTemplates.Add(playerUI);
-        UpdateOrder();
     }
 
-    // private void Update()
-    // {
-    //     UpdateOrder();
-    // }
+    //Move this
+    private void Update()
+    {
+        UpdateOrder();
+    }
 
     public void UpdateOrder() //call this with event when one of player Update Score
     {
