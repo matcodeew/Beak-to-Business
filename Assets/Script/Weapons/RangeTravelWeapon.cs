@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class RangeTravelWeapon : Weapon
 {
-    private GameObject _currentBullet = null;
     private GameObject _bulletPrefab;
     private Vector2 _endPos;
     private Vector2 _startPos;
@@ -34,7 +33,6 @@ public class RangeTravelWeapon : Weapon
 
     private void ResetData()
     {
-        _currentBullet = null;
         _endPos = Vector2.zero;
         _startPos = Vector2.zero;
     }

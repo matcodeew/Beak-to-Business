@@ -11,8 +11,6 @@ public class ScoreboardManager : NetworkBehaviour
     [SerializeField] private Dictionary<Player, ScoreboardItem> _scoreboardItem = new();
     [SerializeField] private List<ScoreboardItem> _itemList;
 
-    private int _maxPlayer = 10;
-
     private void Awake()
     {
         instance = this;

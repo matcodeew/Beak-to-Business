@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public Vector3 direction = Vector2.zero;
     [SerializeField] private Camera _playerCamera;
+    private Rigidbody2D _rb;
+    private Vector3 _mousePosition;
     private void Awake()
     {
         _player = GetComponent<Player>();
@@ -25,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     { 
-        transform.position += (Vector3)(moveInput * _player.stats.speed * Time.fixedDeltaTime);
+        transform.position += (Vector3)(_moveInput * (_player.stats.speed * Time.fixedDeltaTime));
         //direction = _mousePosition - transform.position;
         if (_playerCamera)
         {
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         _lastFrame = null;
     }
 
+    #region  ouvrepaspls
     public void SetBoolAnimation(Vector2 _moveInput)
     {
         if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut droite
@@ -140,4 +143,5 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("MoveRight", false);
         }
     }
+    #endregion
 }

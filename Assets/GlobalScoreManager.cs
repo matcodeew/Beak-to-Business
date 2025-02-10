@@ -43,7 +43,8 @@ public class GlobalScoreManager : MonoBehaviour
                 continue;
             }
 
-            if (NetworkManager.Singleton.ConnectedClients[playerTemplates[i].GetComponent<PlayerScore>().connectionID].PlayerObject.GetComponent<PlayerDeath>()._isDead.Value)
+            if (NetworkManager.Singleton.ConnectedClients[playerTemplates[i].GetComponent<PlayerScore>()
+                    .connectionID].PlayerObject.GetComponent<PlayerDeath>()._isDead.Value)
             {
                 playerTemplates[i].SetActive(false);
             }

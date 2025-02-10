@@ -34,7 +34,7 @@ public class BuffManager : MonoBehaviour
         if (player is null) { return; }
 
         _baseStats.baseSpeed = player.stats.speed;
-        _baseStats.baseHealth = player.stats.health;
+        //_baseStats.baseHealth = player.stats.health;
         _baseStats.baseFireRate = player.weaponEquipied is not null ? player.weaponEquipied.stats.fireRate : 0;
         _baseStats.baseFireRate = player.weaponEquipied is not null ? player.weaponEquipied.stats.damage : 0;
 
@@ -56,7 +56,7 @@ public class BuffManager : MonoBehaviour
         switch (_stat)
         {
             case Stats.health:
-                _playerStats.health *= _value;
+               // _playerStats.health *= _value;
                 break;
 
             case Stats.damage:
@@ -81,7 +81,7 @@ public class BuffManager : MonoBehaviour
                  switch (_stat)
                  {
                      case Stats.health:
-                         _playerStats.health = _baseStats.baseHealth;
+                        // _playerStats.health = _baseStats.baseHealth;
                          break;
 
                      case Stats.damage:

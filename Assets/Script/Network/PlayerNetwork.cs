@@ -13,9 +13,6 @@ public class PlayerNetwork : NetworkBehaviour
 
     public static event Action<GameObject, ulong> OnPlayerSpawn;
     public static event Action<GameObject> OnPlayerDespawn;
-
-    private float _moveSpeed = 5f;
-
     private void Start()
     {
         if (IsOwner)
