@@ -1,4 +1,4 @@
-using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,14 +15,25 @@ public class PlayerMovement : MonoBehaviour
     [Header("Sprite")]
     [SerializeField] private Sprite _lastFrame;
     [SerializeField] private Sprite _defaultSprite;
+
+    [HideInInspector] public Vector3 direction = Vector2.zero;
+    [SerializeField] private Camera _playerCamera;
     private void Awake()
     {
         _player = GetComponent<Player>();
+        _rb = GetComponent<Rigidbody2D>();
     }
     private void FixedUpdate()
-    {
-        GetComponent<Rigidbody2D>().linearVelocity = _moveInput * _player.stats.speed * Time.fixedDeltaTime;
-        //animator.SetFloat("Speed", Mathf.Abs(_moveInput.x));
+    { 
+        transform.position += (Vector3)(moveInput * _player.stats.speed * Time.fixedDeltaTime);
+        //direction = _mousePosition - transform.position;
+        if (_playerCamera)
+        {
+            _mousePosition = _playerCamera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 heading = _mousePosition - transform.position;
+            float distance = heading.magnitude;
+            direction = heading / distance;
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -45,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
     }
+
     public void SaveLastFrame()
     {
         _lastFrame = sr.sprite;

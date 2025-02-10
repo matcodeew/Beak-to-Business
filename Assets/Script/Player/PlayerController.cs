@@ -1,27 +1,33 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
-    private Player _player;
+    private GameObject objectToSpawn;
+
+
+    private Player player;
     private void Awake()
     {
-        _player = GetComponent<Player>();
+        player = GetComponent<Player>();
     }
     public void Shoot(InputAction.CallbackContext _callback)
     {
-        if (_player.weaponEquipied is null) { return; }
+        if (player.weaponEquipied is null) { return; }
 
         if (_callback.started)
         {
-            _player.weaponEquipied.Shoot(transform);
-            print($"{_player.weaponEquipied.name} Shoot");
+            player.weaponEquipied.Shoot(transform);
+            //TestServerRpc(transform.position + new Vector3(0, 2,0));    
+            //print($"{player.weaponEquipied.name} Shoot");
         }
 
         if (_callback.canceled)
         {
-            _player.weaponEquipied.ShootFinished();
-            print($"{_player.weaponEquipied.name} ShootFinished");
+            player.weaponEquipied.ShootFinished();
+            //print($"{player.weaponEquipied.name} ShootFinished");
         }
     }
+
 }
