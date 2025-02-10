@@ -34,6 +34,15 @@ public class GlobalScoreManager : MonoBehaviour
 
         for (int i = 0; i < a; i++)
         {
+            if (!NetworkManager.Singleton.ConnectedClients.ContainsKey(playerTemplates[i].GetComponent<PlayerScore>().connectionID))
+            {
+                playerTemplates[i].SetActive(false);
+                playerTemplates.RemoveAt(i);
+                i--;
+                a--;
+                continue;
+            }
+
             if (NetworkManager.Singleton.ConnectedClients[playerTemplates[i].GetComponent<PlayerScore>().connectionID].PlayerObject.GetComponent<PlayerDeath>()._isDead.Value)
             {
                 playerTemplates[i].SetActive(false);

@@ -13,7 +13,7 @@ public class ScoreboardItem : NetworkBehaviour
     public void UpdateScore(Player player)
     {
 
-        _playerScore.text = player.stats.score.Value.ToString();
+        //_playerScore.text = player.stats.score.Value.ToString();
         EventManager.UpdateScore();
     }
 

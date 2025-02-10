@@ -23,7 +23,7 @@ public class PlayerDeath : NetworkBehaviour
 
     public NetworkVariable<bool> _isDead = new NetworkVariable<bool>(false);
 
-    [SerializeField] List<GameObject> _weaponPrefabs = new List<GameObject>();
+    public List<GameObject> _weaponPrefabs = new List<GameObject>();
 
     private bool _isRespawning = false;
     [SerializeField] private float _respawnTime = 2f;
@@ -126,7 +126,6 @@ public class PlayerDeath : NetworkBehaviour
         int prefabIndex = _weaponPrefabs.IndexOf(weapon);
         //int prefabIndex = _weaponPrefabs.FindIndex(obj => obj.name == weapon.name);
 
-        Debug.Log(prefabIndex);
         SpawnGunOnServerRpc(prefabIndex, transform.position);
     }
 

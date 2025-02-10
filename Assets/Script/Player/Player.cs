@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -8,7 +9,6 @@ public struct PlayerStats
     public float speed;
     public NetworkVariable<float> defaultHealth;
     public NetworkVariable<int> XP;
-    public NetworkVariable<int> score;
 }
 public class Player : NetworkBehaviour
 {
@@ -19,6 +19,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private GameObject _bulletPrefab;
 
     public TextMeshProUGUI lifeText;
+    private bool _canPickupObject = false;
 
     private NetworkVariable<float> health = new NetworkVariable<float>(100,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
@@ -31,7 +32,7 @@ public class Player : NetworkBehaviour
         health.OnValueChanged += OnHealthChanged;
         OnHealthChanged(0f, stats.defaultHealth.Value);
         SetPlayerAtRandomPosition();
-
+        _canPickupObject = true;
     }
 
     public override void OnNetworkDespawn()
@@ -40,12 +41,7 @@ public class Player : NetworkBehaviour
         health.OnValueChanged -= OnHealthChanged;
     }
 
-    public void SetPlayerAtRandomPosition()
-    {
-        Rect zone = Server.instance.spawnZone;
-        Vector2 position = new Vector2(Random.Range(zone.xMin, zone.xMax), Random.Range(zone.yMin, zone.yMax));
-        transform.position = position;
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -63,10 +59,6 @@ public class Player : NetworkBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.K))
-        //    TakeDamage(40, OwnerClientId);
-
-
         if (weaponEquipied is null) return;
         weaponEquipied.ShootHandler(Time.deltaTime);
 
@@ -74,14 +66,44 @@ public class Player : NetworkBehaviour
 
     private void GetInteractibleObject(GameObject interactibleObject)
     {
-        if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
+        if (_canPickupObject && interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
+            if(weaponEquipied != null)
+            {
+                int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
+                SpawnWeaponServerRpc(transform.position, index);
+            }
+
             _interactibleObject.PlayerInteract(this);
             Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
             //GetComponent<PlayerData>().IncreaseScoreServerRpc(10);
+            _canPickupObject = false;
+            StartCoroutine(ReloadPickup());
         }
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    public void SpawnWeaponServerRpc(Vector3 spawnPosition, int weaponIndex)
+    {
+        GameObject weapon = Instantiate(GetComponent<PlayerDeath>()._weaponPrefabs[weaponIndex], transform.position, Quaternion.identity);
+        weapon.GetComponent<NetworkObject>().Spawn();
+        //GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+        //bullet.GetComponent<NetworkObject>().Spawn();
+        //bullet.GetComponent<Bullet>().InitializeBulletClientRpc(bulletSpeed, fireRange, direction, throwerID, damages);
+    }
+
+    private IEnumerator ReloadPickup()
+    {
+        yield return new WaitForSeconds(2f);
+        _canPickupObject = true;
+    }
+
+    public void SetPlayerAtRandomPosition()
+    {
+        Rect zone = Server.instance.spawnZone;
+        Vector2 position = new Vector2(Random.Range(zone.xMin, zone.xMax), Random.Range(zone.yMin, zone.yMax));
+        transform.position = position;
+    }
 
     public void TakeDamage(float damage, ulong throwerID = 0)
     {
@@ -124,8 +146,6 @@ public class Player : NetworkBehaviour
             weaponEquipied.Shoot(this.transform);
         }
     }
-
-    
 
     public void RequestSpawnBullet(Vector2 spawnPosition, Vector2 direction)
     {
