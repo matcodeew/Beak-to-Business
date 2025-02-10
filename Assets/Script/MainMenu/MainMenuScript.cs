@@ -40,7 +40,6 @@ public class MainMenuScript : MonoBehaviour
         
         _onUserLoggedIn.Invoke(userId);
         
-        
         frontPanel.GetComponent<Animator>().SetTrigger("FadeOut");
     }
 

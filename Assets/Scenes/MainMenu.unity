@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072102659}
+      - m_Target: {fileID: 1962280391}
         m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
         m_MethodName: ChangePreviewSkin
         m_Mode: 3
@@ -2110,7 +2110,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072102659}
+      - m_Target: {fileID: 1962280391}
         m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
         m_MethodName: ChangeSelectedSkin
         m_Mode: 1
@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072102659}
+      - m_Target: {fileID: 1962280391}
         m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
         m_MethodName: ChangePreviewSkin
         m_Mode: 3
@@ -3540,7 +3540,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072102659}
+      - m_Target: {fileID: 1962280391}
         m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
         m_MethodName: ChangePreviewSkin
         m_Mode: 3
@@ -3672,7 +3672,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072102659}
+      - m_Target: {fileID: 1962280391}
         m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
         m_MethodName: ChangePreviewSkin
         m_Mode: 3
@@ -3847,18 +3847,6 @@ MonoBehaviour:
   _onUserLoggedIn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072102659}
-        m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
-        m_MethodName: GetId
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2099299474}
         m_TargetAssemblyTypeName: VideoPlayerScript, Assembly-CSharp
         m_MethodName: StartVideo
@@ -4359,7 +4347,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072102659}
+      - m_Target: {fileID: 1962280391}
         m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
         m_MethodName: ChangePreviewSkin
         m_Mode: 3
@@ -4591,13 +4579,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2072102655}
-        m_TargetAssemblyTypeName: MenuAnimations, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1962280391}
+        m_TargetAssemblyTypeName: SkinsHandler, Assembly-CSharp
+        m_MethodName: CheckSkin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4655,6 +4643,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSprite: {fileID: 21300000, guid: 7fdc0460786268c42b44e81586d8007b, type: 3}
   hoverSprite: {fileID: 21300000, guid: cf03158c43f284948b93f54e860f173f, type: 3}
+--- !u!1 &1962280390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1962280392}
+  - component: {fileID: 1962280391}
+  m_Layer: 0
+  m_Name: SkinsHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1962280391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962280390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d963d5681ac40c4198b0bc240b140c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinsNames:
+  - base
+  - fake
+  - rouge
+  - royal
+  - buzz
+  skinsSprites:
+  - {fileID: 21300000, guid: 5106c3bbedd313b4485757bb43462cff, type: 3}
+  - {fileID: 21300000, guid: 6f008aac815d76742be22b6eaf924238, type: 3}
+  - {fileID: 21300000, guid: 194544cfbf66ab442abbb56423970771, type: 3}
+  - {fileID: 21300000, guid: 2c465c4e5fa59c3439ae2f6214385fec, type: 3}
+  - {fileID: 21300000, guid: a5a0930f9721adb4db3a63879efac6af, type: 3}
+  skinSelected: 0
+  lilPreview: {fileID: 148837450}
+  bigPreview: {fileID: 2048605800}
+  skinsNumber: {fileID: 504056415}
+  mainMenuScript: {fileID: 1661370491}
+--- !u!4 &1962280392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962280390}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 910.95734, y: 600.34283, z: -4.7381263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983137031
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,7 +5369,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072102660}
-  - component: {fileID: 2072102659}
   - component: {fileID: 2072102658}
   - component: {fileID: 2072102657}
   - component: {fileID: 2072102656}
@@ -5395,34 +5443,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
---- !u!114 &2072102659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072102655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d963d5681ac40c4198b0bc240b140c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skinsNames:
-  - base
-  - fake
-  - rouge
-  - royal
-  - buzz
-  skinsSprites:
-  - {fileID: 21300000, guid: 5106c3bbedd313b4485757bb43462cff, type: 3}
-  - {fileID: 21300000, guid: 6f008aac815d76742be22b6eaf924238, type: 3}
-  - {fileID: 21300000, guid: 194544cfbf66ab442abbb56423970771, type: 3}
-  - {fileID: 21300000, guid: 2c465c4e5fa59c3439ae2f6214385fec, type: 3}
-  - {fileID: 21300000, guid: a5a0930f9721adb4db3a63879efac6af, type: 3}
-  skinSelected: 0
-  lilPreview: {fileID: 148837450}
-  bigPreview: {fileID: 2048605800}
-  skinsNumber: {fileID: 504056415}
 --- !u!224 &2072102660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5624,3 +5644,4 @@ SceneRoots:
   - {fileID: 1411307148}
   - {fileID: 2038715032}
   - {fileID: 1232372088}
+  - {fileID: 1962280392}

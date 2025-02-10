@@ -21,6 +21,8 @@ public class SkinsHandler : MonoBehaviour
     public Image bigPreview; 
     public TextMeshProUGUI skinsNumber;
     private int _previewNb;
+    
+    public MainMenuScript mainMenuScript;
 
     private int _userId;
     
@@ -30,6 +32,8 @@ public class SkinsHandler : MonoBehaviour
         {
             _skins.Add(skinsNames[i], false);
         }
+        
+        mainMenuScript._onUserLoggedIn.AddListener(GetId);
     }
     public void GetId(int _id)
     {
@@ -48,6 +52,8 @@ public class SkinsHandler : MonoBehaviour
         yield return new WaitUntil(() => _task.IsCompleted);
         _testUser = _task.Result;
         
+        Debug.Log(_testUser);
+        
         string[] _userSkins = _testUser.Split(',');
 
         foreach (string _skin in _userSkins)
@@ -61,6 +67,8 @@ public class SkinsHandler : MonoBehaviour
             {
                 _hats[_skin] = true;
             }
+            
+            Debug.Log(_skin);
         }
     }
 
