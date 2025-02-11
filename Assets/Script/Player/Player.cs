@@ -1,11 +1,8 @@
-using TMPro;
-using Unity.Netcode;
 using System;
 using System.Collections;
+using TMPro;
+using Unity.Netcode;
 using UnityEngine;
-using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
-using Unity.VisualScripting;
-using UnityEditor;
 
 [System.Serializable]
 public struct PlayerStats
@@ -30,11 +27,11 @@ public class Player : NetworkBehaviour
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     [Header("Player Abilities & Interaction")]
-    private bool _canPickupObject = false;
+    private bool _canPickupWeapon = false;
 
     [Header("Player Skin")]
     [SerializeField] private Transform _skinParent;
-    public NetworkVariable<int> SelectedSkinIndex = new NetworkVariable<int>(-1, 
+    public NetworkVariable<int> SelectedSkinIndex = new NetworkVariable<int>(-1,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
     #endregion
@@ -56,18 +53,29 @@ public class Player : NetworkBehaviour
         lifeText.text = _health.Value.ToString();
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
-        if(IsOwner) SetSkin();
+        if (IsOwner) SetSkin();
 
         OnHealthChanged(0f, stats.defaultHealth.Value);
         OnSkinChanged(0, SelectedSkinIndex.Value);
         SetPlayerAtRandomPosition();
-        _canPickupObject = true;
+        _canPickupWeapon = true;
     }
 
     public override void OnNetworkDespawn()
     {
         base.OnNetworkDespawn();
         _health.OnValueChanged -= OnHealthChanged;
+    }
+
+    private void OnApplicationQuit()
+    {
+        //if(IsOwner) GetComponent<PlayerDeath>().Die();
+
+        if (weaponEquipied != null)
+        {
+            int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
+            SpawnWeaponServerRpc(transform.position, index);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -78,7 +86,6 @@ public class Player : NetworkBehaviour
 
         if (collision.CompareTag("Bullet") && collision.GetComponent<Bullet>().throwerID != OwnerClientId)
         {
-            Debug.Log("BUllet");
             Bullet bullet = collision.GetComponent<Bullet>();
             TakeDamage(bullet.Damages, bullet.throwerID);
             Server.instance.DestroyObjectOnServerRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
@@ -135,25 +142,40 @@ public class Player : NetworkBehaviour
     #region Player Interaction
     private void GetInteractibleObject(GameObject interactibleObject)
     {
-        if (_canPickupObject && interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
+        if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
-            if (weaponEquipied != null)
+            if(interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w) && _canPickupWeapon)
             {
-                int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
-                SpawnWeaponServerRpc(transform.position, index);
+                if(weaponEquipied != null)
+                {
+                    int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
+                    SpawnWeaponServerRpc(transform.position, index);
+                }
+                Interact(interactibleObject, _interactibleObject);
+                _canPickupWeapon = false;
+                StartCoroutine(ReloadPickup());
+                return;
+            }
+            else if(interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w1) && !_canPickupWeapon)
+            {
+                return; 
             }
 
-            _interactibleObject.PlayerInteract(this);
-            Server.instance.DestroyObjectOnServerRpc(interactibleObject.GetComponent<NetworkObject>().NetworkObjectId);
-            _canPickupObject = false;
-            StartCoroutine(ReloadPickup());
+            Interact(interactibleObject, _interactibleObject);
+            
         }
+    }
+
+    private void Interact(GameObject obj, InteractableObjects interactibleObject)
+    {
+        interactibleObject.PlayerInteract(this);
+        Server.instance.DestroyObjectOnServerRpc(obj.GetComponent<NetworkObject>().NetworkObjectId);
     }
 
     private IEnumerator ReloadPickup()
     {
         yield return new WaitForSeconds(2f);
-        _canPickupObject = true;
+        _canPickupWeapon = true;
     }
     #endregion
 
@@ -199,6 +221,13 @@ public class Player : NetworkBehaviour
             SetHealthValueServerRpc(0);
             GetComponent<PlayerDeath>().Die(throwerID);
         }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void HealServerRpc(float value)
+    {
+        _health.Value += value;
+        if (_health.Value >= stats.defaultHealth.Value) _health.Value = stats.defaultHealth.Value;
     }
 
     [ServerRpc(RequireOwnership = false)]

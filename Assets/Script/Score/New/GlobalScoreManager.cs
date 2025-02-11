@@ -28,6 +28,7 @@ public class GlobalScoreManager : MonoBehaviour
         PlayerNetwork.OnPlayerSpawn += OnPlayerSpawned;
     }
 
+
     private void OnPlayerSpawned(GameObject player, ulong connectionID)
     {
         GameObject playerUI = Instantiate(playerScoreTemplate, scoreBoard);
@@ -37,6 +38,8 @@ public class GlobalScoreManager : MonoBehaviour
         Debug.Log(NetworkManager.Singleton.ConnectedClients);
         Invoke("UpdateOrder", .5f);
     }
+
+    
 
     public void UpdateOrder() //call this with event when one of player Update Score
     {
