@@ -1,8 +1,9 @@
+
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[System.Serializable]
+
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Animation")]

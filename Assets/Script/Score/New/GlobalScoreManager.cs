@@ -9,6 +9,20 @@ public class GlobalScoreManager : MonoBehaviour
     [SerializeField] private GameObject playerScoreTemplate;
     List<GameObject> playerTemplates = new List<GameObject>();
 
+    public static GlobalScoreManager instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnEnable()
     {
         PlayerNetwork.OnPlayerSpawn += OnPlayerSpawned;
@@ -19,12 +33,9 @@ public class GlobalScoreManager : MonoBehaviour
         GameObject playerUI = Instantiate(playerScoreTemplate, scoreBoard);
         playerUI.GetComponent<PlayerScore>().TrackPlayer(player, connectionID);
         playerTemplates.Add(playerUI);
-    }
-
-    //Move this
-    private void Update()
-    {
-        UpdateOrder();
+        Debug.Log("test");
+        Debug.Log(NetworkManager.Singleton.ConnectedClients);
+        Invoke("UpdateOrder", .5f);
     }
 
     public void UpdateOrder() //call this with event when one of player Update Score
@@ -43,7 +54,6 @@ public class GlobalScoreManager : MonoBehaviour
                 a--;
                 continue;
             }
-
             if (NetworkManager.Singleton.ConnectedClients[playerTemplates[i].GetComponent<PlayerScore>()
                     .connectionID].PlayerObject.GetComponent<PlayerDeath>()._isDead.Value)
             {

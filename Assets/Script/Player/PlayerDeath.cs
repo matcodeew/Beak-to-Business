@@ -10,7 +10,7 @@ using System.Linq;
 public class PlayerDeath : NetworkBehaviour
 {
     [Header("Death")]
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private GameObject visual;
     [SerializeField] private BoxCollider2D _collider;
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private PlayerInput _playerInputs;
@@ -70,9 +70,10 @@ public class PlayerDeath : NetworkBehaviour
 
     private void OnDeathStatusChanged(bool previousValue, bool newValue)
     {
-        _spriteRenderer.enabled = !newValue;
+        visual.SetActive(!newValue);
         _collider.enabled = !newValue;
         _healthBar.SetActive(!newValue);
+        GlobalScoreManager.instance.UpdateOrder();
     }
 
     #endregion
@@ -88,10 +89,6 @@ public class PlayerDeath : NetworkBehaviour
         _deathUI.SetActive(true);
         _scoreText.text = _playerData.Score.Value.ToString();
         _playerData.SetScoreServerRpc(0);
-
-        //Play Again
-        //Quit -> Redirige vers le site
-        //Supprimer du scoreboard - SERVEUR
     }
 
     public void PlayAgain()
@@ -111,6 +108,14 @@ public class PlayerDeath : NetworkBehaviour
         _player.SetHealthValueServerRpc(_player.stats.defaultHealth.Value);
 
         DieServerRpc(false);
+
+        Invoke("ResetScore", .5f);
+    }
+
+    private void ResetScore()
+    {
+        
+        //_playerData.SetScoreServerRpc(0);
     }
 
 

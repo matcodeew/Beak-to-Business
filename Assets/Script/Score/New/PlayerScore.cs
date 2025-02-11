@@ -31,6 +31,7 @@ public class PlayerScore : MonoBehaviour
     private void OnScoreChanged(int previousValue, int newValue)
     {
         scoreUI.text = newValue.ToString();
+        GlobalScoreManager.instance.UpdateOrder();
     }
 
     private void OnNameChanged(FixedString128Bytes previousValue, FixedString128Bytes newValue)
