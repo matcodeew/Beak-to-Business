@@ -6,6 +6,7 @@ using UnityEngine;
 using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEngine.UI;
 public struct PlayerStats
 {
     public float speed;
@@ -35,9 +36,11 @@ public class Player : NetworkBehaviour
     public NetworkVariable<int> SelectedSkinIndex = new NetworkVariable<int>(-1, 
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
+
+    [SerializeField] private Image _healthFill;
     #endregion
-    
-    
+
+
 
     private void OnSkinChanged(int oldIndex, int newIndex)
     {
@@ -230,6 +233,7 @@ public class Player : NetworkBehaviour
     private void OnHealthChanged(float previousValue, float newValue)
     {
         lifeText.text = newValue.ToString();
+        _healthFill.fillAmount = newValue / stats.defaultHealth.Value;
     }
     #endregion
 
