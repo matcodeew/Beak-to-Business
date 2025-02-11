@@ -23,6 +23,10 @@ public class GlobalScoreManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        UpdateOrder();
+    }
     private void OnEnable()
     {
         PlayerNetwork.OnPlayerSpawn += OnPlayerSpawned;
