@@ -78,9 +78,10 @@ public class PlayerDeath : NetworkBehaviour
 
     #endregion
 
-    public void Die(ulong throwerID)
+    public void Die(ulong throwerID = ulong.MaxValue)
     {
-        NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(100);
+        if(throwerID != ulong.MaxValue)
+            NetworkManager.Singleton.ConnectedClients[throwerID].PlayerObject.GetComponent<PlayerData>().IncreaseScoreServerRpc(100);
 
         DropGunOnMap();
         DieServerRpc(true);

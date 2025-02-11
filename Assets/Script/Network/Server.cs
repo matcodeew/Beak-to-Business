@@ -42,7 +42,6 @@ public class Server : NetworkBehaviour
     {
         connectButton.onClick.AddListener(ConnectToServer);
 
-
         string[] args = System.Environment.GetCommandLineArgs();
                 //SpawnObjectsOnServer();
 
@@ -61,6 +60,7 @@ public class Server : NetworkBehaviour
         }
 
     }
+
 
     private void RandomSpawnObjectsOnServer()
     {

@@ -1,6 +1,5 @@
-using UnityEditor;
-using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine;
 
 public static class EventManager 
 {
