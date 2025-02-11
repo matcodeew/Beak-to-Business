@@ -82,9 +82,18 @@ public class Player : NetworkBehaviour
     [ContextMenu("SetSkin")]
     private void SetSkin() //playerSkinIndex must be between 0 and 4 includes.
     {
+        PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+        
+        #region Set Skin Verif
+
+        if (playerMovement is null){
+            throw new NullReferenceException("no component PlayerMovement on the player object");
+        }
         if(_playerSkinIndex > 4 || _playerSkinIndex < -1) {
             throw new ArgumentOutOfRangeException(nameof(_playerSkinIndex), "Skin index must be between 0 and 4 includes");
         }
+        
+        #endregion
         
         ResetSkinVisibility();
         if (_playerSkinIndex == -1) { 
@@ -94,7 +103,10 @@ public class Player : NetworkBehaviour
         
         _choosenSkin = _skinParent.GetChild(_playerSkinIndex).gameObject;
         _choosenSkin.SetActive(true);
-        GetComponent<PlayerMovement>().SetRightAnimator(_choosenSkin);
+        
+        playerMovement.SetRightAnimator(_choosenSkin);
+        playerMovement.GetPlayerSpeed(stats.speed);
+        
         OnSkinChanged?.Invoke();
     }
 

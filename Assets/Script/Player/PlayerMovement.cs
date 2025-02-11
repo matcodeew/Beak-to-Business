@@ -18,22 +18,21 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
 
     [Header("Player")]
-    private Player _player;
     private GameObject _currentSkin;
+    private float _playerSpeed;
 
     [Header("Mouse")]
     private Vector3 _mousePosition;
 
     private void Awake()
     {
-        _player = GetComponentInParent<Player>();
         _rb = GetComponentInParent<Rigidbody2D>();
         Player.OnSkinChanged += SetComponent;
     }
 
     private void FixedUpdate()
     {
-        _rb.linearVelocity = _moveInput * _player.stats.speed;
+        _rb.linearVelocity = _moveInput * _playerSpeed;
 
         if (_playerCamera)
         {
@@ -44,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void GetPlayerSpeed(float Value)
+    {
+        _playerSpeed = Value;
+    }
     private void SetComponent()
     {
         _currentSkin = GetPlayerSkin();
