@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class SkinsHandler : MonoBehaviour
 {
-    // private Skin _testUser;
+    private Skin _testUser;
 
     private Dictionary<string, bool> _skins = new();
     private Dictionary<string, bool> _hats = new();
@@ -56,32 +56,39 @@ public class SkinsHandler : MonoBehaviour
 
     public void CheckSkin()
     {
-        // StartCoroutine(CheckSkins());
+        StartCoroutine(CheckSkins());
     }
 
-    // public IEnumerator CheckSkins()
-    // {
-    //     var _task = APICaller.GetSkinById(_userId);
-    //     yield return new WaitUntil(() => _task.IsCompleted);
-    //     _testUser = _task.Result;
-    //     
-    //     string[] _userSkins = _testUser.skin.Split(',');
-    //
-    //     foreach (string _skin in _userSkins)
-    //     {
-    //         if (_skins.ContainsKey(_skin))
-    //         {
-    //             _skins[_skin] = true;
-    //         }
-    //
-    //         if (_hats.ContainsKey(_skin))
-    //         {
-    //             _hats[_skin] = true;
-    //         }
-    //         
-    //         Debug.Log(_skin);
-    //     }
-    // }
+    public IEnumerator CheckSkins()
+    {
+        Debug.Log("CheckingSkin");
+        var _task = APICaller.GetSkinById(_userId);
+        yield return new WaitUntil(() => _task.IsCompleted);
+        _testUser = _task.Result;
+        
+        Debug.Log("Checked");
+        
+        string[] _userSkins = _testUser.skin.Split(',');
+        
+        Debug.Log("Splitted");
+    
+        foreach (string _skin in _userSkins)
+        {
+            if (_skins.ContainsKey(_skin))
+            {
+                _skins[_skin] = true;
+            }
+    
+            if (_hats.ContainsKey(_skin))
+            {
+                _hats[_skin] = true;
+            }
+            
+            Debug.Log(_skin);
+        }
+        
+        Debug.Log("GaveSkin");
+    }
     
     public void ChangeSelectedSkin()
     {
