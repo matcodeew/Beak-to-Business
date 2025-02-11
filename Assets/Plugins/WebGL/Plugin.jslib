@@ -6,9 +6,9 @@ mergeInto(LibraryManager.library, {
             var parts = cookie.split("=");
             var key = parts[0].trim();
             var value = parts.length > 1 ? decodeURIComponent(parts[1].trim()) : "";
-            alert("Cookie : " + key + " = " + value);
             if (key === "id") {
                 SendMessage("WebGLBridge", "SetPlayerID", value);
+                console.log("Player ID: " + value);
                 return;
             }
         }

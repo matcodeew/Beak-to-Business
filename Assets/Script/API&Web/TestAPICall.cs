@@ -17,7 +17,7 @@ public class TestAPICall : MonoBehaviour
     {
         StartCoroutine(InitUser(userid));
         StartCoroutine(InitSkins(userid));
-        StartCoroutine(UpdateSkins(userid, skinToUpdate));
+        //StartCoroutine(UpdateSkins(userid, skinToUpdate));
     }
 
     private IEnumerator InitUser(int id)

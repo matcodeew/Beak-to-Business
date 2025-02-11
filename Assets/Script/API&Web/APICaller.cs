@@ -7,6 +7,22 @@ using UnityEngine.Networking;
 
 public static class APICaller
 {
+    /// <summary>
+    /// This class is used to call the API from anywhere in the game
+    ///
+    /// Usage is simple, call in an IEnumerator one of the function to get to the desired endpoint of the API :
+    ///
+    /// private IEnumerator InitUser(int id)
+    ///{
+    ///    var task = APICaller.GetUserById(id);
+    ///    yield return new WaitUntil(() => task.IsCompleted);
+    ///    [User variable] = task.Result;
+    ///}
+    ///
+    /// Simply replace the task function with what you'd like to call.
+    /// </summary>
+    
+    
     //We make the class static so it can be accessed everywhere at any times
     //It is also asynchronous since static classes do not support Coroutines
     private static string api_url = "http://192.168.1.238/api/api.php?endpoint=";
@@ -68,27 +84,32 @@ public static class APICaller
         }
     }
 
-    public static async Task UpdateSkins(int id, string skins)
+    public static async Task UpdateSkins(int playerId, string skins)
     {
-        var payload = new { id = id, skin = skins };
+        var payload = new SkinPayload { id = playerId.ToString(), skins = skins };
         string jsonPayload = JsonUtility.ToJson(payload);
-        
+
+        if (string.IsNullOrEmpty(jsonPayload))
+        {
+            Debug.LogError("Failed to serialize payload to JSON.");
+            return;
+        }
+
         using UnityWebRequest request = new UnityWebRequest(api_url + "skins", "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
-        
-        
+
         await request.SendWebRequest();
 
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError(request.error);
+            Debug.LogError("Error: " + request.error);
         }
         else
         {
-            Debug.Log("SkinList uploaded");
+            Debug.Log("SkinList uploaded successfully");
         }
     }
 }
@@ -107,6 +128,13 @@ public class User
 public class Skin
 {
     public string skin;
+}
+
+[System.Serializable]
+public class SkinPayload
+{
+    public string id;
+    public string skins;
 }
 
 public static class JsonHelper
