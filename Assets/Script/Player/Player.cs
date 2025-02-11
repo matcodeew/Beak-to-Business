@@ -56,7 +56,7 @@ public class Player : NetworkBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    { 
         if (!IsOwner) return;
 
         GetInteractibleObject(collision.gameObject);
