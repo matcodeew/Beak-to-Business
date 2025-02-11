@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6276204471261182565}
   - component: {fileID: 1906505810805475433}
   - component: {fileID: 2287982155401599232}
+  - component: {fileID: 4928104324655720369}
   m_Layer: 0
   m_Name: FoamKatana
   m_TagString: Untagged
@@ -76,6 +77,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponData: {fileID: 11400000, guid: 85798b5922da92b4fad09f10213386bb, type: 2}
+  spawnableObject: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!212 &2287982155401599232
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,3 +134,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4928104324655720369
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2636078685905600630}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4b730adc6480be44afcd123f059f7a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
