@@ -1,0 +1,2088 @@
+fileFormatVersion: 2
+guid: 60db2ed5ab2f744419f004b1ea4389f2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615da60c31ff7ba4581f5e4ab1cf4831
+      internalID: -1243501657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_1
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74626307e99c78843b27d68b3670ca4e
+      internalID: -2063481047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_2
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54a2c7bb26c3c7439fd85d9d13e8e85
+      internalID: 1823989432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_3
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe328548449dd6418630eda883dd2bb
+      internalID: 2067440287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_4
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a9e8cf7089afe4e97cc98bf605f977
+      internalID: -945024765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_5
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166fcccf07012e641a22e6d1fa8f9034
+      internalID: 1180637911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_6
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200a531642b61bd49834de4739d11bb3
+      internalID: 625427440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_7
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9718dcaa912085f4da8cf92bea4165d8
+      internalID: -2121635709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_8
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a04424257b97c24aa693c14ba4b66cb
+      internalID: -818132921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_9
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2117562b4e5c7654ca46f8f675875b14
+      internalID: 123564549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a231230141f50364e93fa62b08730abb
+      internalID: 1705065760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_11
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537f4c63908ecac4aa6a8ad6fd42fbc0
+      internalID: 1255242005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_12
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ca2460c183e2147a652bea6548e00b
+      internalID: -2111294388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_13
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e959220903d854695204cc3444fa87
+      internalID: -1309181755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_14
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca93742ff50062b47890f517fc663389
+      internalID: -695357873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_15
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100d817d8f7086a4fa10026f0b1fc6df
+      internalID: 523990006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_16
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c1201752e075a46848edecf023d64d
+      internalID: 823864277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_17
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52442f32006ecd0478e5f8a847e940ad
+      internalID: -2074085482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_18
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816636f33df3df4419a76815ac763f61
+      internalID: -635268052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_19
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53f713b50e4aff41a6c7343e6804c88
+      internalID: -1960034708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20843bee72d67904eb2e4499e6df00eb
+      internalID: -1608478955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_21
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02282102edd9a0c4babf066b820018b4
+      internalID: 2095271873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_22
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85757ee698167c84b9596232b90ba335
+      internalID: -1158951819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_23
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40826c1d7feca9143b87ec0150069e0c
+      internalID: 1696499393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_24
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351b39786209edd45ac0bc563ebf6e57
+      internalID: 818946299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_25
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cf4499dac51a04c91d61205500a43a
+      internalID: -1313515184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_26
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9a0cf8ff533494c8e44dea29008334
+      internalID: -2076472957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_27
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8bd1d9b92d16494593489958c0fe606
+      internalID: 1735007900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_28
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a844b41610b6dbf409a32bf4dfc20938
+      internalID: -1024309066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_29
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cd2b34dd7fc8342a516b63a4bb7841
+      internalID: -1977610747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf7fbf5d0c88634faad53d6ff56cd4a
+      internalID: -1372303102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_31
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46073222df780e54d97de86f5ee0b2be
+      internalID: -596234547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_32
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c340a261ecc6f5c4683b34d0b8848618
+      internalID: 307692583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_33
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f67bc96fc15e1a4bba8f0ca73e42f2a
+      internalID: -1345083469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_34
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095cbdefb4451884095bc41ac6f369e3
+      internalID: 1096855023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_35
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf4d9aaa77f96f498aa3920428928b8
+      internalID: 533080855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_36
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df53ec956beb974d9b7bc050bc08add
+      internalID: -1450857239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_37
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4cbd4018f54544fa865ea2bc2e2d6f
+      internalID: -1733139229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_38
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464781e69511f484788a1e6c09f1f48d
+      internalID: 381111686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5efcb4a2a096a241a71dd470a3f063c
+      internalID: 957902840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_40
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a92d3f2fd23cb14f8eb515f28d9851a
+      internalID: -987681897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_41
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e191d689c6b20b4daf11e8db4aaca5d
+      internalID: 2144591851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_42
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76bf30d8b1062043a982fdde972dc2e
+      internalID: 1239530374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_43
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfab2217df275994094f079406b1a0f9
+      internalID: 50856596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_44
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c981814a232df14f833bfb8e69bda8f
+      internalID: -180925660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_45
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb31932d9d525b44ab81b50f86c6dbf
+      internalID: -2057928186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_46
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca74fab8845cd14cb5eecf47c309581
+      internalID: -750313306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_47
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b38a83bbfe4f3b4f9ad71e428066b7b
+      internalID: 2038250450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2816b67a1642e348b6d53ae2c3ca487
+      internalID: -1239727429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_49
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71dd3de86d72aff42a4fbbd268bb75f5
+      internalID: -2075485895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_50
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00211bf1cb778c42b38cbcb25324131
+      internalID: 1385529911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_51
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe69d1be96a4a74b80f02a0c406f319
+      internalID: 2023463163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_52
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba55bc7839952034593171ad59b9750d
+      internalID: -2069385136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_53
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fa90979f5b6214095461bbcd0cc947
+      internalID: 34219358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_54
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788da6d3923a1be43b884e58c7bb6172
+      internalID: -1314244903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_55
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53db772535030654aa91afbcc23b4732
+      internalID: -1170314180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_56
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7663b83e41bcdb14ba26d581e22fd598
+      internalID: -1731081466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9433d3c8167aa0479f1a48ea9dab642
+      internalID: -687456825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_58
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30def0338eb68e74e938e9ea4c1f4285
+      internalID: -1912952259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_59
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988d74515607059469b14bab276bb1cb
+      internalID: -1597101572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_60
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cec31795165f849839b21a858a7d50
+      internalID: -908808829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_61
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4c0698a82da75418c57baaea9b5756
+      internalID: 1448055034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_62
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63afa6516b8fa0145b0aaa6f5f0ac981
+      internalID: -65767604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_63
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c41e8f2c7667c44495aab5ab62e6744
+      internalID: -517898716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_64
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0601af03df367ee42a1dab87382f3510
+      internalID: -336160356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_65
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297bbd7d316dc6946a6c300ef52d91b0
+      internalID: 2007057144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633c0f08262355245b5287dc8bc68376
+      internalID: 717048317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_67
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4e56d1e021ab140b61a6125ff00366
+      internalID: 2107865150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_68
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749677b4ded86e0448845d66788d7781
+      internalID: 323705397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_69
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6385a484bfb272c47b89a9f7aca71cce
+      internalID: -2136560652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_70
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d274706f39081654aaad47860776ef3d
+      internalID: 688469160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_71
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f8a650a68dc1b4fa7582ea28662a22
+      internalID: -881056799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_72
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b50c592256e384da75e29bad563cb6
+      internalID: -2121317769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_73
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ddc997b8ad87841adb021bac047b99
+      internalID: -928679079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_74
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc3c770f314a54746bc8363290885149
+      internalID: 521619675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c738c4f96e483fb4fb281b4ab82ebee2
+      internalID: -354538894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_76
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224ca4d9ce88afc48bf7f765fb6da5ef
+      internalID: 238854161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_77
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4a329d9861ec64286cfc6ed2324dc9
+      internalID: -446927249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_78
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ca82e79eb58b241beea8d636a95245
+      internalID: 884914679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_79
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf60c127a818244f80b78fbd6ff8e70
+      internalID: -1763504377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_80
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeaeb574ce1a5b744b6806026b744725
+      internalID: 895646892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_81
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223bcae91596a4d4e82bb607b587943f
+      internalID: 551098550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_82
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d737d0fc3b8ec8245882778e8df0a1fc
+      internalID: 658849251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabre Laser Diagonal_83
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3eab640889633b4586bc29eb4b0657d
+      internalID: -271932803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 87b0a685db91b904687003292010e7a0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sabre Laser Diagonal_0: -1243501657
+      Sabre Laser Diagonal_1: -2063481047
+      Sabre Laser Diagonal_10: 1705065760
+      Sabre Laser Diagonal_11: 1255242005
+      Sabre Laser Diagonal_12: -2111294388
+      Sabre Laser Diagonal_13: -1309181755
+      Sabre Laser Diagonal_14: -695357873
+      Sabre Laser Diagonal_15: 523990006
+      Sabre Laser Diagonal_16: 823864277
+      Sabre Laser Diagonal_17: -2074085482
+      Sabre Laser Diagonal_18: -635268052
+      Sabre Laser Diagonal_19: -1960034708
+      Sabre Laser Diagonal_2: 1823989432
+      Sabre Laser Diagonal_20: -1608478955
+      Sabre Laser Diagonal_21: 2095271873
+      Sabre Laser Diagonal_22: -1158951819
+      Sabre Laser Diagonal_23: 1696499393
+      Sabre Laser Diagonal_24: 818946299
+      Sabre Laser Diagonal_25: -1313515184
+      Sabre Laser Diagonal_26: -2076472957
+      Sabre Laser Diagonal_27: 1735007900
+      Sabre Laser Diagonal_28: -1024309066
+      Sabre Laser Diagonal_29: -1977610747
+      Sabre Laser Diagonal_3: 2067440287
+      Sabre Laser Diagonal_30: -1372303102
+      Sabre Laser Diagonal_31: -596234547
+      Sabre Laser Diagonal_32: 307692583
+      Sabre Laser Diagonal_33: -1345083469
+      Sabre Laser Diagonal_34: 1096855023
+      Sabre Laser Diagonal_35: 533080855
+      Sabre Laser Diagonal_36: -1450857239
+      Sabre Laser Diagonal_37: -1733139229
+      Sabre Laser Diagonal_38: 381111686
+      Sabre Laser Diagonal_39: 957902840
+      Sabre Laser Diagonal_4: -945024765
+      Sabre Laser Diagonal_40: -987681897
+      Sabre Laser Diagonal_41: 2144591851
+      Sabre Laser Diagonal_42: 1239530374
+      Sabre Laser Diagonal_43: 50856596
+      Sabre Laser Diagonal_44: -180925660
+      Sabre Laser Diagonal_45: -2057928186
+      Sabre Laser Diagonal_46: -750313306
+      Sabre Laser Diagonal_47: 2038250450
+      Sabre Laser Diagonal_48: -1239727429
+      Sabre Laser Diagonal_49: -2075485895
+      Sabre Laser Diagonal_5: 1180637911
+      Sabre Laser Diagonal_50: 1385529911
+      Sabre Laser Diagonal_51: 2023463163
+      Sabre Laser Diagonal_52: -2069385136
+      Sabre Laser Diagonal_53: 34219358
+      Sabre Laser Diagonal_54: -1314244903
+      Sabre Laser Diagonal_55: -1170314180
+      Sabre Laser Diagonal_56: -1731081466
+      Sabre Laser Diagonal_57: -687456825
+      Sabre Laser Diagonal_58: -1912952259
+      Sabre Laser Diagonal_59: -1597101572
+      Sabre Laser Diagonal_6: 625427440
+      Sabre Laser Diagonal_60: -908808829
+      Sabre Laser Diagonal_61: 1448055034
+      Sabre Laser Diagonal_62: -65767604
+      Sabre Laser Diagonal_63: -517898716
+      Sabre Laser Diagonal_64: -336160356
+      Sabre Laser Diagonal_65: 2007057144
+      Sabre Laser Diagonal_66: 717048317
+      Sabre Laser Diagonal_67: 2107865150
+      Sabre Laser Diagonal_68: 323705397
+      Sabre Laser Diagonal_69: -2136560652
+      Sabre Laser Diagonal_7: -2121635709
+      Sabre Laser Diagonal_70: 688469160
+      Sabre Laser Diagonal_71: -881056799
+      Sabre Laser Diagonal_72: -2121317769
+      Sabre Laser Diagonal_73: -928679079
+      Sabre Laser Diagonal_74: 521619675
+      Sabre Laser Diagonal_75: -354538894
+      Sabre Laser Diagonal_76: 238854161
+      Sabre Laser Diagonal_77: -446927249
+      Sabre Laser Diagonal_78: 884914679
+      Sabre Laser Diagonal_79: -1763504377
+      Sabre Laser Diagonal_8: -818132921
+      Sabre Laser Diagonal_80: 895646892
+      Sabre Laser Diagonal_81: 551098550
+      Sabre Laser Diagonal_82: 658849251
+      Sabre Laser Diagonal_83: -271932803
+      Sabre Laser Diagonal_9: 123564549
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2088 @@
+fileFormatVersion: 2
+guid: 8cfe763193cdf78439009ea8155b332b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Casserolle Diagonale_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e93f366b9480d4fa98b7461da5bfaa
+      internalID: -323447031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_1
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118d5c9cc5cf4f746934ff595ad6e852
+      internalID: 1501167738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_2
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785dc30bc2d17184c8aded86b6cf41a9
+      internalID: -599098448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_3
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2b56fc3f1db9c41a17ab939a14a7d8
+      internalID: -966909934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_4
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29fbee4cbb3c135439c094c8ccf0b2da
+      internalID: -1339998726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_5
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a051a9dace4c9cb48852abaca355c9ca
+      internalID: 1603066044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_6
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44044f50a9d3d4c4fab22afb8a941ca3
+      internalID: -2133185203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_7
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49a405207f2fe540aaaa39a2f5bd945
+      internalID: -2045393820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_8
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f5b9124507c8546b618a5bf4a8daaf
+      internalID: 1324469089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_9
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 4112
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c85ba6b52c125e4da3c96f93a973df2
+      internalID: 1907949753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 120d2d51f90438944a7bb05756d72e93
+      internalID: -997436237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_11
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0d392537de6874ba0fc4606eb05e62
+      internalID: 153995955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_12
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a92056fdfe81d41b7f22682025fffe
+      internalID: 1172942284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_13
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f877ea94243b2f54992770f390fc7944
+      internalID: -741033587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_14
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c969e5fa7586464f86bd202d7f8c204
+      internalID: -1517082212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_15
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7ec54c848882746a1dcf0f8d62643e
+      internalID: -1351205894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_16
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ec80f73ecb28a41b991b4b3f286dbb
+      internalID: -93087951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_17
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f403e6d22199c584eb33286017a82f51
+      internalID: 334317558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_18
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedaade1c83257346978f3c4f31cee45
+      internalID: 2027179083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_19
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 3598
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b2efe263d35754882b768cb5a3d7f5
+      internalID: -698253740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad7a934d413af349b797099f624cb08
+      internalID: 1554796937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_21
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31a5763259d6bc418fcb34bd18c2c57
+      internalID: 2017475772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_22
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33e3bd69782aaa4ca29b3c397b12848
+      internalID: -1671858173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_23
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534891c64d996ca4eb603990a176f7d3
+      internalID: 528630153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_24
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97cbd43255159f418030847829ec12b
+      internalID: 1634127230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_25
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5eaa089cd3a56c47bd42e6a76bae272
+      internalID: -1764565846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_26
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5738afbac810b75429cf5ede1684185e
+      internalID: -276030546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_27
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11913589117178419be6da44867248a
+      internalID: -1270842381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_28
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176c3e4d4c9c8c24789fef1342f96a76
+      internalID: -836628194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_29
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 3084
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c67f97902936f4dae4f48052c5a12c
+      internalID: -1220404751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa763d7158d8f144fa65ab6240b1cad4
+      internalID: 1034194313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_31
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d03e3d890ec3564a9d69006b98fe00c
+      internalID: 1296112864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_32
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd687df1cfb19fa40bf409016ed316a9
+      internalID: 1004027718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_33
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe63a13265542c468d33544f8dc6b7b
+      internalID: -1931108808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_34
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8ad1f45e6c0c5439e2c66f6c658444
+      internalID: -1918885110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_35
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14977b4b2d1d08142b558306cdfbf65f
+      internalID: -1262260879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_36
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f88bc5182bbad49ac7ae195c3de0e4
+      internalID: -514073683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_37
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef71449e9ffd70148a5a81bce7a6eff3
+      internalID: -515671679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_38
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2570
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb57688d6a4b9174ba58015b72b3b485
+      internalID: -2010392568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506bc0ae14e2c134a9888f6bf3bbcae0
+      internalID: 1340242541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_40
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ce042029ee24b4b84ca025e8d36911
+      internalID: 1570491138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_41
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3091fb9675a0ca24e97ab9e3d4eba0ba
+      internalID: -204806245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_42
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfce8299c1d33bd4baa5896c9c79ebf9
+      internalID: -519130571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_43
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922db5c54783e3a4c8afc5fa430536b1
+      internalID: -734401191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_44
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bcf0966e1830254f8c4270cd8665870
+      internalID: 1513988462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_45
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf4d3fbabe145a4da26752c3ae3fa79
+      internalID: 765133871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_46
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385ed6df93f32a544b2cc25e4edcf7c6
+      internalID: -56654482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_47
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2056
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682a50cd7b3c89746820110dd4e7d614
+      internalID: -411576566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a31b54c1c64cc4dbde38fd202cdc93
+      internalID: 1094092129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_49
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece278d201f827b47850662bf30a0ee5
+      internalID: 807622442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_50
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408b55b67904daa4c90d8c237e7f367e
+      internalID: 749093112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_51
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bbdd4b74be68949933bb4f93e50b62
+      internalID: 1717324685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_52
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad718a0691dff642969bed4141f033c
+      internalID: -1488886074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_53
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6283493d98ac9a4d9eb02e03eb1380f
+      internalID: 688778067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_54
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d32cb3836907846b5e99f565733a81
+      internalID: 1244048886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_55
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fc8d435c7d11b43bbc22f370dd0f00
+      internalID: -514754004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_56
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 1542
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8688dba6e26f8bf43a0ef3016ad030aa
+      internalID: -110290417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3af6a9e7881e5f42911fbdf0869dde6
+      internalID: -1092784249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_58
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3a719fcb55e2b49891c1a6ff004cf9
+      internalID: -664871330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_59
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea58ebeca6980404ca01e5b4943828ad
+      internalID: -1469807383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_60
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5924e3419f5fb8e459c389e942e75159
+      internalID: 1516829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_61
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7130eb717140bd04d8dd5302626ba074
+      internalID: -31734869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_62
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0275068be13679d4baeabd73a87bc9c3
+      internalID: 829974691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_63
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef334320acd7e1840a189dc1b5d07c80
+      internalID: 1198076087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_64
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211b3f5fc5e2f124494ff4592f670acc
+      internalID: 256488784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_65
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 1028
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c858a8b194b654faf4fa1ec66b13da
+      internalID: -1786199515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa88382763e079446b38d10c6e927e36
+      internalID: -103038100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_67
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7dc1d5e22ebf948bc4c7c26edf171c
+      internalID: 352995910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_68
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887ce110f8b5ba042b51e75c617c6cda
+      internalID: -2117635357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_69
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9645c8d17719e4a488abdb0551036479
+      internalID: 1048842271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_70
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa25fb56d97bfd449f35049bee14a90
+      internalID: -379139449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_71
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cebaa5ecdf72caa4092dd3befded1011
+      internalID: 1504249894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_72
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f9d2ef84601cc4c82895772fea4995
+      internalID: 1180845016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_73
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1569f8ea2b943844eb4abeea26914da3
+      internalID: 2048227163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_74
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 514
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec396d09349f834aac2952b4b5f588b
+      internalID: -1358320461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f11aa60292856645a9d8de41eecf975
+      internalID: 837262711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_76
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e01a4bd973f2774583d4bb00b3d622b
+      internalID: -1573019664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_77
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404ec33d13b4b1c46b50b19f3136b36b
+      internalID: -939293032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_78
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003c8cc8c8ad04a43a5ce3749589aa6b
+      internalID: -1819939990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_79
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a6d243ce30d314f9f1a084a135ae46
+      internalID: -778841828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_80
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d18b1556c416764eaf12d8fb23452e8
+      internalID: -2072913450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_81
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e7f74d28002474da886399f86caa43
+      internalID: 706439354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_82
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4253025c06dcc854d950f389eb842f35
+      internalID: 628899675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Casserolle Diagonale_83
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 0
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226a8c287956ee74fa1d0d93603633ba
+      internalID: -1184040920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bcf44af0dcb0a9a4c8e13d8a4678d538
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Casserolle Diagonale_0: -323447031
+      Casserolle Diagonale_1: 1501167738
+      Casserolle Diagonale_10: -997436237
+      Casserolle Diagonale_11: 153995955
+      Casserolle Diagonale_12: 1172942284
+      Casserolle Diagonale_13: -741033587
+      Casserolle Diagonale_14: -1517082212
+      Casserolle Diagonale_15: -1351205894
+      Casserolle Diagonale_16: -93087951
+      Casserolle Diagonale_17: 334317558
+      Casserolle Diagonale_18: 2027179083
+      Casserolle Diagonale_19: -698253740
+      Casserolle Diagonale_2: -599098448
+      Casserolle Diagonale_20: 1554796937
+      Casserolle Diagonale_21: 2017475772
+      Casserolle Diagonale_22: -1671858173
+      Casserolle Diagonale_23: 528630153
+      Casserolle Diagonale_24: 1634127230
+      Casserolle Diagonale_25: -1764565846
+      Casserolle Diagonale_26: -276030546
+      Casserolle Diagonale_27: -1270842381
+      Casserolle Diagonale_28: -836628194
+      Casserolle Diagonale_29: -1220404751
+      Casserolle Diagonale_3: -966909934
+      Casserolle Diagonale_30: 1034194313
+      Casserolle Diagonale_31: 1296112864
+      Casserolle Diagonale_32: 1004027718
+      Casserolle Diagonale_33: -1931108808
+      Casserolle Diagonale_34: -1918885110
+      Casserolle Diagonale_35: -1262260879
+      Casserolle Diagonale_36: -514073683
+      Casserolle Diagonale_37: -515671679
+      Casserolle Diagonale_38: -2010392568
+      Casserolle Diagonale_39: 1340242541
+      Casserolle Diagonale_4: -1339998726
+      Casserolle Diagonale_40: 1570491138
+      Casserolle Diagonale_41: -204806245
+      Casserolle Diagonale_42: -519130571
+      Casserolle Diagonale_43: -734401191
+      Casserolle Diagonale_44: 1513988462
+      Casserolle Diagonale_45: 765133871
+      Casserolle Diagonale_46: -56654482
+      Casserolle Diagonale_47: -411576566
+      Casserolle Diagonale_48: 1094092129
+      Casserolle Diagonale_49: 807622442
+      Casserolle Diagonale_5: 1603066044
+      Casserolle Diagonale_50: 749093112
+      Casserolle Diagonale_51: 1717324685
+      Casserolle Diagonale_52: -1488886074
+      Casserolle Diagonale_53: 688778067
+      Casserolle Diagonale_54: 1244048886
+      Casserolle Diagonale_55: -514754004
+      Casserolle Diagonale_56: -110290417
+      Casserolle Diagonale_57: -1092784249
+      Casserolle Diagonale_58: -664871330
+      Casserolle Diagonale_59: -1469807383
+      Casserolle Diagonale_6: -2133185203
+      Casserolle Diagonale_60: 1516829
+      Casserolle Diagonale_61: -31734869
+      Casserolle Diagonale_62: 829974691
+      Casserolle Diagonale_63: 1198076087
+      Casserolle Diagonale_64: 256488784
+      Casserolle Diagonale_65: -1786199515
+      Casserolle Diagonale_66: -103038100
+      Casserolle Diagonale_67: 352995910
+      Casserolle Diagonale_68: -2117635357
+      Casserolle Diagonale_69: 1048842271
+      Casserolle Diagonale_7: -2045393820
+      Casserolle Diagonale_70: -379139449
+      Casserolle Diagonale_71: 1504249894
+      Casserolle Diagonale_72: 1180845016
+      Casserolle Diagonale_73: 2048227163
+      Casserolle Diagonale_74: -1358320461
+      Casserolle Diagonale_75: 837262711
+      Casserolle Diagonale_76: -1573019664
+      Casserolle Diagonale_77: -939293032
+      Casserolle Diagonale_78: -1819939990
+      Casserolle Diagonale_79: -778841828
+      Casserolle Diagonale_8: 1324469089
+      Casserolle Diagonale_80: -2072913450
+      Casserolle Diagonale_81: 706439354
+      Casserolle Diagonale_82: 628899675
+      Casserolle Diagonale_83: -1184040920
+      Casserolle Diagonale_9: 1907949753
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

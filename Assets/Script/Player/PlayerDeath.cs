@@ -29,12 +29,15 @@ public class PlayerDeath : NetworkBehaviour
     [SerializeField] private float _respawnTime = 2f;
     private float _currentTimer = 0f;
 
+    private Player _player;
+    
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
 
 
         _playerData = GetComponent<PlayerData>();
+        _player = GetComponent<Player>();
         _playAgainButton.onClick.AddListener(PlayAgain);
 
         _isDead.OnValueChanged += OnDeathStatusChanged;
@@ -91,7 +94,7 @@ public class PlayerDeath : NetworkBehaviour
 
     public void PlayAgain()
     {
-        GetComponent<Player>().SetPlayerAtRandomPosition();
+        _player.SetPlayerAtRandomPosition();
         _isRespawning = true;
         _respawnTimerText.gameObject.SetActive(true);
         _currentTimer = _respawnTime;
@@ -103,11 +106,7 @@ public class PlayerDeath : NetworkBehaviour
     {
         _playerInputs.enabled = true;
         _deathUI.SetActive(false);
-
-        Player player = GetComponent<Player>();
-
-
-        player.SetHealthValueServerRpc(player.stats.defaultHealth.Value);
+        _player.SetHealthValueServerRpc(_player.stats.defaultHealth.Value);
 
         DieServerRpc(false);
 
@@ -123,10 +122,10 @@ public class PlayerDeath : NetworkBehaviour
 
     private void DropGunOnMap()
     {
-        if (GetComponent<Player>().weaponEquipied == null) return;
+        if (_player.weaponEquipied == null) return;
 
-        GameObject weapon = GetComponent<Player>().weaponEquipied.spawnableObject;
-        GetComponent<Player>().weaponEquipied = null;
+        GameObject weapon = _player.weaponEquipied.spawnableObject;
+        _player.weaponEquipied = null;
 
 
         int prefabIndex = _weaponPrefabs.IndexOf(weapon);

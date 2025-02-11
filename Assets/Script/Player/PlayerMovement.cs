@@ -1,31 +1,40 @@
+
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector2 _moveInput;
-    private Player _player;
-    [SerializeField] Animator animator;
-    [SerializeField] SpriteRenderer sr;
-    private Vector2 _playerDirection;
+    [Header("Animation")]
+    [SerializeField] private Animator _animator;
+    private PlayerAnimation _skinAnimation;
 
-    [Header("Sprite")]
-    [SerializeField] private Sprite _lastFrame;
-    [SerializeField] private Sprite _defaultSprite;
-
-    [HideInInspector] public Vector3 direction = Vector2.zero;
+    [Header("Camera")]
     [SerializeField] private Camera _playerCamera;
+
+    [Header("Movement")]
+    [HideInInspector] public Vector3 direction;
+    private Vector2 _moveInput;
     private Rigidbody2D _rb;
+
+    [Header("Player")]
+    private GameObject _currentSkin;
+    private float _playerSpeed;
+
+    [Header("Mouse")]
     private Vector3 _mousePosition;
+
     private void Awake()
     {
-        _player = GetComponentInParent<Player>();
         _rb = GetComponentInParent<Rigidbody2D>();
+        EventManager.OnSkinChanged += SetComponent;
     }
+
     private void FixedUpdate()
-    { 
-        transform.position += (Vector3)(_moveInput * (_player.stats.speed * Time.fixedDeltaTime));
-        //direction = _mousePosition - transform.position;
+    {
+        _rb.linearVelocity = _moveInput * _playerSpeed;
+
         if (_playerCamera)
         {
             _mousePosition = _playerCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -35,111 +44,56 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void GetPlayerSpeed(float Value)
+    {
+        _playerSpeed = Value;
+    }
+    private void SetComponent()
+    {
+        _currentSkin = GetPlayerSkin();
+        _skinAnimation = _currentSkin.GetComponent<PlayerAnimation>();
+    }
+
     public void SetRightAnimator(GameObject choosenSkin)
     {
-        animator = choosenSkin.GetComponent<Animator>();
+        _animator = choosenSkin.GetComponent<Animator>();
     }
+
     public void OnMove(InputAction.CallbackContext context)
     {
-        //if (context.started)
-        //{
-        //    sr.sprite = _defaultSprite;
-        //    animator.enabled = true;
-        //    animator.SetBool("IsMoving", true);
-        //}
-
         _moveInput = context.ReadValue<Vector2>();
-        //SetBoolAnimation(_moveInput);
-        animator.SetFloat("DirectionX", _moveInput.x);
-        animator.SetFloat("DirectionY", _moveInput.y);
 
-        //if (context.canceled)
-        //{
-        //    this.enabled = false;
-        //    animator.SetBool("IsMoving", false);
-        //}
-    }
-
-    public void SaveLastFrame()
-    {
-        _lastFrame = sr.sprite;
-    }
-
-    public void SetSprite()
-    {
-        if (_lastFrame == null)
+        if (context.started)
         {
-            sr.sprite = null;
-            return;
+            _animator.enabled = true;
+            _animator.SetBool("IsMoving", true);
         }
-        animator.enabled = false;
-        sr.sprite = _lastFrame;
-        _lastFrame = null;
+
+        _animator.SetFloat("DirectionX", _moveInput.x);
+        _animator.SetFloat("DirectionY", _moveInput.y);
+        _skinAnimation.SaveLastFrame();
+
+        if (context.canceled)
+        {
+            this.enabled = false;
+            
+            _moveInput = Vector2.zero;
+            _rb.linearVelocity = Vector2.zero;
+            _animator.SetBool("IsMoving", false);
+            _skinAnimation.SetSprite();
+        }
     }
 
-    #region  ouvrepaspls
-    //public void SetBoolAnimation(Vector2 _moveInput)
-    //{
-    //    if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut droite
-    //    {
-    //        print("haut droite");
-    //        animator.SetBool("MoveUp", true);
-    //        animator.SetBool("MoveRight", true);
-    //        animator.SetBool("MoveDown", false);
-    //        animator.SetBool("MoveLeft", false);
-    //    }
-    //    else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y > 0 && _moveInput.y < 1)) // haut gauche
-    //    {
-    //        print("haut Gauche");
-    //        animator.SetBool("MoveUp", true);
-    //        animator.SetBool("MoveLeft", true);
-    //        animator.SetBool("MoveDown", false);
-    //        animator.SetBool("MoveRight", false);
-    //    }
-    //    else if ((_moveInput.x > 0 && _moveInput.x < 1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas droite
-    //    {
-    //        print("bas droite");
-    //        animator.SetBool("MoveDown", true);
-    //        animator.SetBool("MoveRight", true);
-    //        animator.SetBool("MoveUp", false);
-    //        animator.SetBool("MoveLeft", false);
-    //    }
-    //    else if ((_moveInput.x < 0 && _moveInput.x > -1) && (_moveInput.y < 0 && _moveInput.y > -1)) // bas gauche
-    //    {
-    //        print("bas Gauche");
-    //        animator.SetBool("MoveDown", true);
-    //        animator.SetBool("MoveLeft", true);
-    //        animator.SetBool("MoveUp", false);
-    //        animator.SetBool("MoveRight", false);
-    //    }
-    //    else if (_moveInput == Vector2.up)
-    //    {
-    //        animator.SetBool("MoveDown", false);
-    //        animator.SetBool("MoveLeft", false);
-    //        animator.SetBool("MoveUp", true);
-    //        animator.SetBool("MoveRight", false);
-    //    }
-    //    else if ( _moveInput == Vector2.down)
-    //    {
-    //        animator.SetBool("MoveDown", true);
-    //        animator.SetBool("MoveLeft", false);
-    //        animator.SetBool("MoveUp", false);
-    //        animator.SetBool("MoveRight", false);
-    //    }
-    //    else if ( _moveInput == Vector2.right)
-    //    {
-    //        animator.SetBool("MoveDown", false);
-    //        animator.SetBool("MoveLeft", false);
-    //        animator.SetBool("MoveUp", false);
-    //        animator.SetBool("MoveRight", true);
-    //    }
-    //    else if ( _moveInput == Vector2.left)
-    //    {
-    //        animator.SetBool("MoveDown", false);
-    //        animator.SetBool("MoveLeft", true);
-    //        animator.SetBool("MoveUp", false);
-    //        animator.SetBool("MoveRight", false);
-    //    }
-    //}
-    #endregion
+    public GameObject GetPlayerSkin()
+    {
+        Transform skinParent = transform.GetChild(0);
+        for (int i = 0; i < skinParent.childCount; i++)
+        {
+            if (skinParent.GetChild(i).gameObject.activeSelf)
+            {
+                return skinParent.GetChild(i).gameObject;
+            }
+        }
+        return null;
+    }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 85641551512936185}
   - component: {fileID: 8178828304591031569}
   - component: {fileID: 9054535790027727817}
-  - component: {fileID: 223258617103048304}
+  - component: {fileID: 3618572058768040183}
   m_Layer: 0
   m_Name: Bleu
   m_TagString: Untagged
@@ -112,22 +112,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &223258617103048304
-Animation:
+--- !u!114 &3618572058768040183
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2993451802459687848}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 81a52a202eeede2449e4195407a052cb, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f273b3045db2d49908e5c93e44ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4111417266750139259
 GameObject:
   m_ObjectHideFlags: 0

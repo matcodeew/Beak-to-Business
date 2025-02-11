@@ -35,6 +35,8 @@ public class Player : NetworkBehaviour
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
     #endregion
+    
+    
 
     private void OnSkinChanged(int oldIndex, int newIndex)
     {
@@ -79,7 +81,7 @@ public class Player : NetworkBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    { 
         if (!IsOwner) return;
 
         GetInteractibleObject(collision.gameObject);
@@ -105,9 +107,18 @@ public class Player : NetworkBehaviour
     [ContextMenu("SetSkin")]
     private void SetSkin() //playerSkinIndex must be between 0 and 4 includes.
     {
-        if(SelectedSkinIndex.Value > 4 || SelectedSkinIndex.Value < -1) {
-            throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
+        PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+        
+        #region Set Skin Verif
+
+        if (playerMovement is null){
+            throw new NullReferenceException("no component PlayerMovement on the player object");
         }
+        if(_playerSkinIndex > 4 || _playerSkinIndex < -1) {
+            throw new ArgumentOutOfRangeException(nameof(_playerSkinIndex), "Skin index must be between 0 and 4 includes");
+        }
+        
+        #endregion
         
         ResetSkinVisibility();
         if (SelectedSkinIndex.Value == -1) { 
@@ -116,7 +127,14 @@ public class Player : NetworkBehaviour
 
         SelectSkinServerRpc(SelectedSkinIndex.Value);
 
+     
+        _choosenSkin = _skinParent.GetChild(_playerSkinIndex).gameObject;
+        _choosenSkin.SetActive(true);
         
+        playerMovement.SetRightAnimator(_choosenSkin);
+        playerMovement.GetPlayerSpeed(stats.speed);
+
+        EventManager.SetSkin();
     }
 
     [ServerRpc(RequireOwnership = false)]
