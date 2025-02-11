@@ -1,23 +1,29 @@
 using System;
-using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [System.Serializable]
-
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector2 _moveInput;
-    private Player _player;
-    [SerializeField] Animator animator;
-    private Vector2 _playerDirection;
-    [HideInInspector] public Vector3 direction = Vector2.zero;
+    [Header("Animation")]
+    [SerializeField] private Animator _animator;
+    private PlayerAnimation _skinAnimation;
+
+    [Header("Camera")]
     [SerializeField] private Camera _playerCamera;
+
+    [Header("Movement")]
+    [HideInInspector] public Vector3 direction;
+    private Vector2 _moveInput;
     private Rigidbody2D _rb;
+
+    [Header("Player")]
+    private Player _player;
+    private GameObject _currentSkin;
+
+    [Header("Mouse")]
     private Vector3 _mousePosition;
 
-    private GameObject _currentSkin; 
-    private PlayerAnimation _skinAnimation; 
     private void Awake()
     {
         _player = GetComponentInParent<Player>();
@@ -25,16 +31,10 @@ public class PlayerMovement : MonoBehaviour
         Player.OnSkinChanged += SetComponent;
     }
 
-    private void SetComponent()
-    {
-        _currentSkin = GetPlayerSkin();
-        _skinAnimation = _currentSkin.GetComponent<PlayerAnimation>();
-    }
-
     private void FixedUpdate()
     {
-        transform.position += (Vector3)(_moveInput * (_player.stats.speed * Time.fixedDeltaTime));
-        //direction = _mousePosition - transform.position;
+        _rb.linearVelocity = _moveInput * _player.stats.speed;
+
         if (_playerCamera)
         {
             _mousePosition = _playerCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -44,35 +44,46 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void SetComponent()
+    {
+        _currentSkin = GetPlayerSkin();
+        _skinAnimation = _currentSkin.GetComponent<PlayerAnimation>();
+    }
+
     public void SetRightAnimator(GameObject choosenSkin)
     {
-        animator = choosenSkin.GetComponent<Animator>();
+        _animator = choosenSkin.GetComponent<Animator>();
     }
+
     public void OnMove(InputAction.CallbackContext context)
     {
+        _moveInput = context.ReadValue<Vector2>();
+
         if (context.started)
         {
-            animator.enabled = true;
-            animator.SetBool("IsMoving", true);
+            _animator.enabled = true;
+            _animator.SetBool("IsMoving", true);
         }
 
-        _moveInput = context.ReadValue<Vector2>();
-        animator.SetFloat("DirectionX", _moveInput.x);
-        animator.SetFloat("DirectionY", _moveInput.y);
-
+        _animator.SetFloat("DirectionX", _moveInput.x);
+        _animator.SetFloat("DirectionY", _moveInput.y);
         _skinAnimation.SaveLastFrame();
+
         if (context.canceled)
         {
             this.enabled = false;
-            animator.SetBool("IsMoving", false);
+            
+            _moveInput = Vector2.zero;
+            _rb.linearVelocity = Vector2.zero;
+            _animator.SetBool("IsMoving", false);
             _skinAnimation.SetSprite();
         }
     }
 
-    public GameObject GetPlayerSkin() //Warning: Skin must be on the top of the player hierarchy
+    public GameObject GetPlayerSkin()
     {
-        Transform skinParent = transform.GetChild(0); //change the position in the hierarchy here
-        for(int i = 0; i < skinParent.childCount; i++)
+        Transform skinParent = transform.GetChild(0);
+        for (int i = 0; i < skinParent.childCount; i++)
         {
             if (skinParent.GetChild(i).gameObject.activeSelf)
             {

@@ -20,8 +20,6 @@ public class PlayerAnimation : MonoBehaviour
 
     public void SetSprite()
     {
-        print($"last frame {_lastFrame?.name ?? "null"}");
-
         if (_lastFrame is null)
         {
             _spriteRenderer.sprite = null;
