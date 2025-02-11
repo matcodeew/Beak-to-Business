@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6276204471261182565}
   - component: {fileID: 1906505810805475433}
   - component: {fileID: 9041345836340193883}
+  - component: {fileID: 547919733586011800}
   m_Layer: 0
   m_Name: PoolNoodle
   m_TagString: Untagged
@@ -76,6 +77,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponData: {fileID: 11400000, guid: 575b9f477191df04493cf3e92b8045a3, type: 2}
+  spawnableObject: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!212 &9041345836340193883
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,3 +134,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &547919733586011800
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2636078685905600630}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1bfb7240574ba24e842e2af0255e0d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
