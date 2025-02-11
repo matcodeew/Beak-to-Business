@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             direction = heading / distance;
         }
     }
-
+    public Vector2 getPlayerInput() => _moveInput;
     public void GetPlayerSpeed(float Value)
     {
         _playerSpeed = Value;
