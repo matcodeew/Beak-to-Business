@@ -1,19 +1,24 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : NetworkBehaviour
 {
-    private Vector2 _startPos;
-    private Vector2 _endPos;
+    private Vector2 _startPos = new Vector2();
+    private Vector2 _endPos = new Vector2();
     private float _speed = 5f;
     private float _distTreshHold = 0.05f;
-    public Player playerLuncher;
+    public ulong throwerID = 0;
+    private float _damages = 0;
+    public float Damages { get { return _damages; } private set { _damages = value; } }
 
-    public void InitializeBullet(Vector2 startPos, Vector2 endPos, float speed, Player playerLuncher)
+    [ClientRpc(RequireOwnership = false)]
+    public void InitializeBulletClientRpc(float speed, float range, Vector2 direction, ulong throwerID, float damages)
     {
-        _startPos = startPos;
-        _endPos = endPos;
+        _startPos = transform.position;
+        _endPos = _startPos + direction * range;
         _speed = speed;
-        this.playerLuncher = playerLuncher;
+        _damages = damages;
+        this.throwerID = throwerID;
     }
 
     private void Update()
@@ -22,7 +27,7 @@ public class Bullet : MonoBehaviour
 
         if (Vector2.Distance(transform.position, _endPos) < _distTreshHold)
         {
-            Destroy(gameObject);
+            Server.instance.DestroyObjectOnServerRpc(this.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
 }

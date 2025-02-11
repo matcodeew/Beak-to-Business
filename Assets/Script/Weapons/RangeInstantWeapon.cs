@@ -7,6 +7,12 @@ public class RangeInstantWeapon : Weapon
     {
         base.Initialize(data);
     }
+
+    public override GameObject GetBulletPrefab()
+    {
+        return null;
+    }
+
     public override void Shoot(Transform playerTransform)
     {
         base.Shoot(playerTransform);
@@ -18,7 +24,7 @@ public class RangeInstantWeapon : Weapon
             print($"{_hit.collider.name} hitted");
             if (_hit.collider.TryGetComponent(out Player player))
             {
-                player.TakeDamage(stats.damage, playerTransform.gameObject.GetComponent<Player>());
+                player.TakeDamage(stats.damage);
                 print($"{player.name} take {stats.damage} by {playerTransform.gameObject.name}");
             }
         }

@@ -13,10 +13,16 @@ public class MeleeWeapon : Weapon
         {
             if (hit.collider.gameObject.TryGetComponent(out Player player))
             {
-                player.TakeDamage(stats.damage, playerTransform.GetComponent<Player>());
+                player.TakeDamage(stats.damage);
             }
         }
     }
+
+    public override GameObject GetBulletPrefab()
+    {
+        return null;
+    }
+
     public override void Initialize(WeaponStats data)
     {
         base.Initialize(data);

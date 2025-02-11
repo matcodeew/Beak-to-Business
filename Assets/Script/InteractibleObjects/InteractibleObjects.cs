@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 
@@ -8,7 +9,7 @@ public interface IInteractible
     void StartVfxAndSfx();
 }
 
-public class InteractableObjects : MonoBehaviour, IInteractible
+public class InteractableObjects : NetworkBehaviour, IInteractible
 {
     public virtual void PlayerInteract(Player player)
     {
