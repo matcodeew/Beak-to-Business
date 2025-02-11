@@ -34,6 +34,8 @@ public class Player : NetworkBehaviour
     [SerializeField] private Transform _skinParent;
     [SerializeField] private int _playerSkinIndex = -1;
     private GameObject _choosenSkin;
+
+    [SerializeField] private SpriteRenderer _weaponRenderer;
     #endregion
     
     
@@ -156,6 +158,7 @@ public class Player : NetworkBehaviour
     {
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
+        //_weaponRenderer.sprite = weaponEquipied.weaponImage;
     }
 
     public void Shoot()
