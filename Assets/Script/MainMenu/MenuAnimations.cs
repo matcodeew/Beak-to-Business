@@ -26,6 +26,9 @@ public class MenuAnimations : MonoBehaviour
             _time += Time.deltaTime;
             yield return null;
         }
+
+        _base.GetComponent<CanvasGroup>().alpha = 0;
+        
         _base.SetActive(false);
         _target.SetActive(true);
         
@@ -37,5 +40,7 @@ public class MenuAnimations : MonoBehaviour
             _time += Time.deltaTime;
             yield return null;
         }
+
+        _target.GetComponent<CanvasGroup>().alpha = 1;
     }
 }
