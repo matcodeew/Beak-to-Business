@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
-        Player.OnSkinChanged += SetComponent;
+        EventManager.OnSkinChanged += SetComponent;
     }
 
     private void FixedUpdate()

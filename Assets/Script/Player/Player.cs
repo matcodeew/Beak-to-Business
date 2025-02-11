@@ -36,7 +36,7 @@ public class Player : NetworkBehaviour
     private GameObject _choosenSkin;
     #endregion
     
-    public static event UnityAction OnSkinChanged;
+    
 
     public override void OnNetworkSpawn()
     {
@@ -106,8 +106,8 @@ public class Player : NetworkBehaviour
         
         playerMovement.SetRightAnimator(_choosenSkin);
         playerMovement.GetPlayerSpeed(stats.speed);
-        
-        OnSkinChanged?.Invoke();
+
+        EventManager.SetSkin();
     }
 
     private void ResetSkinVisibility()
