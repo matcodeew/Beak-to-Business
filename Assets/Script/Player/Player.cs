@@ -114,8 +114,8 @@ public class Player : NetworkBehaviour
         if (playerMovement is null){
             throw new NullReferenceException("no component PlayerMovement on the player object");
         }
-        if(_playerSkinIndex > 4 || _playerSkinIndex < -1) {
-            throw new ArgumentOutOfRangeException(nameof(_playerSkinIndex), "Skin index must be between 0 and 4 includes");
+        if(SelectedSkinIndex.Value > 4 || SelectedSkinIndex.Value < -1) {
+            throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
         }
         
         #endregion
@@ -128,7 +128,7 @@ public class Player : NetworkBehaviour
         SelectSkinServerRpc(SelectedSkinIndex.Value);
 
      
-        _choosenSkin = _skinParent.GetChild(_playerSkinIndex).gameObject;
+        _choosenSkin = _skinParent.GetChild(SelectedSkinIndex.Value).gameObject;
         _choosenSkin.SetActive(true);
         
         playerMovement.SetRightAnimator(_choosenSkin);
