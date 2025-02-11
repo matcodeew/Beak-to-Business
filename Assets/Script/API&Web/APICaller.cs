@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -37,6 +39,58 @@ public static class APICaller
             }
         }
     }
+    
+    public static async Task<Skin> GetSkinById(int id)
+    {
+        return await GetSkinByIdRequest(id);
+    }
+
+    private static async Task<Skin> GetSkinByIdRequest(int id)
+    {
+        using (UnityWebRequest request = UnityWebRequest.Get(api_url + "skins/" + id))
+        {
+            var operation = request.SendWebRequest();
+
+            while (!operation.isDone)
+                await Task.Yield();
+
+            if (request.result == UnityWebRequest.Result.ConnectionError ||
+                request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error: " + request.error);
+                return null;
+            }
+            else
+            {
+                string jsonResponse = request.downloadHandler.text;
+                return JsonHelper.FromSingleJson<Skin>(jsonResponse);
+            }
+        }
+    }
+
+    public static async Task UpdateSkins(int id, string skins)
+    {
+        var payload = new { id = id, skin = skins };
+        string jsonPayload = JsonUtility.ToJson(payload);
+        
+        using UnityWebRequest request = new UnityWebRequest(api_url + "skins", "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        
+        
+        await request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError(request.error);
+        }
+        else
+        {
+            Debug.Log("SkinList uploaded");
+        }
+    }
 }
 
 //These classes are used to format the Json from the api into a User object
@@ -47,6 +101,12 @@ public class User
     public string nickname;
     public string email;
     public string password;
+}
+
+[System.Serializable]
+public class Skin
+{
+    public string skin;
 }
 
 public static class JsonHelper

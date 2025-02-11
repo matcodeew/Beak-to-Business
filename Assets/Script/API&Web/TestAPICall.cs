@@ -10,11 +10,14 @@ public class TestAPICall : MonoBehaviour
     [SerializeField] private TextMeshProUGUI debugText;
     [SerializeField] private string url = "http://192.168.1.238/api/api.php?endpoint=users";
     [SerializeField] private int userid = 22;
+    [SerializeField] private string skinToUpdate = "base";
     private User _testUser;
 
     void Start()
     {
         StartCoroutine(InitUser(userid));
+        StartCoroutine(InitSkins(userid));
+        StartCoroutine(UpdateSkins(userid, skinToUpdate));
     }
 
     private IEnumerator InitUser(int id)
@@ -33,6 +36,22 @@ public class TestAPICall : MonoBehaviour
     {
         return await APICaller.GetUserById(22);
     }
+
+    private IEnumerator InitSkins(int id)
+    {
+        var task = APICaller.GetSkinById(id);
+        yield return new WaitUntil(() => task.IsCompleted);
+        Skin skinList = task.Result;
+        Debug.Log(skinList.skin);
+    }
+
+    private IEnumerator UpdateSkins(int id, string skinList)
+    {
+        var task = APICaller.UpdateSkins(id, skinList);
+        yield return new WaitUntil(() => task.IsCompleted);
+        Debug.Log("Skin update task completed");
+    }
+    
 }
 
 //IEnumerator GetUsers(){
