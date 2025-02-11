@@ -35,7 +35,8 @@ public abstract class Weapon : NetworkBehaviour
         stats.fireRange = data.fireRange;
         stats.fireRate = data.fireRate;
         stats.bulletSpeed = data.bulletSpeed;
-        type = data.type;
+        
+        cooldown = stats.fireRate;
     }
 
     public abstract GameObject GetBulletPrefab();
