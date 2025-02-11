@@ -1469,7 +1469,8 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
   lifeText: {fileID: 5908342942182135896}
   _skinParent: {fileID: 2217227213119684928}
-  _playerSkinIndex: -1
+  SelectedSkinIndex:
+    m_InternalValue: -1
 --- !u!114 &1495271844076063941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,7 +1488,7 @@ MonoBehaviour:
   _lastFrame: {fileID: 0}
   _defaultSprite: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
-  _playerCamera: {fileID: 0}
+  _playerCamera: {fileID: 5164870266843220070}
 --- !u!114 &3077477916564770824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,7 +1961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  _spriteRenderer: {fileID: 0}
+  visual: {fileID: 8210355116324653378}
   _collider: {fileID: 3606248101773672234}
   _healthBar: {fileID: 2977386629739989229}
   _playerInputs: {fileID: -5647312035403202708}

@@ -1,11 +1,7 @@
-using System.IO;
-using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[System.Serializable]
-
-public class PlayerMovement : NetworkBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Vector2 _moveInput;
     private Player _player;

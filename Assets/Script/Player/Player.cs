@@ -3,6 +3,9 @@ using Unity.Netcode;
 using System;
 using System.Collections;
 using UnityEngine;
+using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
+using Unity.VisualScripting;
+using UnityEditor;
 
 [System.Serializable]
 public struct PlayerStats
@@ -31,19 +34,34 @@ public class Player : NetworkBehaviour
 
     [Header("Player Skin")]
     [SerializeField] private Transform _skinParent;
-    [SerializeField] private int _playerSkinIndex = -1;
+    public NetworkVariable<int> SelectedSkinIndex = new NetworkVariable<int>(-1, 
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
     #endregion
+
+    private void OnSkinChanged(int oldIndex, int newIndex)
+    {
+        ResetSkinVisibility();
+        if (newIndex >= 0 && newIndex < _skinParent.childCount)
+        {
+            _skinParent.GetChild(newIndex).gameObject.SetActive(true);
+            _choosenSkin = _skinParent.GetChild(newIndex).gameObject;
+            GetComponent<PlayerMovement>().SetRightAnimator(_choosenSkin);
+        }
+    }
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         lifeText.text = _health.Value.ToString();
         _health.OnValueChanged += OnHealthChanged;
+        SelectedSkinIndex.OnValueChanged += OnSkinChanged;
+        if(IsOwner) SetSkin();
+
         OnHealthChanged(0f, stats.defaultHealth.Value);
+        OnSkinChanged(0, SelectedSkinIndex.Value);
         SetPlayerAtRandomPosition();
         _canPickupObject = true;
-        SetSkin();
     }
 
     public override void OnNetworkDespawn()
@@ -68,31 +86,42 @@ public class Player : NetworkBehaviour
     }
     private void Update()
     {
+
         if (weaponEquipied is null) return;
         weaponEquipied.ShootHandler(Time.deltaTime);
     }
-    
+
     #region Player Skin Management
-    public int SetSkinIndex(int value) => _playerSkinIndex = value; // Call this to set the skin index.
+    public void SetSkinIndex(int value) => SelectSkinServerRpc(value); // Call this to set the skin index.
     private int PickRandomSkin() => UnityEngine.Random.Range(0, 5); //pick random index between 0 and 4.
     
     [ContextMenu("SetSkin")]
     private void SetSkin() //playerSkinIndex must be between 0 and 4 includes.
     {
-        if(_playerSkinIndex > 4 || _playerSkinIndex < -1) {
-            throw new ArgumentOutOfRangeException(nameof(_playerSkinIndex), "Skin index must be between 0 and 4 includes");
+        if(SelectedSkinIndex.Value > 4 || SelectedSkinIndex.Value < -1) {
+            throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
         }
         
         ResetSkinVisibility();
-        if (_playerSkinIndex == -1) { 
-            _playerSkinIndex = PickRandomSkin(); 
-            print("Choose Random Skin ");
+        if (SelectedSkinIndex.Value == -1) { 
+            SelectSkinServerRpc(PickRandomSkin()); 
         }
+
+        SelectSkinServerRpc(SelectedSkinIndex.Value);
+
         
-        _choosenSkin = _skinParent.GetChild(_playerSkinIndex).gameObject;
-        _choosenSkin.SetActive(true);
-        GetComponent<PlayerMovement>().SetRightAnimator(_choosenSkin);
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SelectSkinServerRpc(int index)
+    {
+        if (index >= 0 && index < _skinParent.childCount)
+        {
+            SelectedSkinIndex.Value = index;
+        }
+    }
+
+
 
     private void ResetSkinVisibility()
     {
@@ -195,7 +224,6 @@ public class Player : NetworkBehaviour
     {
         if (IsOwner)
         {
-            Debug.Log(spawnPosition + " " + direction);
             SpawnBulletServerRpc(spawnPosition,
                 weaponEquipied.stats.bulletSpeed,
                 weaponEquipied.stats.fireRange,
