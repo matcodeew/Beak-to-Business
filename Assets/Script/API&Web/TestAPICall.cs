@@ -8,7 +8,7 @@ public class TestAPICall : MonoBehaviour
 {
     //This class contains various example of how to call the API
     [SerializeField] private TextMeshProUGUI debugText;
-    [SerializeField] private string url = "http://192.168.1.238/api/api.php?endpoint=users";
+    [SerializeField] private string url = "http://b2b.zapto.org/api/api.php?endpoint=users";
     [SerializeField] private int userid = 22;
     [SerializeField] private string skinToUpdate = "base";
     private User _testUser;

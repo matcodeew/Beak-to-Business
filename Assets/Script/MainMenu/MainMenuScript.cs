@@ -59,9 +59,9 @@ public class MainMenuScript : MonoBehaviour
         userNameText.text = "Username : <br>" + userName;
     }
 
-    public void PlayGame(string _name)
+    public void PlayGame()
     {
-        SceneManager.LoadScene(_name);
+        SceneManager.LoadScene(1);
     }
 
     public void LogOut()
