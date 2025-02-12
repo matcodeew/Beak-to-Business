@@ -38,7 +38,6 @@ public class GlobalScoreManager : MonoBehaviour
         GameObject playerUI = Instantiate(playerScoreTemplate, scoreBoard);
         playerUI.GetComponent<PlayerScore>().TrackPlayer(player, connectionID);
         playerTemplates.Add(playerUI);
-        Debug.Log("test");
         Debug.Log(NetworkManager.Singleton.ConnectedClients);
         Invoke("UpdateOrder", .5f);
     }

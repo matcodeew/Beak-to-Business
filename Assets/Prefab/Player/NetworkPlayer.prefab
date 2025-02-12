@@ -1483,12 +1483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3b13968dd90034e944c9ffc86fec4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6345508777506814598, guid: 4d27c463bf142fd46905b332c1376fd1, type: 3}
-  sr: {fileID: 0}
-  _lastFrame: {fileID: 0}
-  _defaultSprite: {fileID: 0}
-  direction: {x: 0, y: 0, z: 0}
+  _animator: {fileID: 0}
   _playerCamera: {fileID: 5164870266843220070}
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &3077477916564770824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,7 +1553,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6504150661315849115}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2300,10 +2297,6 @@ PrefabInstance:
     - target: {fileID: 19647484255005736, guid: 4d27c463bf142fd46905b332c1376fd1, type: 3}
       propertyPath: m_Name
       value: Rouge
-      objectReference: {fileID: 0}
-    - target: {fileID: 19647484255005736, guid: 4d27c463bf142fd46905b332c1376fd1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117553040834099259, guid: 4d27c463bf142fd46905b332c1376fd1, type: 3}
       propertyPath: m_LocalPosition.x

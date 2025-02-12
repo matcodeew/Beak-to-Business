@@ -51,7 +51,6 @@ public class SkinsHandler : MonoBehaviour
     public void GetId(int _id)
     {
         _userId = _id;
-        Debug.Log(_userId);
     }
 
     public void CheckSkin()

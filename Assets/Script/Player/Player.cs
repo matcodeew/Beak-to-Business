@@ -46,6 +46,8 @@ public class Player : NetworkBehaviour
             _skinParent.GetChild(newIndex).gameObject.SetActive(true);
             _choosenSkin = _skinParent.GetChild(newIndex).gameObject;
             GetComponent<PlayerMovement>().SetRightAnimator(_choosenSkin);
+
+            EventManager.SetSkin();
         }
     }
 
@@ -128,13 +130,13 @@ public class Player : NetworkBehaviour
         SelectSkinServerRpc(SelectedSkinIndex.Value);
 
      
-        _choosenSkin = _skinParent.GetChild(SelectedSkinIndex.Value).gameObject;
-        _choosenSkin.SetActive(true);
+        //_choosenSkin = _skinParent.GetChild(SelectedSkinIndex.Value).gameObject;
+        //_choosenSkin.SetActive(true);
         
-        playerMovement.SetRightAnimator(_choosenSkin);
+        //playerMovement.SetRightAnimator(_choosenSkin);
         playerMovement.GetPlayerSpeed(stats.speed);
 
-        EventManager.SetSkin();
+        
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -164,9 +166,12 @@ public class Player : NetworkBehaviour
         {
             if(interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w) && _canPickupWeapon)
             {
+                Debug.Log("1 --");
                 if(weaponEquipied != null)
                 {
+                    Debug.Log("2 --");
                     int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
+                    Debug.Log(index);
                     SpawnWeaponServerRpc(transform.position, index);
                 }
                 Interact(interactibleObject, _interactibleObject);
@@ -187,6 +192,7 @@ public class Player : NetworkBehaviour
     private void Interact(GameObject obj, InteractableObjects interactibleObject)
     {
         interactibleObject.PlayerInteract(this);
+        Debug.Log(NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(obj.GetComponent<NetworkObject>().NetworkObjectId, out var o));
         Server.instance.DestroyObjectOnServerRpc(obj.GetComponent<NetworkObject>().NetworkObjectId);
     }
 

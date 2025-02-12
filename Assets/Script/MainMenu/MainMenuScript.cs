@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 using TMPro;
@@ -25,9 +24,27 @@ public class MainMenuScript : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         GetPlayerIdCookie();
 #endif
-        // GetUserId("22");
+        //Commenté = build Web
+        //Non commenté = nuild Windows
+        GetUserId("22");
     }
 
+    private void Start()
+    {
+        string[] args = System.Environment.GetCommandLineArgs();
+        //SpawnObjectsOnServer();
+
+        for (int i = 0; i < args.Length; i++)
+        {
+            if (args[i] == "-s")
+            {
+                Debug.Log("--------------------Running as server--------------------");
+                //NetworkManager.Singleton.StartServer();
+                SceneManager.LoadScene("GameRoom");
+                
+            }
+        }
+    }
 
     [DllImport("__Internal")]
     public static extern void GetPlayerIdCookie();
