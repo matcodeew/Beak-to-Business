@@ -38,28 +38,28 @@ public class Server : NetworkBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-
-        string[] args = System.Environment.GetCommandLineArgs();
-
-        for (int i = 0; i < args.Length; i++)
-        {
-            if (args[i] == "-s")
-            {
-                server = true;
-                Debug.Log($"--------------- Scene {SceneManager.GetActiveScene().name} loaded ---------------");
-                NetworkManager.Singleton.StartServer();
-                NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
-                SpawnObjectsOnServer();
-                RandomSpawnObjectsOnServer();
-            }
-        }
-
-        if (!server)
-            ConnectToServer();
-
-    }
+    //void Start()
+    //{
+    //
+    //    string[] args = System.Environment.GetCommandLineArgs();
+    //
+    //    for (int i = 0; i < args.Length; i++)
+    //    {
+    //        if (args[i] == "-s")
+    //        {
+    //            server = true;
+    //            Debug.Log($"--------------- Scene {SceneManager.GetActiveScene().name} loaded ---------------");
+    //            NetworkManager.Singleton.StartServer();
+    //            NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
+    //            SpawnObjectsOnServer();
+    //            RandomSpawnObjectsOnServer();
+    //        }
+    //    }
+    //
+    //    if (!server)
+    //        ConnectToServer();
+    //
+    //}
 
 
     private void RandomSpawnObjectsOnServer()
