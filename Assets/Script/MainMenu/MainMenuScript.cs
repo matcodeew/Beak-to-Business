@@ -25,9 +25,11 @@ public class MainMenuScript : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         GetPlayerIdCookie();
 #endif
-        // GetUserId("22");
+        GetUserId("16");
     }
-
+    
+    [DllImport("__Internal")]
+    public static extern void LogOut();
 
     [DllImport("__Internal")]
     public static extern void GetPlayerIdCookie();
@@ -45,7 +47,6 @@ public class MainMenuScript : MonoBehaviour
         
         userId = _testUser.id;
         userName = _testUser.nickname;
-        
         SetPlayerInfos();
         
         _onUserLoggedIn.Invoke(userId);
@@ -62,10 +63,5 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
-    }
-
-    public void LogOut()
-    {
-        
     }
 }
