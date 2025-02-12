@@ -20,6 +20,8 @@ public class Player : NetworkBehaviour
     #region Variables
     [Header("Player Stats")]
     public PlayerStats stats;
+
+    [SerializeField] private GameObject _weapon;
     public Weapon weaponEquipied;
 
     [Header("Combat & Shooting")]
@@ -61,7 +63,8 @@ public class Player : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        lifeText.text = _health.Value.ToString();
+        
+       // lifeText.text = _health.Value.ToString();
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
         if (IsOwner) SetSkin();
@@ -76,7 +79,7 @@ public class Player : NetworkBehaviour
     {
         base.OnNetworkDespawn();
         _health.OnValueChanged -= OnHealthChanged;
-
+        SetWeapon(_weapon.GetComponent<Weapon>(),_weapon.GetComponent<Weapon>().weaponData);
         if (weaponEquipied != null)
         {
             SpawnWeaponServerRpc(transform.position, GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject));
@@ -265,8 +268,8 @@ public class Player : NetworkBehaviour
 
     private void OnHealthChanged(float previousValue, float newValue)
     {
-        lifeText.text = newValue.ToString();
-        _healthFill.fillAmount = newValue / stats.defaultHealth.Value;
+        //lifeText.text = newValue.ToString();
+        //_healthFill.fillAmount = newValue / stats.defaultHealth.Value;
     }
     #endregion
 

@@ -78,7 +78,8 @@ MonoBehaviour:
     m_Bits: 8
   weaponData: {fileID: 11400000, guid: 4fc838948b8ee7848b648b368f14db8c, type: 2}
   spawnableObject: {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
-  _animator: {fileID: 821342086458746393}
+  animator: {fileID: 821342086458746393}
+  weaponImage: {fileID: 0}
 --- !u!212 &7012259608459384255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -144,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 2636078685905600630}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4cdc676ddbf9104c8925532c7ba354d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

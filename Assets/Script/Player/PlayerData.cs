@@ -10,12 +10,12 @@ public class PlayerData : NetworkBehaviour
     public NetworkVariable<int> Score = new NetworkVariable<int>();
     public NetworkVariable<int> Position = new NetworkVariable<int>();
     public NetworkVariable<FixedString128Bytes> Name = new NetworkVariable<FixedString128Bytes>();
-    [SerializeField] private TextMeshProUGUI _personalScore;
+    //[SerializeField] private TextMeshProUGUI _personalScore;
 
     public override void OnNetworkSpawn()
     {
         
-        Score.OnValueChanged += UpdateScore;
+        //Score.OnValueChanged += UpdateScore;
 
         base.OnNetworkSpawn();
         if (!IsServer) return;
@@ -71,8 +71,8 @@ public class PlayerData : NetworkBehaviour
         this.Name.Value = name;
     }
 
-    private void UpdateScore(int previousValue, int newValue)
-    {
-        _personalScore.text = "score : " + newValue.ToString();
-    }
+    // private void UpdateScore(int previousValue, int newValue)
+    // {
+    //     _personalScore.text = "score : " + newValue.ToString();
+    // }
 }
