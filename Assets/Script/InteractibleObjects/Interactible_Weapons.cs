@@ -16,5 +16,6 @@ public class Interactible_Weapons : InteractableObjects
         base.PlayerInteract(player);
         Weapon _weapon = _weaponPrefab.GetComponent<Weapon>();
         player.SetWeapon(_weapon, _weapon.weaponData);
+        _weaponPrefab.transform.parent = player.transform;
     }
 }

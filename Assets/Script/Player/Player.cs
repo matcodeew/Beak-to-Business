@@ -7,6 +7,10 @@ using Unity.Netcode;
 using Unity.Netcode.Components;
 using Unity.VisualScripting;
 using UnityEngine;
+using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
+using Unity.VisualScripting;
+using UnityEditor;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct PlayerStats
@@ -38,9 +42,12 @@ public class Player : NetworkBehaviour
     public NetworkVariable<int> SelectedSkinIndex = new NetworkVariable<int>(-1,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
+
+    [SerializeField] private Image _healthFill;
+    [SerializeField] private SpriteRenderer _weaponRenderer;
     #endregion
-    
-    
+
+
 
     private void OnSkinChanged(int oldIndex, int newIndex)
     {
@@ -131,7 +138,8 @@ public class Player : NetworkBehaviour
             throw new NullReferenceException("no component PlayerMovement on the player object");
         }
         if(SelectedSkinIndex.Value > 4 || SelectedSkinIndex.Value < -1) {
-            throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
+
+             throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
         }
         
         #endregion
@@ -161,8 +169,6 @@ public class Player : NetworkBehaviour
             SelectedSkinIndex.Value = index;
         }
     }
-
-
 
     private void ResetSkinVisibility()
     {
@@ -226,6 +232,7 @@ public class Player : NetworkBehaviour
     {
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
+        //_weaponRenderer.sprite = weaponEquipied.weaponImage;
     }
 
     public void Shoot()
@@ -280,6 +287,7 @@ public class Player : NetworkBehaviour
     private void OnHealthChanged(float previousValue, float newValue)
     {
         lifeText.text = newValue.ToString();
+        _healthFill.fillAmount = newValue / stats.defaultHealth.Value;
     }
     #endregion
 
