@@ -240,9 +240,16 @@ public class Player : NetworkBehaviour
     #region Player Positioning
     public void SetPlayerAtRandomPosition()
     {
-        Rect zone = Server.instance.spawnZone;
-        Vector2 position = new Vector2(UnityEngine.Random.Range(zone.xMin, zone.xMax), UnityEngine.Random.Range(zone.yMin, zone.yMax));
-        transform.position = position;
+        Transform spawn = Server.instance.spawnPoints[UnityEngine.Random.Range(0, Server.instance.spawnPoints.Count)];
+
+        if(Server.instance.usedSpawnPoints.Contains(spawn))
+        {
+            SetPlayerAtRandomPosition();
+        }
+        else
+        {
+            transform.position = spawn.position;
+        }
     }
     #endregion
 

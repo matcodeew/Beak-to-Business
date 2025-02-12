@@ -24,6 +24,8 @@ public class PlayerMovement : NetworkBehaviour
     [Header("Mouse")]
     private Vector3 _mousePosition;
 
+    public Vector2 getPlayerInput() => _moveInput;
+
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();

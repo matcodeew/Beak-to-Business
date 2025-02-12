@@ -22,17 +22,12 @@ public class Server : NetworkBehaviour
     [SerializeField] private List<SpawnableObjectOnSpawnOnServer> spawnableObjectsOnSpawn;
 
     [Header("Item Random Spawn")]
+    public List<Transform> spawnPoints;
+    [HideInInspector] public List<Transform> usedSpawnPoints;
     [SerializeField] private List<GameObject> spawnableRandomItems;
-    public Rect spawnZone;
+    //public Rect spawnZone;
 
     private bool server = false;
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(spawnZone.center, spawnZone.size);
-    }
-
 
     private void Awake()
     {
@@ -64,11 +59,26 @@ public class Server : NetworkBehaviour
     {
         foreach (GameObject obj in spawnableRandomItems)
         {
-            Vector2 position = new Vector2(UnityEngine.Random.Range(spawnZone.xMin, spawnZone.xMax), UnityEngine.Random.Range(spawnZone.yMin, spawnZone.yMax));
-            GameObject gameObj = Instantiate(obj, position, Quaternion.identity);
+            SpawnObj(obj);
+            
+        }
+    }
+
+    private void SpawnObj(GameObject obj)
+    {
+        Transform spawn = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
+        if(usedSpawnPoints.Contains(spawn))
+        {
+            SpawnObj(obj);
+        }
+        else
+        {
+            usedSpawnPoints.Add(spawn);
+            GameObject gameObj = Instantiate(obj, spawn.position, Quaternion.identity);
             gameObj.GetComponent<NetworkObject>().Spawn();
         }
     }
+
     private void SpawnObjectsOnServer()
     {
         foreach (SpawnableObjectOnSpawnOnServer obj in spawnableObjectsOnSpawn)
