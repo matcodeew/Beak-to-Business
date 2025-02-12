@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -40,7 +41,6 @@ public class Server : NetworkBehaviour
 
     void Start()
     {
-
         string[] args = System.Environment.GetCommandLineArgs();
 
         for (int i = 0; i < args.Length; i++)
@@ -58,15 +58,13 @@ public class Server : NetworkBehaviour
 
         if (!server)
             ConnectToServer();
-
     }
-
 
     private void RandomSpawnObjectsOnServer()
     {
         foreach (GameObject obj in spawnableRandomItems)
         {
-            Vector2 position = new Vector2(Random.Range(spawnZone.xMin, spawnZone.xMax), Random.Range(spawnZone.yMin, spawnZone.yMax));
+            Vector2 position = new Vector2(UnityEngine.Random.Range(spawnZone.xMin, spawnZone.xMax), UnityEngine.Random.Range(spawnZone.yMin, spawnZone.yMax));
             GameObject gameObj = Instantiate(obj, position, Quaternion.identity);
             gameObj.GetComponent<NetworkObject>().Spawn();
         }
@@ -92,7 +90,6 @@ public class Server : NetworkBehaviour
     public void ClientConnect(ulong connectionID)
     {
         Debug.Log("----------" + connectionID + " connected----------");
-        //ScoreboardManager.instance.OnPlayerEnteredRoom(connectionID);
 
     }
 

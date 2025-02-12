@@ -30,14 +30,15 @@ public class PlayerMovement : NetworkBehaviour
         EventManager.OnSkinChanged += SetComponent;
     }
 
-    public override void OnNetworkSpawn()
-    {
-        if (!IsOwner)
-        {
-            enabled = false;
-            return;
-        }
-    }
+
+    //public override void OnNetworkSpawn()
+    //{
+    //    if (!IsOwner)
+    //    {
+    //        enabled = false;
+    //        return;
+    //    }
+    //}
 
     private void FixedUpdate()
     {
@@ -82,7 +83,7 @@ public class PlayerMovement : NetworkBehaviour
         UpdateAnimationClientRpc(moveInput);
     }
 
-    public void GetPlayerSpeed(float Value)
+    public void SetPlayerSpeed(float Value)
     {
         _playerSpeed = Value;
     }

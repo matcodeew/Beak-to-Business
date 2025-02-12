@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
+using System.Security.Cryptography;
 using TMPro;
 using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 using Unity.Netcode;
 using Unity.Netcode.Components;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -67,15 +69,31 @@ public class Player : NetworkBehaviour
         _canPickupWeapon = true;
     }
 
-    public override void OnNetworkDespawn()
-    {
-        base.OnNetworkDespawn();
-        _health.OnValueChanged -= OnHealthChanged;
+    //private void OnApplicationQuit()
+    //{
+    //    if (weaponEquipied != null)
+    //    {
+    //        int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
+    //        SpawnWeaponServerRpc(transform.position, index);
+    //        Debug.Log("testons ça mgl");
+    //    }
+    //}
 
-        if (weaponEquipied != null)
-        {
-            SpawnWeaponServerRpc(transform.position, GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject));
-        }
+    //public override void OnNetworkDespawn()
+    //{
+    //    _health.OnValueChanged -= OnHealthChanged;
+
+    //    if (weaponEquipied != null)
+    //    {
+    //        int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
+    //        if (IsServer) SpawnWeaponServerRpc(transform.position, index);
+    //        Debug.Log("testons ça mgl mais das onnetwork despawn");
+    //    }
+    //}
+
+    public void TT()
+    {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -130,7 +148,7 @@ public class Player : NetworkBehaviour
         //_choosenSkin.SetActive(true);
         
         //playerMovement.SetRightAnimator(_choosenSkin);
-        playerMovement.GetPlayerSpeed(stats.speed);
+        playerMovement.SetPlayerSpeed(stats.speed);
 
         
     }
@@ -199,6 +217,7 @@ public class Player : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void SpawnWeaponServerRpc(Vector3 spawnPosition, int weaponIndex)
     {
+        Debug.Log("Spawn on server called on server");
         GameObject weapon = Instantiate(GetComponent<PlayerDeath>()._weaponPrefabs[weaponIndex], transform.position, Quaternion.identity);
         weapon.GetComponent<NetworkObject>().Spawn();
     }
