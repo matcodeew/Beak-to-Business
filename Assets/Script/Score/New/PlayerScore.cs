@@ -1,7 +1,5 @@
-using System;
 using TMPro;
 using Unity.Collections;
-using Unity.Netcode;
 using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
@@ -32,7 +30,7 @@ public class PlayerScore : MonoBehaviour
     private void OnScoreChanged(int previousValue, int newValue)
     {
         scoreUI.text = newValue.ToString();
-        GlobalScoreManager.instance.UpdateOrder();
+        //GlobalScoreManager.instance.UpdateOrder();
     }
 
     private void OnNameChanged(FixedString128Bytes previousValue, FixedString128Bytes newValue)

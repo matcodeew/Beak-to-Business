@@ -39,7 +39,7 @@ public class GlobalScoreManager : MonoBehaviour
         playerUI.GetComponent<PlayerScore>().TrackPlayer(player, connectionID);
         playerTemplates.Add(playerUI);
         Debug.Log(NetworkManager.Singleton.ConnectedClients);
-        Invoke("UpdateOrder", .5f);
+        //Invoke("UpdateOrder", .5f);
     }
 
     
