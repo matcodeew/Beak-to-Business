@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct SpawnableObjectOnSpawnOnServer
@@ -16,8 +16,6 @@ public class Server : NetworkBehaviour
     [SerializeField] private string serverAddress = "192.168.1.238";
     [SerializeField] private ushort serverPort = 7777;
 
-    [SerializeField] private Button connectButton;
-
     public static Server instance;
 
     [SerializeField] private List<SpawnableObjectOnSpawnOnServer> spawnableObjectsOnSpawn;
@@ -25,6 +23,8 @@ public class Server : NetworkBehaviour
     [Header("Item Random Spawn")]
     [SerializeField] private List<GameObject> spawnableRandomItems;
     public Rect spawnZone;
+
+    private bool server = false;
 
     private void OnDrawGizmos()
     {
@@ -40,24 +40,24 @@ public class Server : NetworkBehaviour
 
     void Start()
     {
-        connectButton.onClick.AddListener(ConnectToServer);
 
         string[] args = System.Environment.GetCommandLineArgs();
-                //SpawnObjectsOnServer();
 
         for (int i = 0; i < args.Length; i++)
         {
-            if(args[i] == "-s")
+            if (args[i] == "-s")
             {
-                Debug.Log("--------------------Running as server--------------------");
+                server = true;
+                Debug.Log($"--------------- Scene {SceneManager.GetActiveScene().name} loaded ---------------");
                 NetworkManager.Singleton.StartServer();
                 NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
-                //GameObject go = Instantiate(cubePrefab, new Vector3(2.88f, 0.15f, 2.92f), Quaternion.identity);
-                //go.GetComponent<NetworkObject>().Spawn();
                 SpawnObjectsOnServer();
                 RandomSpawnObjectsOnServer();
             }
         }
+
+        if (!server)
+            ConnectToServer();
 
     }
 
@@ -80,7 +80,7 @@ public class Server : NetworkBehaviour
         }
     }
 
-    [Rpc(SendTo.Server)]
+    [ServerRpc(RequireOwnership = false)]
     public void DestroyObjectOnServerRpc(ulong objectId)
     {
         if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(objectId, out var obj))
@@ -99,7 +99,6 @@ public class Server : NetworkBehaviour
 
         void ConnectToServer()
         {
-        connectButton.gameObject.SetActive(false);
             if (NetworkManager.Singleton == null)
             {
                 Debug.LogError("NetworkManager not found !");

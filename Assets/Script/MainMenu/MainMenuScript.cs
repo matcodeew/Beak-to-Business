@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 using TMPro;
@@ -25,11 +24,27 @@ public class MainMenuScript : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         GetPlayerIdCookie();
 #endif
-        GetUserId("16");
+        //Commenté = build Web
+        //Non commenté = nuild Windows
+        GetUserId("22");
     }
-    
-    [DllImport("__Internal")]
-    public static extern void LogOut();
+
+    private void Start()
+    {
+        string[] args = System.Environment.GetCommandLineArgs();
+        //SpawnObjectsOnServer();
+
+        for (int i = 0; i < args.Length; i++)
+        {
+            if (args[i] == "-s")
+            {
+                Debug.Log("--------------------Running as server--------------------");
+                //NetworkManager.Singleton.StartServer();
+                SceneManager.LoadScene("GameRoom");
+                
+            }
+        }
+    }
 
     [DllImport("__Internal")]
     public static extern void GetPlayerIdCookie();
@@ -47,6 +62,7 @@ public class MainMenuScript : MonoBehaviour
         
         userId = _testUser.id;
         userName = _testUser.nickname;
+        
         SetPlayerInfos();
         
         _onUserLoggedIn.Invoke(userId);
@@ -63,5 +79,10 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void LogOut()
+    {
+        
     }
 }
