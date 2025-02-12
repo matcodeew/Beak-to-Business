@@ -47,7 +47,7 @@ public abstract class Weapon : NetworkBehaviour
     {
         if (!CanShoot()) { return; }
         cooldown = stats.fireRate;
-        StartAnim();
+        StartAnim(playerTransform);
     }
     public virtual void ShootFinished() { }
 
@@ -60,8 +60,9 @@ public abstract class Weapon : NetworkBehaviour
     }
     protected bool CanShoot() => cooldown <= 0;
 
-    public virtual void StartAnim()
+    public virtual void StartAnim(Transform _playerTransform)
     {
-        //animator.StartPlayback();
+        animator.SetFloat("DirectionX", _playerTransform.GetComponent<PlayerMovement>().moveInput.x);
+        animator.SetFloat("DirectionY", _playerTransform.GetComponent<PlayerMovement>().moveInput.y);
     }
 }
