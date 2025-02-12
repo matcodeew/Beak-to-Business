@@ -25,9 +25,7 @@ public abstract class Weapon : NetworkBehaviour
 
     public GameObject spawnableObject;
 
-    public Animator animator;
-
-    public Sprite weaponImage;
+    [SerializeField] private Animator _animator;
 
     public virtual void Initialize(WeaponStats data)
     {
@@ -62,6 +60,6 @@ public abstract class Weapon : NetworkBehaviour
 
     public virtual void StartAnim()
     {
-        //animator.StartPlayback();
+        _animator.StartPlayback();
     }
 }

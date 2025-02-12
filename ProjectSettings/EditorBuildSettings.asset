@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameRoom.unity
     guid: 264189eff87a16c469dab795d123bf15
-  - enabled: 1
-    path: Assets/Scenes/Wouhouuu.unity
-    guid: 2d23a4675d47d8847b602d4cd10af7e5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e1a02a5907cf1ba4fbb336396b46bb26, type: 3}
   m_UseUCBPForAssetBundles: 0
