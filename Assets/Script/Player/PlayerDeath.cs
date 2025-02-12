@@ -73,7 +73,7 @@ public class PlayerDeath : NetworkBehaviour
         visual.SetActive(!newValue);
         _collider.enabled = !newValue;
         _healthBar.SetActive(!newValue);
-        GlobalScoreManager.instance.UpdateOrder();
+        //GlobalScoreManager.instance.UpdateOrder();
     }
 
     #endregion

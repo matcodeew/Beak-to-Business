@@ -77,7 +77,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponData: {fileID: 11400000, guid: 1dab3fe84acf65d4c8f16c3d9c895010, type: 2}
-  spawnableObject: {fileID: 0}
+  spawnableObject: {fileID: 59200519895895491, guid: 827e0fa7e53c9504ba3e3d32771ba442, type: 3}
   _animator: {fileID: 0}
 --- !u!212 &-4793819466464005967
 SpriteRenderer:

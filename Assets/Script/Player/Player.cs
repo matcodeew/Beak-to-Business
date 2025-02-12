@@ -69,16 +69,10 @@ public class Player : NetworkBehaviour
     {
         base.OnNetworkDespawn();
         _health.OnValueChanged -= OnHealthChanged;
-    }
-
-    private void OnApplicationQuit()
-    {
-        //if(IsOwner) GetComponent<PlayerDeath>().Die();
 
         if (weaponEquipied != null)
         {
-            int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
-            SpawnWeaponServerRpc(transform.position, index);
+            SpawnWeaponServerRpc(transform.position, GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject));
         }
     }
 
@@ -166,12 +160,9 @@ public class Player : NetworkBehaviour
         {
             if(interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w) && _canPickupWeapon)
             {
-                Debug.Log("1 --");
                 if(weaponEquipied != null)
                 {
-                    Debug.Log("2 --");
                     int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
-                    Debug.Log(index);
                     SpawnWeaponServerRpc(transform.position, index);
                 }
                 Interact(interactibleObject, _interactibleObject);
@@ -192,7 +183,6 @@ public class Player : NetworkBehaviour
     private void Interact(GameObject obj, InteractableObjects interactibleObject)
     {
         interactibleObject.PlayerInteract(this);
-        Debug.Log(NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(obj.GetComponent<NetworkObject>().NetworkObjectId, out var o));
         Server.instance.DestroyObjectOnServerRpc(obj.GetComponent<NetworkObject>().NetworkObjectId);
     }
 
