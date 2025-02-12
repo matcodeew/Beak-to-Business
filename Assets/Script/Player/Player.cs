@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using UnityEngine;
 
 [System.Serializable]

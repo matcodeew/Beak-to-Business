@@ -1483,6 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3b13968dd90034e944c9ffc86fec4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _animator: {fileID: 0}
   _playerCamera: {fileID: 5164870266843220070}
   direction: {x: 0, y: 0, z: 0}
@@ -2338,6 +2339,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6656133495245292882, guid: 4d27c463bf142fd46905b332c1376fd1, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fed0b174143c1e04b8fc6290b299dd1b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2356,6 +2361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2217227213119684928}
     m_Modifications:
+    - target: {fileID: 5155879766666253642, guid: cfbe1d4cfb0d248419d0d4311dc65f42, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6268f6add69d45f45888c05e4e73cdea, type: 2}
     - target: {fileID: 5690389828637222783, guid: cfbe1d4cfb0d248419d0d4311dc65f42, type: 3}
       propertyPath: m_Name
       value: Royal
@@ -2470,6 +2479,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9031634358237567645, guid: 92fd6e17caf93b54ab4a6662840fa425, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cf9576ffd4428e44ea798ef7c3f20a31, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2488,6 +2501,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2217227213119684928}
     m_Modifications:
+    - target: {fileID: 1692075225848336016, guid: a2e29f6a8ff50d640ae6869d19cd80e5, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2dcfd421d366f6646bd04528dbd34c66, type: 2}
     - target: {fileID: 3622998165965299516, guid: a2e29f6a8ff50d640ae6869d19cd80e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2602,6 +2619,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3618572058768040183, guid: 4d6f38c4c40a26d4ea85ae97b28fc835, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7c6143d61b751194087a068eaa04a3e2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
