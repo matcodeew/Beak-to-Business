@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRange: 10
   fireRate: 4
-  damage: 30
+  damage: 40
   aoeRange: {x: 0, y: 0}
-  bulletSpeed: 10
+  bulletSpeed: 8
   bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
   type: 0
