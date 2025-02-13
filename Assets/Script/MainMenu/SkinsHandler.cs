@@ -95,6 +95,7 @@ public class SkinsHandler : MonoBehaviour
         {
             skinSelected = _previewNb;
             Debug.Log("skinSelected !");
+            UserInfos.Instance.selectedSkin = skinSelected;
             return;
         }
         
