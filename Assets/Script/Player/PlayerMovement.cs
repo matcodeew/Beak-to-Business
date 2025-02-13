@@ -1,11 +1,9 @@
-
-using System;
-using Unity.VisualScripting;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     [Header("Animation")]
     [SerializeField] private Animator _animator;
@@ -32,8 +30,17 @@ public class PlayerMovement : MonoBehaviour
         EventManager.OnSkinChanged += SetComponent;
     }
 
+    public override void OnNetworkSpawn()
+    {
+        if (!IsOwner)
+        {
+            enabled = false; // Désactiver le script pour les non-owners
+            return;
+        }
+    }
     private void FixedUpdate()
     {
+        if (!IsOwner) return;
         _rb.linearVelocity = _moveInput * _playerSpeed;
 
         if (_playerCamera)
@@ -60,8 +67,11 @@ public class PlayerMovement : MonoBehaviour
         _animator = choosenSkin.GetComponent<Animator>();
     }
 
+
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (!IsOwner) return; // Seul le propriétaire gère les inputs
+
         _moveInput = context.ReadValue<Vector2>();
 
         if (context.started)
@@ -69,20 +79,38 @@ public class PlayerMovement : MonoBehaviour
             _animator.enabled = true;
             _animator.SetBool("IsMoving", true);
         }
-
-        _animator.SetFloat("DirectionX", _moveInput.x);
-        _animator.SetFloat("DirectionY", _moveInput.y);
-        _skinAnimation.SaveLastFrame();
-
         if (context.canceled)
         {
-            //this.enabled = false;
-            
             _moveInput = Vector2.zero;
             _rb.linearVelocity = Vector2.zero;
             _animator.SetBool("IsMoving", false);
-            _skinAnimation.SetSprite();
+            SetRightAnimationAtTheEndServerRpc();
         }
+        UpdateAnimationServerRpc(_moveInput);
+    }
+
+    [ServerRpc]
+    private void SetRightAnimationAtTheEndServerRpc()
+    {
+        _skinAnimation.SetSprite();
+    }
+
+    [ServerRpc]
+    private void UpdateAnimationServerRpc(Vector2 moveInput)
+    {
+        UpdateAnimationClientRpc(moveInput);
+    }
+
+    [ClientRpc]
+    private void UpdateAnimationClientRpc(Vector2 moveInput)
+    {
+        if (_animator == null) return;
+
+        _animator.SetFloat("DirectionX", moveInput.x);
+        _animator.SetFloat("DirectionY", moveInput.y);
+        _skinAnimation.SaveLastFrame();
+        bool isMoving = moveInput != Vector2.zero;
+        _animator.SetBool("IsMoving", isMoving);
     }
 
     public GameObject GetPlayerSkin()

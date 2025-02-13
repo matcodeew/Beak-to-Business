@@ -255,7 +255,7 @@ public class Player : NetworkBehaviour
         TakeDamageServerRpc(damage);
 
         //Flashes the sprite red for half a second when taking damage
-        //ChangeSpriteColorServerRpc();
+        ChangeSpriteColorServerRpc();
         if (copy <= 0)
         {
             SetHealthValueServerRpc(0);
