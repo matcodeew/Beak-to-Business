@@ -75,7 +75,7 @@ public class Player : NetworkBehaviour
     //    {
     //        int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
     //        SpawnWeaponServerRpc(transform.position, index);
-    //        Debug.Log("testons ça mgl");
+    //        Debug.Log("testons ï¿½a mgl");
     //    }
     //}
 
@@ -87,7 +87,7 @@ public class Player : NetworkBehaviour
     //    {
     //        int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
     //        if (IsServer) SpawnWeaponServerRpc(transform.position, index);
-    //        Debug.Log("testons ça mgl mais das onnetwork despawn");
+    //        Debug.Log("testons ï¿½a mgl mais das onnetwork despawn");
     //    }
     //}
 
@@ -221,6 +221,8 @@ public class Player : NetworkBehaviour
     {
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
+        //_weaponRenderer.sprite = weaponEquipied.weaponImage;
+        GetComponent<PlayerAudio>().PlayEquipedWeaponAudio();
     }
 
     public void Shoot()
