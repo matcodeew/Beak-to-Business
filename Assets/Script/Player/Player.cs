@@ -23,7 +23,7 @@ public class Player : NetworkBehaviour
 
     [Header("Player Health")]
     public Image _healthFill;
-    private NetworkVariable<float> _health = new NetworkVariable<float>(100,
+    private NetworkVariable<float> _health = new NetworkVariable<float>(200,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     [Header("Player Abilities & Interaction")]
@@ -54,6 +54,7 @@ public class Player : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+        SetHealthValueServerRpc(stats.defaultHealth.Value);
         _healthFill.fillAmount = _health.Value / stats.defaultHealth.Value;
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
@@ -208,7 +209,6 @@ public class Player : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void SpawnWeaponServerRpc(Vector3 spawnPosition, int weaponIndex)
     {
-        Debug.Log("Spawn on server called on server");
         GameObject weapon = Instantiate(GetComponent<PlayerDeath>()._weaponPrefabs[weaponIndex], transform.position, Quaternion.identity);
         weapon.GetComponent<NetworkObject>().Spawn();
     }
