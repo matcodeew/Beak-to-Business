@@ -28,6 +28,11 @@ public abstract class Weapon : NetworkBehaviour
     public Animator animator;
 
     public Sprite weaponImage;
+    
+    [SerializeField] private string _downAnim;
+    [SerializeField] private string _upAnim;
+    [SerializeField] private string _leftAnim;
+    [SerializeField] private string _rightAnim;
 
     public virtual void Initialize(WeaponStats data)
     {
@@ -47,8 +52,8 @@ public abstract class Weapon : NetworkBehaviour
     {
         if (!CanShoot()) { return; }
         cooldown = stats.fireRate;
-        GetComponent<PlayerAudio>().PlaySniperAudio();
-        StartAnim();
+        //GetComponent<PlayerAudio>().PlaySniperAudio();
+        StartAnim(playerTransform);
     }
     public virtual void ShootFinished() { }
 
@@ -61,8 +66,35 @@ public abstract class Weapon : NetworkBehaviour
     }
     protected bool CanShoot() => cooldown <= 0;
 
-    public virtual void StartAnim()
+    public void StartAnim(Transform _playerTransform)
     {
-        //animator.StartPlayback();
+        Vector2 _shootDirection = _playerTransform.GetComponent<PlayerMovement>().heading.normalized;
+        
+        Debug.Log(_shootDirection);
+
+        if (_shootDirection.x > 0 && _shootDirection.x < 1
+            && _shootDirection.y > -0.707f && _shootDirection.y < 0.707f)
+        {
+            animator.Play(_rightAnim);
+            Debug.Log("Right");
+        } else if (_shootDirection.x > -1 && _shootDirection.x < 0 
+                   && _shootDirection.y > -0.707f && _shootDirection.y < 0.707f)
+        {
+            animator.Play(_leftAnim);
+            Debug.Log("Left");
+        } else if (_shootDirection.x > -0.707 && _shootDirection.x < 0.707
+                   && _shootDirection.y > 0f && _shootDirection.y < 1f)
+        {
+            animator.Play(_upAnim);
+            Debug.Log("Up");
+        } else if (_shootDirection.x > -0.707 && _shootDirection.x < 0.707
+                   && _shootDirection.y > -1f && _shootDirection.y < 0f)
+        {
+            animator.Play(_downAnim);
+            Debug.Log("Down");
+        }
+
+        // animator.SetFloat("DirectionX", _shootDirection.x);
+        // animator.SetFloat("DirectionY", _shootDirection.y);
     }
 }

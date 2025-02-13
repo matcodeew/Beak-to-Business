@@ -3,6 +3,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     [HideInInspector] public Vector3 direction;
-    private Vector2 _moveInput;
+    [FormerlySerializedAs("_moveInput")] public Vector2 moveInput;
     private Rigidbody2D _rb;
 
     [Header("Player")]
@@ -25,26 +26,28 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Mouse")]
     private Vector3 _mousePosition;
-
+    public Vector3 heading;
+    
     private void Awake()
     {
+        SetComponent();
         _rb = GetComponentInParent<Rigidbody2D>();
         EventManager.OnSkinChanged += SetComponent;
     }
 
     private void FixedUpdate()
     {
-        _rb.linearVelocity = _moveInput * _playerSpeed;
+        _rb.linearVelocity = moveInput * _playerSpeed;
 
         if (_playerCamera)
         {
             _mousePosition = _playerCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 heading = _mousePosition - transform.position;
+            heading = _mousePosition - transform.position;
             float distance = heading.magnitude;
             direction = heading / distance;
         }
     }
-    public Vector2 getPlayerInput() => _moveInput;
+    public Vector2 getPlayerInput() => moveInput;
     public void GetPlayerSpeed(float Value)
     {
         _playerSpeed = Value;
@@ -52,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     private void SetComponent()
     {
         _currentSkin = GetPlayerSkin();
+        Debug.Log(_currentSkin.name);
         _skinAnimation = _currentSkin.GetComponent<PlayerAnimation>();
     }
 
@@ -62,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        _moveInput = context.ReadValue<Vector2>();
+        moveInput = context.ReadValue<Vector2>();
 
         if (context.started)
         {
@@ -70,15 +74,14 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("IsMoving", true);
         }
 
-        _animator.SetFloat("DirectionX", _moveInput.x);
-        _animator.SetFloat("DirectionY", _moveInput.y);
+        _animator.SetFloat("DirectionX", moveInput.x);
+        _animator.SetFloat("DirectionY", moveInput.y);
         _skinAnimation.SaveLastFrame();
 
         if (context.canceled)
         {
             //this.enabled = false;
-            
-            _moveInput = Vector2.zero;
+            moveInput = Vector2.zero;
             _rb.linearVelocity = Vector2.zero;
             _animator.SetBool("IsMoving", false);
             _skinAnimation.SetSprite();

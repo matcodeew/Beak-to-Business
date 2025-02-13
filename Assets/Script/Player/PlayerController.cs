@@ -21,8 +21,6 @@ public class PlayerController : NetworkBehaviour
 
             //TestServerRpc(transform.position + new Vector3(0, 2,0));    
             //print($"{player.weaponEquipied.name} Shoot");
-            player.weaponEquipied.animator.SetFloat("DirectionX", GetComponent<PlayerMovement>().getPlayerInput().x);
-            player.weaponEquipied.animator.SetFloat("DirectionY", GetComponent<PlayerMovement>().getPlayerInput().y);
         }
 
         if (_callback.canceled)
