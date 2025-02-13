@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     public Vector2 getPlayerInput() => _moveInput;
-    public void GetPlayerSpeed(float Value)
+    public void SetPlayerSpeed(float Value)
     {
         _playerSpeed = Value;
     }

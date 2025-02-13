@@ -58,7 +58,7 @@ public class Player : NetworkBehaviour
         _healthFill.fillAmount = _health.Value / stats.defaultHealth.Value;
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
-        SetSkinIndex(UserInfos.Instance.selectedSkin); // Comment if causes error, very patchy solution
+        //SetSkinIndex(UserInfos.Instance.selectedSkin); // Comment if causes error, very patchy solution
         if (IsOwner) SetSkin();
 
         OnHealthChanged(0f, stats.defaultHealth.Value);

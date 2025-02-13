@@ -1534,7 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3b13968dd90034e944c9ffc86fec4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
   _animator: {fileID: 0}
   _playerCamera: {fileID: 5164870266843220070}
   direction: {x: 0, y: 0, z: 0}

@@ -29,9 +29,21 @@ public class Server : NetworkBehaviour
 
     private bool server = false;
 
+    public Rect spawnZone;
+
+    [Header("Buff")]
+    [SerializeField] private int healBuffCountOnMap = 10;
+    [SerializeField] private GameObject _healPrefab;
+
     private void Awake()
     {
         instance = this;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(spawnZone.center, spawnZone.size);
     }
 
     void Start()
@@ -48,6 +60,7 @@ public class Server : NetworkBehaviour
                 NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
                 SpawnObjectsOnServer();
                 RandomSpawnObjectsOnServer();
+                SpawnBuffsOnMap();
             }
         }
 
@@ -61,6 +74,30 @@ public class Server : NetworkBehaviour
         {
             SpawnObj(obj);
             
+        }
+    }
+
+    private void SpawnBuffsOnMap()
+    {
+        for(int i =0;i < healBuffCountOnMap; i++)
+        {
+            GameObject buff = Instantiate(_healPrefab, GetRandomPointOnMap(), Quaternion.identity);
+            buff.GetComponent<NetworkObject>().Spawn();
+        }
+    }
+
+    private Vector2 GetRandomPointOnMap()
+    {
+        Vector2 position = new Vector2(UnityEngine.Random.Range(spawnZone.min.x, spawnZone.max.x), UnityEngine.Random.Range(spawnZone.min.y, spawnZone.max.y));
+        Collider2D[] col = Physics2D.OverlapCircleAll(position, 0.25f);
+        if(col.Length == 0)
+        {
+            return position;
+        }
+        else
+        {
+            return GetRandomPointOnMap();
+
         }
     }
 
