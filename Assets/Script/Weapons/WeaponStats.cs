@@ -11,4 +11,5 @@ public class WeaponStats : ScriptableObject
     public float bulletSpeed;
     public GameObject bulletPrefab;
     public WeaponType type;
+    public int index;
 }
