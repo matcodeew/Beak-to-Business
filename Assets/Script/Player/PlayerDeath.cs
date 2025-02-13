@@ -94,6 +94,7 @@ public class PlayerDeath : NetworkBehaviour
 
     public void PlayAgain()
     {
+        _playAgainButton.enabled = false;
         _player.SetPlayerAtRandomPosition();
         _isRespawning = true;
         _respawnTimerText.gameObject.SetActive(true);
@@ -105,6 +106,7 @@ public class PlayerDeath : NetworkBehaviour
     private void PerformRespawn()
     {
         _playerInputs.enabled = true;
+        _playAgainButton.enabled = true;
         _deathUI.SetActive(false);
         _player.SetHealthValueServerRpc(_player.stats.defaultHealth.Value);
 

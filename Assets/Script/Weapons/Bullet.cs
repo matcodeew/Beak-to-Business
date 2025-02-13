@@ -1,5 +1,6 @@
 using Unity.Netcode;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : NetworkBehaviour
 {
@@ -18,6 +19,12 @@ public class Bullet : NetworkBehaviour
         _endPos = _startPos + direction * range;
         _speed = speed;
         _damages = damages;
+
+        Vector3 endPos = _endPos;
+        Vector3 dir = endPos - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
         this.throwerID = throwerID;
     }
 
