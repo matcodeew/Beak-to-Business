@@ -251,6 +251,13 @@ public class Player : NetworkBehaviour
     {
         float copy = _health.Value - damage;
         TakeDamageServerRpc(damage);
+        
+        //Flashes the sprite red for half a second when taking damage
+        _choosenSkin.GetComponent<SpriteRenderer>().color = Color.red;
+        TimerManager.StartTimer(0.5f, () =>
+        {
+            _choosenSkin.GetComponent<SpriteRenderer>().color = Color.white;
+        });
         if (copy <= 0)
         {
             SetHealthValueServerRpc(0);
