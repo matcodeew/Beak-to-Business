@@ -19,7 +19,7 @@ public class RangeTravelWeapon : Weapon
         //ResetData();
         base.Shoot(playerTransform);
 
-        direction = playerTransform.GetComponent<PlayerMovement>().direction;
+        direction = playerTransform.GetComponent<PlayerMovement>().direction.normalized;
         _startPos = playerTransform.position + direction * playerTransform.localScale.x;
 
         playerTransform.GetComponent<Player>().RequestSpawnBullet(_startPos, direction);
