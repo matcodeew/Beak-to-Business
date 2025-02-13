@@ -1,11 +1,10 @@
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using System.Linq;
 
 public class PlayerDeath : NetworkBehaviour
 {
@@ -30,6 +29,9 @@ public class PlayerDeath : NetworkBehaviour
     private float _currentTimer = 0f;
 
     private Player _player;
+
+    [DllImport("__Internal")]
+    public static extern void LogOut();
     
     public override void OnNetworkSpawn()
     {
@@ -72,7 +74,7 @@ public class PlayerDeath : NetworkBehaviour
     {
         visual.SetActive(!newValue);
         _collider.enabled = !newValue;
-        _healthBar.SetActive(!newValue);
+        //_healthBar.SetActive(!newValue);
         //GlobalScoreManager.instance.UpdateOrder();
     }
 
@@ -90,11 +92,12 @@ public class PlayerDeath : NetworkBehaviour
         _deathUI.SetActive(true);
         _scoreText.text = _playerData.Score.Value.ToString();
         _playerData.SetScoreServerRpc(0);
-        GetComponent<PlayerAudio>().PlayDeathAudio();
+        //GetComponent<PlayerAudio>().PlayDeathAudio();
     }
 
     public void PlayAgain()
     {
+        _playAgainButton.enabled = false;
         _player.SetPlayerAtRandomPosition();
         _isRespawning = true;
         _respawnTimerText.gameObject.SetActive(true);
@@ -106,6 +109,7 @@ public class PlayerDeath : NetworkBehaviour
     private void PerformRespawn()
     {
         _playerInputs.enabled = true;
+        _playAgainButton.enabled = true;
         _deathUI.SetActive(false);
         _player.SetHealthValueServerRpc(_player.stats.defaultHealth.Value);
 
@@ -130,9 +134,13 @@ public class PlayerDeath : NetworkBehaviour
 
 
         int prefabIndex = _weaponPrefabs.IndexOf(weapon);
-        //int prefabIndex = _weaponPrefabs.FindIndex(obj => obj.name == weapon.name);
 
         SpawnGunOnServerRpc(prefabIndex, transform.position);
+    }
+
+    public void QuitGame()
+    {
+        LogOut();
     }
 
 

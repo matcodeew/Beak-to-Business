@@ -9,6 +9,7 @@ public class PlayerNetwork : NetworkBehaviour
     [SerializeField] private Camera _playerCamera;
     [SerializeField] private GameObject _playerUI;
     [SerializeField] private PlayerInput _playerInputs;
+    [SerializeField] private GameObject _healtBar;
 
 
     public static event Action<GameObject, ulong> OnPlayerSpawn;
@@ -20,6 +21,7 @@ public class PlayerNetwork : NetworkBehaviour
             _playerCamera.gameObject.SetActive(true);
             _playerUI.SetActive(true);
             _playerInputs.enabled = true;
+            _healtBar.SetActive(true);
         }
     }
 

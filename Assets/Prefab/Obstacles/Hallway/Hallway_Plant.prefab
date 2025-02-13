@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3927562630786084139}
   - component: {fileID: 1354830328153122032}
-  - component: {fileID: 7119658992741078630}
+  - component: {fileID: 7602950695373885970}
   m_Layer: 0
   m_Name: Hallway_Plant
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 26d5e87c3ef6f1047a7bcee0aee02c9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7119658992741078630
-BoxCollider2D:
+--- !u!58 &7602950695373885970
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,15 +122,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.110686064, y: 0.11651182}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 4.1063476, y: 3.7917643}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.118172884, y: 0.0000035762787}
+  m_Radius: 1.4373815
