@@ -212,7 +212,12 @@ public class Player : NetworkBehaviour
         Transform _weaponParent = this.transform.Find("Weapons");
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
+        
         _weaponParent.GetChild(data.index).gameObject.SetActive(true);
+
+        //_weaponRenderer.sprite = weaponEquipied.weaponImage;
+        GetComponent<PlayerAudio>().PlayEquipedWeaponAudio();
+
     }
 
     public void Shoot()
