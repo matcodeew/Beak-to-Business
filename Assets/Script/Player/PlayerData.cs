@@ -11,13 +11,18 @@ public class PlayerData : NetworkBehaviour
     public NetworkVariable<int> Position = new NetworkVariable<int>();
     public NetworkVariable<FixedString128Bytes> Name = new NetworkVariable<FixedString128Bytes>();
     [SerializeField] private TextMeshProUGUI _personalScore;
+    [SerializeField] private TextMeshProUGUI _playerNameSceneUI;
+
 
     public override void OnNetworkSpawn()
     {
-        
+        Name.OnValueChanged += UpdateNameWorldUI;
         Score.OnValueChanged += UpdateScore;
 
         base.OnNetworkSpawn();
+
+        UpdateNameWorldUI("", Name.Value);
+
         if (!IsServer) return;
 
         Score.Value = 0;
@@ -29,6 +34,12 @@ public class PlayerData : NetworkBehaviour
                     TargetClientIds = new ulong[] { GetComponent<NetworkObject>().OwnerClientId }
                 }
             });
+
+    }
+
+    private void UpdateNameWorldUI(FixedString128Bytes oldValue, FixedString128Bytes newValue)
+    {
+        _playerNameSceneUI.text = newValue.ToString();
     }
 
     [ServerRpc(RequireOwnership = false)]

@@ -15,8 +15,10 @@ public class Bullet : NetworkBehaviour
     [ClientRpc(RequireOwnership = false)]
     public void InitializeBulletClientRpc(float speed, float range, Vector2 direction, ulong throwerID, float damages)
     {
+        Vector2 normalizedDirection = direction.normalized;
+
         _startPos = transform.position;
-        _endPos = _startPos + direction * range;
+        _endPos = _startPos + normalizedDirection * range;
         _speed = speed;
         _damages = damages;
 

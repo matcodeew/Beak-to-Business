@@ -41,6 +41,7 @@ public class PlayerDeath : NetworkBehaviour
         _playerData = GetComponent<PlayerData>();
         _player = GetComponent<Player>();
         _playAgainButton.onClick.AddListener(PlayAgain);
+        _quitButton.onClick.AddListener(LogOut);
 
         _isDead.OnValueChanged += OnDeathStatusChanged;
         if (_isDead.Value)
