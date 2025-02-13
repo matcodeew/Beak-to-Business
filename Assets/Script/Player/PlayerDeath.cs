@@ -72,7 +72,7 @@ public class PlayerDeath : NetworkBehaviour
     {
         visual.SetActive(!newValue);
         _collider.enabled = !newValue;
-        _healthBar.SetActive(!newValue);
+        //_healthBar.SetActive(!newValue);
         //GlobalScoreManager.instance.UpdateOrder();
     }
 
@@ -90,7 +90,7 @@ public class PlayerDeath : NetworkBehaviour
         _deathUI.SetActive(true);
         _scoreText.text = _playerData.Score.Value.ToString();
         _playerData.SetScoreServerRpc(0);
-        GetComponent<PlayerAudio>().PlayDeathAudio();
+        //GetComponent<PlayerAudio>().PlayDeathAudio();
     }
 
     public void PlayAgain()
@@ -132,7 +132,6 @@ public class PlayerDeath : NetworkBehaviour
 
 
         int prefabIndex = _weaponPrefabs.IndexOf(weapon);
-        //int prefabIndex = _weaponPrefabs.FindIndex(obj => obj.name == weapon.name);
 
         SpawnGunOnServerRpc(prefabIndex, transform.position);
     }

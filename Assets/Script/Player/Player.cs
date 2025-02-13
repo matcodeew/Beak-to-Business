@@ -1,12 +1,8 @@
 using System;
 using System.Collections;
-using System.Security.Cryptography;
-using TMPro;
-using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 using Unity.Netcode;
-using Unity.Netcode.Components;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct PlayerStats
@@ -26,7 +22,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private GameObject _bulletPrefab;
 
     [Header("Player Health")]
-    public TextMeshProUGUI lifeText;
+    public Image _healthFill;
     private NetworkVariable<float> _health = new NetworkVariable<float>(100,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
@@ -58,7 +54,7 @@ public class Player : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        lifeText.text = _health.Value.ToString();
+        _healthFill.fillAmount = _health.Value / stats.defaultHealth.Value;
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
         if (IsOwner) SetSkin();
@@ -222,7 +218,7 @@ public class Player : NetworkBehaviour
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
         //_weaponRenderer.sprite = weaponEquipied.weaponImage;
-        GetComponent<PlayerAudio>().PlayEquipedWeaponAudio();
+        //GetComponent<PlayerAudio>().PlayEquipedWeaponAudio();
     }
 
     public void Shoot()
@@ -283,8 +279,10 @@ public class Player : NetworkBehaviour
 
     private void OnHealthChanged(float previousValue, float newValue)
     {
-        lifeText.text = newValue.ToString();
+        if(_healthFill.transform.parent.gameObject.activeSelf)
+            _healthFill.fillAmount = newValue / stats.defaultHealth.Value;
     }
+
     #endregion
 
     #region Bullet Management

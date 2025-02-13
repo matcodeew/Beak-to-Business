@@ -105,7 +105,7 @@ public class PlayerMovement : NetworkBehaviour
     private void SetComponent()
     {
         _currentSkin = GetPlayerSkin();
-        _skinAnimation = _currentSkin.GetComponent<PlayerAnimation>();
+        if(_currentSkin != null) _skinAnimation = _currentSkin.GetComponent<PlayerAnimation>();
     }
 
     public void SetRightAnimator(GameObject choosenSkin)

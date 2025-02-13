@@ -223,7 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   _stats: 3
-  _value: 1.25
+  _value: 10
   _duration: 5
 --- !u!1 &7202965232272184659
 GameObject:
