@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,9 +77,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponData: {fileID: 11400000, guid: 61cc8efafec5fd2409ff37de6d6c99d5, type: 2}
-  spawnableObject: {fileID: 0}
-  _animator: {fileID: 3548925988203808564}
-  weaponImage: {fileID: 21300000, guid: bcc572d859ed92d4692d4281601f48c6, type: 3}
+  spawnableObject: {fileID: 59200519895895491, guid: 3ffbdfe59ef37cf44a7da0d7cfd167b5, type: 3}
+  _animator: {fileID: 0}
 --- !u!212 &2116799555259460334
 SpriteRenderer:
   m_ObjectHideFlags: 0

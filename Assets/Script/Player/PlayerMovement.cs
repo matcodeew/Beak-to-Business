@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (context.canceled)
         {
-            this.enabled = false;
+            //this.enabled = false;
             
             moveInput = Vector2.zero;
             _rb.linearVelocity = Vector2.zero;

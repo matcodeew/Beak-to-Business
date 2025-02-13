@@ -260,6 +260,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1630973
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14332445
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -339,6 +347,7 @@ Transform:
   - {fileID: 284873065}
   - {fileID: 1168083489}
   - {fileID: 1602354114}
+  - {fileID: 1990017031}
   m_Father: {fileID: 2134155132}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &22546429
@@ -400,6 +409,14 @@ PrefabInstance:
     - target: {fileID: 4065776492706504194, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
       propertyPath: m_Name
       value: Hallway_Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0913537
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.033621162
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -555,7 +572,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.7916033}
+  m_Offset: {x: -0.27094212, y: -0.5056083}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -565,7 +582,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 16.205385}
+  m_Size: {x: 0.45811576, y: 16.596743}
   m_EdgeRadius: 0
 --- !u!1001 &30666108
 PrefabInstance:
@@ -778,6 +795,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway_Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.x
+      value: 4.5749464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1060123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.16766548
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.026291877
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -799,6 +832,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0127888
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19253042
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -872,6 +913,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 1.993377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2022363
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -1239,7 +1288,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.9328227, y: 0}
+  m_Offset: {x: -7.688653, y: 0.64106417}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1249,7 +1298,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 19.828289, y: 1}
+  m_Size: {x: 6.3166294, y: 0.4411232}
   m_EdgeRadius: 0
 --- !u!1001 &102795980
 PrefabInstance:
@@ -1315,6 +1364,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.0040243
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2406042
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.14743078
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.09813774
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant (7)
@@ -1335,6 +1400,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9933777
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20223594
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -1420,6 +1493,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.369858
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3632146
+      objectReference: {fileID: 0}
     - target: {fileID: 8845202262777152622, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -1781,6 +1862,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5137189713361364909, guid: cde300aaa801b1947af8a7c284dcf466, type: 3}
+      propertyPath: m_Size.y
+      value: 3.4423132
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137189713361364909, guid: cde300aaa801b1947af8a7c284dcf466, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.33784246
+      objectReference: {fileID: 0}
     - target: {fileID: 5969063128278784815, guid: cde300aaa801b1947af8a7c284dcf466, type: 3}
       propertyPath: m_Name
       value: Hallway_Vending
@@ -2005,6 +2094,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3794365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.3071477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.110684395
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.05593574
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant
@@ -2022,6 +2127,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 311667597049699830, guid: de464c6ab24609742b715bdf6f246db5, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0603116
+      objectReference: {fileID: 0}
+    - target: {fileID: 311667597049699830, guid: de464c6ab24609742b715bdf6f246db5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.38070762
+      objectReference: {fileID: 0}
     - target: {fileID: 1143612827106529658, guid: de464c6ab24609742b715bdf6f246db5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -2091,11 +2204,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de464c6ab24609742b715bdf6f246db5, type: 3}
---- !u!4 &204872241 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-  m_PrefabInstance: {fileID: 1679336903}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &213276681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2104,6 +2212,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0767698
+      objectReference: {fileID: 0}
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.15842581
+      objectReference: {fileID: 0}
     - target: {fileID: 2548922372984498447, guid: f7724991ab024034e957024fd4808897, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch1
@@ -2172,6 +2288,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9933771
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20223624
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -2307,6 +2431,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.206756
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.391937
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03925252
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16648829
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant (13)
@@ -2388,6 +2528,14 @@ PrefabInstance:
     - target: {fileID: 3898127495687537579, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf2 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Size.y
+      value: 1.552304
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.18015131
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2560,6 +2708,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5405380176372736480, guid: ce4abee4fb003b64bb5b3f840fb9491f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.999483
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405380176372736480, guid: ce4abee4fb003b64bb5b3f840fb9491f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19498783
+      objectReference: {fileID: 0}
     - target: {fileID: 7165031503874983135, guid: ce4abee4fb003b64bb5b3f840fb9491f, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf5
@@ -2577,6 +2733,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7768874
+      objectReference: {fileID: 0}
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0797565
+      objectReference: {fileID: 0}
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34119034
+      objectReference: {fileID: 0}
     - target: {fileID: 3750376219092982157, guid: 60b3b963ffef1044dba470470d506362, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Register1
@@ -2701,6 +2869,14 @@ PrefabInstance:
     - target: {fileID: 921071335891899641, guid: 94be691349c8f5d41ba8d9575b5eda36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112466814648323559, guid: 94be691349c8f5d41ba8d9575b5eda36, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6857677
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112466814648323559, guid: 94be691349c8f5d41ba8d9575b5eda36, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.34251857
       objectReference: {fileID: 0}
     - target: {fileID: 5523108193996166979, guid: 94be691349c8f5d41ba8d9575b5eda36, type: 3}
       propertyPath: m_Name
@@ -2867,6 +3043,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Size.y
+      value: 3.764546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.047754467
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2941,6 +3125,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.1371288
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.3071554
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.11068416
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.05593574
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant (3)
@@ -2986,6 +3186,14 @@ PrefabInstance:
     - target: {fileID: 1911479612028369731, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_Name
       value: Hallway_Window (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2603989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5277138
       objectReference: {fileID: 0}
     - target: {fileID: 9079403940120404929, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_LocalScale.x
@@ -3056,6 +3264,14 @@ PrefabInstance:
     - target: {fileID: 1911479612028369731, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_Name
       value: Hallway_Window (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2128601
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.55148315
       objectReference: {fileID: 0}
     - target: {fileID: 9079403940120404929, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_LocalScale.x
@@ -3128,6 +3344,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1728764
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.098721504
+      objectReference: {fileID: 0}
     - target: {fileID: 3567568028803045799, guid: ebb1af8984194574fb436e51f82708de, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch2
@@ -3263,6 +3487,14 @@ PrefabInstance:
     - target: {fileID: 5658297640490974625, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8153595
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010440052
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3417,6 +3649,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5283583
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19212419
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3430,6 +3670,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 877759087351032187, guid: bdcc856d0e64dde44a15ef374db2f7db, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5041335
+      objectReference: {fileID: 0}
+    - target: {fileID: 877759087351032187, guid: bdcc856d0e64dde44a15ef374db2f7db, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.037789196
+      objectReference: {fileID: 0}
     - target: {fileID: 1884417688004591688, guid: bdcc856d0e64dde44a15ef374db2f7db, type: 3}
       propertyPath: m_Name
       value: Supermarket_EmptyShelf
@@ -3560,6 +3808,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0913537
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.033621162
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3586,6 +3842,14 @@ PrefabInstance:
     - target: {fileID: 1911479612028369731, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_Name
       value: Hallway_Window (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2810955
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.51736546
       objectReference: {fileID: 0}
     - target: {fileID: 9079403940120404929, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_LocalScale.x
@@ -3753,6 +4017,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8153614
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010439098
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3766,6 +4038,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 558742722034632147, guid: 2df4d5eb861de724a98ea2f1046a086c, type: 3}
+      propertyPath: m_Size.y
+      value: 4.090964
+      objectReference: {fileID: 0}
+    - target: {fileID: 558742722034632147, guid: 2df4d5eb861de724a98ea2f1046a086c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20019633
+      objectReference: {fileID: 0}
     - target: {fileID: 1685333361182293245, guid: 2df4d5eb861de724a98ea2f1046a086c, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf7
@@ -3898,6 +4178,22 @@ PrefabInstance:
     - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.1371346
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.3071516
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07104683
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.17708933
       objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
@@ -4059,6 +4355,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1630974
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14332438
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4075,6 +4379,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0168836
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.190483
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -4283,6 +4595,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1630973
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14332445
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4352,6 +4672,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1894403
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14795756
+      objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf1 (15)
@@ -4369,6 +4697,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1728764
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.098721504
+      objectReference: {fileID: 0}
     - target: {fileID: 3567568028803045799, guid: ebb1af8984194574fb436e51f82708de, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch2 (3)
@@ -4426,6 +4762,84 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+--- !u!1 &607804220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607804221}
+  - component: {fileID: 607804222}
+  m_Layer: 0
+  m_Name: NorthWall(3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &607804221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607804220}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.45, y: 7.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1789365139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &607804222
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607804220}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.14793786, y: 0.4766885}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.4411224, y: 2.3478782}
+  m_EdgeRadius: 0
 --- !u!1001 &611177258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4437,6 +4851,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.012788
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19253075
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -4516,6 +4938,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.016883
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19048333
+      objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -4590,6 +5020,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.359052
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36861765
+      objectReference: {fileID: 0}
     - target: {fileID: 8845202262777152622, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -4664,6 +5102,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Size.y
+      value: 2.140993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.114663124
+      objectReference: {fileID: 0}
     - target: {fileID: 3567568028803045799, guid: ebb1af8984194574fb436e51f82708de, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch2 (1)
@@ -4730,18 +5176,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
     - target: {fileID: 435275059141328867, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 435275059141328867, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 435275059141328867, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 435275059141328867, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.65
       objectReference: {fileID: 0}
@@ -4781,13 +5215,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 435275059141328867, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4061824985076738103, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Portique
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2919598
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5640936
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5046,6 +5484,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FastFood_Terminal1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8197267024211399929, guid: f6c446a92d2504e4980e2a89ce62c0a9, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9767065
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197267024211399929, guid: f6c446a92d2504e4980e2a89ce62c0a9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.35782766
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5203,6 +5649,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2244108
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.1548078
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.11067474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.04301727
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant (11)
@@ -5284,6 +5746,22 @@ PrefabInstance:
     - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3003254
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2544172
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07738757
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.11651194
       objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
@@ -5688,6 +6166,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Size.y
+      value: 1.552304
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.18015131
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5701,6 +6187,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 877759087351032187, guid: bdcc856d0e64dde44a15ef374db2f7db, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5041335
+      objectReference: {fileID: 0}
+    - target: {fileID: 877759087351032187, guid: bdcc856d0e64dde44a15ef374db2f7db, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.037789196
+      objectReference: {fileID: 0}
     - target: {fileID: 1884417688004591688, guid: bdcc856d0e64dde44a15ef374db2f7db, type: 3}
       propertyPath: m_Name
       value: Supermarket_EmptyShelf (1)
@@ -5776,6 +6270,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
   m_PrefabInstance: {fileID: 2023526030}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &832984953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 832984954}
+  - component: {fileID: 832984955}
+  m_Layer: 0
+  m_Name: NorthWall(2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &832984954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832984953}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.8, y: 9.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1789365139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &832984955
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832984953}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.7561264, y: 0.16437528}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 11.717276, y: 0.4082489}
+  m_EdgeRadius: 0
 --- !u!1 &835648986
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,6 +6513,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.379436
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.4283025
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.13161868
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.17708743
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant (6)
@@ -6017,6 +6605,14 @@ PrefabInstance:
     - target: {fileID: 4061824985076738103, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Portique (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2382221
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5372267
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6104,6 +6700,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0576181
+      objectReference: {fileID: 0}
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16800165
+      objectReference: {fileID: 0}
     - target: {fileID: 2548922372984498447, guid: f7724991ab024034e957024fd4808897, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch1 (3)
@@ -6224,6 +6828,14 @@ PrefabInstance:
     - target: {fileID: 2435564502682846879, guid: ce4abee4fb003b64bb5b3f840fb9491f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405380176372736480, guid: ce4abee4fb003b64bb5b3f840fb9491f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1032715
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405380176372736480, guid: ce4abee4fb003b64bb5b3f840fb9491f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.24688312
       objectReference: {fileID: 0}
     - target: {fileID: 7165031503874983135, guid: ce4abee4fb003b64bb5b3f840fb9491f, type: 3}
       propertyPath: m_Name
@@ -6496,6 +7108,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf4
       objectReference: {fileID: 0}
+    - target: {fileID: 8479451035761961459, guid: 825fd3a5573bb41419c86f836a9f85f7, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3240805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479451035761961459, guid: 825fd3a5573bb41419c86f836a9f85f7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.24791288
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6611,6 +7231,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 125202401843162411, guid: 4479d66c45a81be41bdc83ac320a6243, type: 3}
+      propertyPath: m_Size.y
+      value: 4.25476
+      objectReference: {fileID: 0}
+    - target: {fileID: 125202401843162411, guid: 4479d66c45a81be41bdc83ac320a6243, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.10704839
+      objectReference: {fileID: 0}
     - target: {fileID: 5644540969144151838, guid: 4479d66c45a81be41bdc83ac320a6243, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf8
@@ -6745,6 +7373,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0928605
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19624749
+      objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf1
@@ -6827,11 +7463,111 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1630965
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14332479
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+--- !u!1 &943995080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 943995083}
+  - component: {fileID: 943995082}
+  - component: {fileID: 943995081}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &943995081
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943995080}
+  m_Enabled: 1
+--- !u!20 &943995082
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943995080}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &943995083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943995080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25, y: -5, z: -50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &944909038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6974,6 +7710,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2582817
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.367729
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.110681474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08622253
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant (1)
@@ -6994,6 +7746,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.012786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1925318
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -7200,7 +7960,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.836036}
+  m_Offset: {x: 0.4683087, y: 0.8446268}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7210,7 +7970,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 5.242577}
+  m_Size: {x: 0.18501687, y: 5.259759}
   m_EdgeRadius: 0
 --- !u!1 &955636008
 GameObject:
@@ -7365,6 +8125,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.012788
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19253075
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -7593,6 +8361,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Size.x
+      value: 1.749527
+      objectReference: {fileID: 0}
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06607628
+      objectReference: {fileID: 0}
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34119034
+      objectReference: {fileID: 0}
     - target: {fileID: 3750376219092982157, guid: 60b3b963ffef1044dba470470d506362, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Register1 (2)
@@ -7674,6 +8454,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0127895
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19253007
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -7800,6 +8588,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.165349
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16000319
+      objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf1 (13)
@@ -7825,6 +8621,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0127895
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19253007
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -7969,6 +8773,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.376074
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3601066
+      objectReference: {fileID: 0}
     - target: {fileID: 8845202262777152622, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -8130,6 +8942,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway_Window (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2478199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.53400326
+      objectReference: {fileID: 0}
     - target: {fileID: 9079403940120404929, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.37507015
@@ -8191,6 +9011,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0767698
+      objectReference: {fileID: 0}
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.15842581
+      objectReference: {fileID: 0}
     - target: {fileID: 2548922372984498447, guid: f7724991ab024034e957024fd4808897, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch1 (1)
@@ -8312,6 +9140,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1894388
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14795825
+      objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf1 (8)
@@ -8399,6 +9235,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Size.y
+      value: 3.700889
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.054109633
+      objectReference: {fileID: 0}
     - target: {fileID: 5836798284069152120, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
       propertyPath: m_Name
       value: FastFood_Table1
@@ -8538,6 +9382,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FastFood_Trash1
       objectReference: {fileID: 0}
+    - target: {fileID: 8168999494930417186, guid: 45c4063271cb2d94b88384b401c0d8b9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2181531
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168999494930417186, guid: 45c4063271cb2d94b88384b401c0d8b9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.32813555
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8611,6 +9463,22 @@ PrefabInstance:
     - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2465818
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2544134
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.05694592
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06277549
       objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
@@ -8762,6 +9630,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.318859
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.246578
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.101332664
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14679873
+      objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
       value: Hallway_Plant (5)
@@ -8837,7 +9721,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.836036}
+  m_Offset: {x: -0.49567863, y: 0.8517696}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8847,7 +9731,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 5.242577}
+  m_Size: {x: 0.20914418, y: 5.274044}
   m_EdgeRadius: 0
 --- !u!4 &1241743295 stripped
 Transform:
@@ -8875,6 +9759,14 @@ PrefabInstance:
     - target: {fileID: 1911479612028369731, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_Name
       value: Hallway_Window (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3057213
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.50505257
       objectReference: {fileID: 0}
     - target: {fileID: 9079403940120404929, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_LocalScale.x
@@ -8942,6 +9834,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3558695
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.37020886
+      objectReference: {fileID: 0}
     - target: {fileID: 8845202262777152622, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -9081,6 +9981,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1630965
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14332479
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9097,6 +10005,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9933777
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20223594
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -9308,7 +10224,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.9328227, y: 0}
+  m_Offset: {x: -0.7962971, y: -0.13117872}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9318,7 +10234,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 19.828289, y: 1}
+  m_Size: {x: 19.933311, y: 0.17014617}
   m_EdgeRadius: 0
 --- !u!1001 &1302579929
 PrefabInstance:
@@ -9401,6 +10317,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1604595
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.104929924
+      objectReference: {fileID: 0}
     - target: {fileID: 3567568028803045799, guid: ebb1af8984194574fb436e51f82708de, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch2 (4)
@@ -9631,6 +10555,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway_Window
       objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2478199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696677460383635938, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.53400326
+      objectReference: {fileID: 0}
     - target: {fileID: 9079403940120404929, guid: 2c5ab6f120890bc4398613240cc4ea73, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.37507015
@@ -9752,6 +10684,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Portique (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2550602
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5626173
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9809,6 +10749,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Size.y
+      value: 2.140993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.114663124
+      objectReference: {fileID: 0}
     - target: {fileID: 3567568028803045799, guid: ebb1af8984194574fb436e51f82708de, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch2 (2)
@@ -10077,6 +11025,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.x
+      value: 4.5047746
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0899006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.17944932
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.034347713
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10148,7 +11112,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.12755823}
+  m_Offset: {x: -0.43226665, y: -0.0124492645}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10158,7 +11122,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 17.533474}
+  m_Size: {x: 0.1354667, y: 17.609318}
   m_EdgeRadius: 0
 --- !u!1001 &1401002240
 PrefabInstance:
@@ -10377,7 +11341,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -4.310322, y: -4.908475}
+  m_Offset: {x: -4.3036537, y: -4.7370887}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10387,7 +11351,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 48.108864, y: 0.49402237}
+  m_Size: {x: 48.19613, y: 0.15124989}
   m_EdgeRadius: 0
 --- !u!4 &1461961397 stripped
 Transform:
@@ -10458,6 +11422,14 @@ PrefabInstance:
     - target: {fileID: 4065776492706504194, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
       propertyPath: m_Name
       value: Hallway_Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1074977
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.025549144
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10530,7 +11502,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.10343647}
+  m_Offset: {x: 0.42525697, y: -0.017777443}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10540,7 +11512,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 17.581717}
+  m_Size: {x: 0.20070195, y: 17.613722}
   m_EdgeRadius: 0
 --- !u!4 &1470162754 stripped
 Transform:
@@ -10615,6 +11587,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5523027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.180152
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10628,6 +11608,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0903425
+      objectReference: {fileID: 0}
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.15163946
+      objectReference: {fileID: 0}
     - target: {fileID: 2548922372984498447, guid: f7724991ab024034e957024fd4808897, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch1 (5)
@@ -10703,14 +11691,6 @@ PrefabInstance:
       value: Hallway_Trash (2)
       objectReference: {fileID: 0}
     - target: {fileID: 9068202969580315298, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.37507015
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068202969580315298, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5298013
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068202969580315298, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.16134
       objectReference: {fileID: 0}
@@ -10728,15 +11708,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068202969580315298, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9068202969580315298, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9068202969580315298, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9068202969580315298, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10845,6 +11825,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0080361
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19490668
+      objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -10906,6 +11894,178 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+--- !u!1 &1534624711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534624715}
+  - component: {fileID: 1534624712}
+  - component: {fileID: 1534624714}
+  - component: {fileID: 1534624713}
+  m_Layer: 0
+  m_Name: SoundsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1534624712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534624711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1856302401
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!82 &1534624713
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534624711}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1534624714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534624711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2739ed1aedd0049af434968fcd20a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  audioSource: {fileID: 1534624713}
+  pimentAudio: {fileID: 8300000, guid: 743b07bca9d2dd64f84ade9dfa8299d6, type: 3}
+  sniperAudio: {fileID: 8300000, guid: d6dcce5927fff1045b43cda74a31aed1, type: 3}
+--- !u!4 &1534624715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534624711}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1539010528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127270970883519331, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
@@ -10915,11 +12075,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 40292243508692278, guid: 4fa07109944c53b45bd0224387c5c65e, type: 3}
   m_PrefabInstance: {fileID: 1871812134}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1549017149 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-  m_PrefabInstance: {fileID: 1737832044}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1551761199 stripped
 Transform:
@@ -11068,6 +12223,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.05742
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.21396768
+      objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf1 (1)
@@ -11144,6 +12307,22 @@ PrefabInstance:
     - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.192848
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.3618886
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.077388644
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.11651003
       objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
@@ -11226,6 +12405,14 @@ PrefabInstance:
     - target: {fileID: 5475602696557006246, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1666375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14155428
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11384,6 +12571,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FastFood_Trash1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8168999494930417186, guid: 45c4063271cb2d94b88384b401c0d8b9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.168625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168999494930417186, guid: 45c4063271cb2d94b88384b401c0d8b9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3528996
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11482,71 +12677,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5475602696557006246, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
   m_PrefabInstance: {fileID: 588248718}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1679336903
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1810738290}
-    m_Modifications:
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.892224
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0052981344
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659338065153574080, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065776492706504194, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
-      propertyPath: m_Name
-      value: Hallway_Wall (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
 --- !u!4 &1689954613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3390809201510201053, guid: acb8799debaa91040899842943bcef3a, type: 3}
@@ -11560,6 +12690,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.359051
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36861813
+      objectReference: {fileID: 0}
     - target: {fileID: 8845202262777152622, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -11694,6 +12832,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1630974
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14332438
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11715,6 +12861,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0127902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19252974
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -11777,79 +12931,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
---- !u!1001 &1737832044
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1810738290}
-    m_Modifications:
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.18753508
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.26490065
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.0441327
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.7788076
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
-      propertyPath: m_Name
-      value: Hallway_Plant (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
 --- !u!1001 &1746267203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11913,6 +12994,22 @@ PrefabInstance:
     - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.1067805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.242008
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.060707867
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.09152305
       objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
@@ -11991,6 +13088,14 @@ PrefabInstance:
     - target: {fileID: 3390809201510201053, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.057418
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2139686
       objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
@@ -12073,13 +13178,94 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5064964724302761806, guid: f6c446a92d2504e4980e2a89ce62c0a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1766586494}
   m_SourcePrefab: {fileID: 100100000, guid: f6c446a92d2504e4980e2a89ce62c0a9, type: 3}
 --- !u!4 &1766586492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2613693666262541320, guid: f6c446a92d2504e4980e2a89ce62c0a9, type: 3}
   m_PrefabInstance: {fileID: 1766586491}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1766586493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5064964724302761806, guid: f6c446a92d2504e4980e2a89ce62c0a9, type: 3}
+  m_PrefabInstance: {fileID: 1766586491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &1766586494
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766586493}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7, y: -0.13}
+      - {x: 0.79999995, y: -0.06}
+      - {x: 1.06, y: 0.21}
+      - {x: 1.06, y: 1.35}
+      - {x: 0.94, y: 1.49}
+      - {x: 0.53, y: 1.8499999}
+      - {x: 0.48999998, y: 1.8499999}
+      - {x: 0.42999998, y: 1.8399999}
+      - {x: -0.089999996, y: 1.36}
+      - {x: -0.62, y: 0.88}
+      - {x: -0.79999995, y: 0.7}
+      - {x: -0.85999995, y: 0.61}
+      - {x: -0.87, y: 0.55}
+      - {x: -0.87, y: -0.45999998}
+      - {x: -0.85999995, y: -0.51}
+      - {x: -0.64, y: -0.71999997}
+      - {x: -0.45999998, y: -0.88}
+      - {x: -0.56, y: -0.96}
+      - {x: -0.87, y: -1.25}
+      - {x: -0.87, y: -1.35}
+      - {x: -0.65999997, y: -1.56}
+      - {x: -0.34, y: -1.8299999}
+      - {x: -0.29, y: -1.81}
+      - {x: 0.88, y: -0.75}
+      - {x: 1.06, y: -0.58}
+      - {x: 1.06, y: -0.45999998}
+  m_UseDelaunayMesh: 0
 --- !u!4 &1766750648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5419475609103108926, guid: 60b3b963ffef1044dba470470d506362, type: 3}
@@ -12153,11 +13339,97 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf2
       objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5283583
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19212419
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+--- !u!1 &1776582726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1776582727}
+  - component: {fileID: 1776582728}
+  m_Layer: 0
+  m_Name: NorthWall(1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1776582727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776582726}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.06, y: 6.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1789365139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1776582728
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776582726}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.5917511, y: 1.0520025}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 8.495523, y: 0.4739983}
+  m_EdgeRadius: 0
 --- !u!1001 &1780936460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12490,6 +13762,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 92497290}
+  - {fileID: 1776582727}
+  - {fileID: 832984954}
+  - {fileID: 607804221}
   - {fileID: 30450072}
   - {fileID: 1858762102}
   m_Father: {fileID: 2134155132}
@@ -12533,7 +13808,6 @@ Transform:
   - {fileID: 22546430}
   - {fileID: 346563353}
   - {fileID: 321273605}
-  - {fileID: 204872241}
   - {fileID: 422033068}
   - {fileID: 1256037030}
   - {fileID: 36902656}
@@ -12545,7 +13819,6 @@ Transform:
   - {fileID: 2138437071}
   - {fileID: 1046262428}
   - {fileID: 1114452635}
-  - {fileID: 1549017149}
   - {fileID: 766351545}
   - {fileID: 1344642332}
   - {fileID: 114495129}
@@ -12584,6 +13857,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1213846
+      objectReference: {fileID: 0}
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.13611841
+      objectReference: {fileID: 0}
     - target: {fileID: 2548922372984498447, guid: f7724991ab024034e957024fd4808897, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch1 (2)
@@ -12708,6 +13989,22 @@ PrefabInstance:
     - target: {fileID: 3927562630786084139, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.0068512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.242008
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.13920313
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119658992741078630, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14150012
       objectReference: {fileID: 0}
     - target: {fileID: 7518029679066660020, guid: 24d824f3e32da7e48b4cd1f13ae1df7f, type: 3}
       propertyPath: m_Name
@@ -12874,6 +14171,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1630964
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174493494003469491, guid: 3e990f841d161214695f2b0ce4100480, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14332488
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12947,6 +14252,14 @@ PrefabInstance:
     - target: {fileID: 3390809201510201053, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.16535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16000277
       objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
@@ -13033,7 +14346,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.7916033}
+  m_Offset: {x: 0.27094227, y: 0.34010077}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -13043,7 +14356,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 16.205385}
+  m_Size: {x: 0.45811546, y: 18.468792}
   m_EdgeRadius: 0
 --- !u!1001 &1859673990
 PrefabInstance:
@@ -13108,6 +14421,14 @@ PrefabInstance:
     - target: {fileID: 3152616176600149589, guid: 825fd3a5573bb41419c86f836a9f85f7, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479451035761961459, guid: 825fd3a5573bb41419c86f836a9f85f7, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2869437
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479451035761961459, guid: 825fd3a5573bb41419c86f836a9f85f7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.25228727
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13305,6 +14626,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8301262
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.003056705
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13396,6 +14725,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7495251
+      objectReference: {fileID: 0}
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.066075325
+      objectReference: {fileID: 0}
+    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34119034
+      objectReference: {fileID: 0}
     - target: {fileID: 3750376219092982157, guid: 60b3b963ffef1044dba470470d506362, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Register1 (1)
@@ -13559,6 +14900,14 @@ PrefabInstance:
     - target: {fileID: 3481705543990180640, guid: af63244dd9e769b42821de34651da23c, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210366856791021118, guid: af63244dd9e769b42821de34651da23c, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6699896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210366856791021118, guid: af63244dd9e769b42821de34651da23c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.21314937
       objectReference: {fileID: 0}
     - target: {fileID: 8317363498334599335, guid: af63244dd9e769b42821de34651da23c, type: 3}
       propertyPath: m_LocalScale.x
@@ -13759,6 +15108,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8759956
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1060128
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.51714087
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316390933093419, guid: 8ae0803a36e7b1b4f8d68987a8952099, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.026291609
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13866,6 +15231,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5283583
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061217294233326784, guid: 32d2e15286af8ef4ca414bd7d5cfdf87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19212419
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13889,6 +15262,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 5747143570169334845, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6711590542229520138, guid: 2c49136ff46e4e54f8ef37185766ba8b, type: 3}
       propertyPath: m_Name
       value: Hallway_Trash
@@ -13954,6 +15331,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.369858
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088569889804596789, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3632146
+      objectReference: {fileID: 0}
     - target: {fileID: 8845202262777152622, guid: 5ff69b83fe9af064e99e00bdd8af8db7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -14186,6 +15571,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4893279641166471765, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
   m_PrefabInstance: {fileID: 1989256189}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1990017030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990017031}
+  - component: {fileID: 1990017032}
+  m_Layer: 0
+  m_Name: Comptoir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990017031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990017030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96, y: 6.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 19489980}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1990017032
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990017030}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.40258062, y: 0.23937102}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.8506958, y: 0.52125794}
+  m_EdgeRadius: 0
 --- !u!1001 &2000440099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14194,6 +15657,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1253328
+      objectReference: {fileID: 0}
+    - target: {fileID: 855929082462419199, guid: f7724991ab024034e957024fd4808897, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1341443
+      objectReference: {fileID: 0}
     - target: {fileID: 2548922372984498447, guid: f7724991ab024034e957024fd4808897, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch1 (4)
@@ -14351,6 +15822,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperMarket_Shelf3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8210366856791021118, guid: af63244dd9e769b42821de34651da23c, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6883035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210366856791021118, guid: af63244dd9e769b42821de34651da23c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20399243
+      objectReference: {fileID: 0}
     - target: {fileID: 8317363498334599335, guid: af63244dd9e769b42821de34651da23c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -14423,6 +15902,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0080347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19490737
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -14498,6 +15985,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810738290}
     m_Modifications:
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1604614
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162286430381494240, guid: ebb1af8984194574fb436e51f82708de, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10492897
+      objectReference: {fileID: 0}
     - target: {fileID: 3567568028803045799, guid: ebb1af8984194574fb436e51f82708de, type: 3}
       propertyPath: m_Name
       value: Hallway_Couch2 (5)
@@ -14596,6 +16091,14 @@ PrefabInstance:
     - target: {fileID: 2587988546094078717, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf9 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0127873
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032904605563652401, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19253111
       objectReference: {fileID: 0}
     - target: {fileID: 4617544352569639770, guid: 81162fa7a89af2249b160fb66ca2e373, type: 3}
       propertyPath: m_LocalScale.x
@@ -14871,6 +16374,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0574193
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592657989229136670, guid: acb8799debaa91040899842943bcef3a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.21396804
+      objectReference: {fileID: 0}
     - target: {fileID: 8351333865295856011, guid: acb8799debaa91040899842943bcef3a, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf1 (3)
@@ -14949,6 +16460,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8153595
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659431501749566387, guid: aee36daefabc88c4687cf2749aba7618, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010440052
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14962,6 +16481,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
+    - target: {fileID: 558742722034632147, guid: 2df4d5eb861de724a98ea2f1046a086c, type: 3}
+      propertyPath: m_Size.y
+      value: 4.1292815
+      objectReference: {fileID: 0}
+    - target: {fileID: 558742722034632147, guid: 2df4d5eb861de724a98ea2f1046a086c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.18103862
+      objectReference: {fileID: 0}
     - target: {fileID: 1685333361182293245, guid: 2df4d5eb861de724a98ea2f1046a086c, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Shelf7 (1)
@@ -15109,6 +16636,14 @@ PrefabInstance:
     - target: {fileID: 4061824985076738103, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Portique (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2382221
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559373449570396992, guid: 1561e8264f7ba514485c1d9f429aaa0d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5640955
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15388,7 +16923,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 259197271}
+  - {fileID: 943995083}
   - {fileID: 2074922318}
   - {fileID: 1334993432}
   - {fileID: 2134155132}
   - {fileID: 955636009}
+  - {fileID: 1534624715}

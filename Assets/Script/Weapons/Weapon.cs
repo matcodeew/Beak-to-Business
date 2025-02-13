@@ -47,7 +47,8 @@ public abstract class Weapon : NetworkBehaviour
     {
         if (!CanShoot()) { return; }
         cooldown = stats.fireRate;
-        StartAnim(playerTransform);
+        GetComponent<PlayerAudio>().PlaySniperAudio();
+        StartAnim();
     }
     public virtual void ShootFinished() { }
 
