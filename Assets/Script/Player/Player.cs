@@ -91,11 +91,6 @@ public class Player : NetworkBehaviour
     //    }
     //}
 
-    public void TT()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         if (!IsOwner) return;
