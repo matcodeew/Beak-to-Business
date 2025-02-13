@@ -1594,13 +1594,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  weaponEquipied: {fileID: 0}
+  stats:
+    speed: 0
+    defaultHealth:
+      m_InternalValue: 0
+    XP:
+      m_InternalValue: 0
+  weaponEquipied: {fileID: 1906505810805475433, guid: e820d0a77bb28694cb0920a2a236b4cd, type: 3}
   _bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
   lifeText: {fileID: 5908342942182135896}
   _skinParent: {fileID: 2217227213119684928}
   SelectedSkinIndex:
     m_InternalValue: -1
   _healthFill: {fileID: 8985812495965539198}
+  _weaponRenderer: {fileID: 0}
 --- !u!114 &1495271844076063941
 MonoBehaviour:
   m_ObjectHideFlags: 0
