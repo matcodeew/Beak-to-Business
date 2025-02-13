@@ -50,7 +50,7 @@ public class MainMenuScript : MonoBehaviour
     public static extern void GetPlayerIdCookie();
     
     [DllImport("__Internal")]
-    public static extern void logOut();
+    public static extern void LogOut();
     public void GetUserId(string _id)
     {
         StartCoroutine(GetUser(_id));
@@ -94,8 +94,8 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void LogOut()
+    public void logOut()
     {
-        logOut();
+        LogOut();
     }
 }
