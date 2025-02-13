@@ -19,3 +19,4 @@ MonoBehaviour:
   bulletSpeed: 6
   bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
   type: 0
+  index: 5

@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -22,7 +26,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private GameObject _bulletPrefab;
 
     [Header("Player Health")]
-    public Image _healthFill;
+    public TextMeshProUGUI lifeText;
     private NetworkVariable<float> _health = new NetworkVariable<float>(100,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
@@ -34,9 +38,12 @@ public class Player : NetworkBehaviour
     public NetworkVariable<int> SelectedSkinIndex = new NetworkVariable<int>(-1,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
+
+    [SerializeField] private Image _healthFill;
+    [SerializeField] private SpriteRenderer _weaponRenderer;
     #endregion
-    
-    
+
+
 
     private void OnSkinChanged(int oldIndex, int newIndex)
     {
@@ -54,7 +61,7 @@ public class Player : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        _healthFill.fillAmount = _health.Value / stats.defaultHealth.Value;
+        lifeText.text = _health.Value.ToString();
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
         if (IsOwner) SetSkin();
@@ -65,27 +72,16 @@ public class Player : NetworkBehaviour
         _canPickupWeapon = true;
     }
 
-    //private void OnApplicationQuit()
-    //{
-    //    if (weaponEquipied != null)
-    //    {
-    //        int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
-    //        SpawnWeaponServerRpc(transform.position, index);
-    //        Debug.Log("testons �a mgl");
-    //    }
-    //}
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+        _health.OnValueChanged -= OnHealthChanged;
 
-    //public override void OnNetworkDespawn()
-    //{
-    //    _health.OnValueChanged -= OnHealthChanged;
-
-    //    if (weaponEquipied != null)
-    //    {
-    //        int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
-    //        if (IsServer) SpawnWeaponServerRpc(transform.position, index);
-    //        Debug.Log("testons �a mgl mais das onnetwork despawn");
-    //    }
-    //}
+        if (weaponEquipied != null)
+        {
+            SpawnWeaponServerRpc(transform.position, GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject));
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
@@ -122,7 +118,8 @@ public class Player : NetworkBehaviour
             throw new NullReferenceException("no component PlayerMovement on the player object");
         }
         if(SelectedSkinIndex.Value > 4 || SelectedSkinIndex.Value < -1) {
-            throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
+
+             throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
         }
         
         #endregion
@@ -139,7 +136,7 @@ public class Player : NetworkBehaviour
         //_choosenSkin.SetActive(true);
         
         //playerMovement.SetRightAnimator(_choosenSkin);
-        playerMovement.SetPlayerSpeed(stats.speed);
+        playerMovement.GetPlayerSpeed(stats.speed);
 
         
     }
@@ -152,8 +149,6 @@ public class Player : NetworkBehaviour
             SelectedSkinIndex.Value = index;
         }
     }
-
-
 
     private void ResetSkinVisibility()
     {
@@ -208,17 +203,21 @@ public class Player : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void SpawnWeaponServerRpc(Vector3 spawnPosition, int weaponIndex)
     {
-        Debug.Log("Spawn on server called on server");
         GameObject weapon = Instantiate(GetComponent<PlayerDeath>()._weaponPrefabs[weaponIndex], transform.position, Quaternion.identity);
         weapon.GetComponent<NetworkObject>().Spawn();
     }
 
     public void SetWeapon(Weapon weapon, WeaponStats data)
     {
+        Transform _weaponParent = this.transform.Find("Weapons");
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
+        
+        _weaponParent.GetChild(data.index).gameObject.SetActive(true);
+
         //_weaponRenderer.sprite = weaponEquipied.weaponImage;
-        //GetComponent<PlayerAudio>().PlayEquipedWeaponAudio();
+        GetComponent<PlayerAudio>().PlayEquipedWeaponAudio();
+
     }
 
     public void Shoot()
@@ -233,16 +232,9 @@ public class Player : NetworkBehaviour
     #region Player Positioning
     public void SetPlayerAtRandomPosition()
     {
-        Transform spawn = Server.instance.spawnPoints[UnityEngine.Random.Range(0, Server.instance.spawnPoints.Count)];
-
-        if(Server.instance.usedSpawnPoints.Contains(spawn))
-        {
-            SetPlayerAtRandomPosition();
-        }
-        else
-        {
-            transform.position = spawn.position;
-        }
+        Rect zone = Server.instance.spawnZone;
+        Vector2 position = new Vector2(UnityEngine.Random.Range(zone.xMin, zone.xMax), UnityEngine.Random.Range(zone.yMin, zone.yMax));
+        transform.position = position;
     }
     #endregion
 
@@ -279,10 +271,9 @@ public class Player : NetworkBehaviour
 
     private void OnHealthChanged(float previousValue, float newValue)
     {
-        if(_healthFill.transform.parent.gameObject.activeSelf)
-            _healthFill.fillAmount = newValue / stats.defaultHealth.Value;
+        lifeText.text = newValue.ToString();
+        _healthFill.fillAmount = newValue / stats.defaultHealth.Value;
     }
-
     #endregion
 
     #region Bullet Management
