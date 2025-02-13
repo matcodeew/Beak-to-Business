@@ -35,11 +35,12 @@ public class Player : NetworkBehaviour
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
     #endregion
-    
-    
+
+
 
     private void OnSkinChanged(int oldIndex, int newIndex)
     {
+        print("SelectedSkinIndex is " + SelectedSkinIndex.Value);
         ResetSkinVisibility();
         if (newIndex >= 0 && newIndex < _skinParent.childCount)
         {
@@ -58,11 +59,13 @@ public class Player : NetworkBehaviour
         _healthFill.fillAmount = _health.Value / stats.defaultHealth.Value;
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
-        //SetSkinIndex(UserInfos.Instance.selectedSkin); // Comment if causes error, very patchy solution
-        if (IsOwner) SetSkin();
 
+        if (IsOwner)
+        {
+            SetSkin(UserInfos.Instance.selectedSkin);
+        }
         OnHealthChanged(0f, stats.defaultHealth.Value);
-        OnSkinChanged(0, SelectedSkinIndex.Value);
+
         SetPlayerAtRandomPosition();
         _canPickupWeapon = true;
     }
@@ -85,12 +88,12 @@ public class Player : NetworkBehaviour
     //    {
     //        int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
     //        if (IsServer) SpawnWeaponServerRpc(transform.position, index);
-    //        Debug.Log("testons �a mgl mais das onnetwork despawn");
+    //        Debug.Log("testons sa mgl mais das onnetwork despawn");
     //    }
     //}
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
+    {
         if (!IsOwner) return;
 
         GetInteractibleObject(collision.gameObject);
@@ -110,48 +113,46 @@ public class Player : NetworkBehaviour
     }
 
     #region Player Skin Management
-    public void SetSkinIndex(int value) => SelectSkinServerRpc(value); // Call this to set the skin index.
     private int PickRandomSkin() => UnityEngine.Random.Range(0, 5); //pick random index between 0 and 4.
-    
+
     [ContextMenu("SetSkin")]
-    private void SetSkin() //playerSkinIndex must be between 0 and 4 includes.
+    private void SetSkin(int newSkinIndex) //playerSkinIndex must be between 0 and 4 includes.
     {
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
-        
+
         #region Set Skin Verif
 
-        if (playerMovement is null){
+        if (playerMovement is null)
+        {
             throw new NullReferenceException("no component PlayerMovement on the player object");
         }
-        if(SelectedSkinIndex.Value > 4 || SelectedSkinIndex.Value < -1) {
-            throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
+        if (newSkinIndex > 4 || newSkinIndex < -1)
+        {
+            throw new ArgumentOutOfRangeException(nameof(newSkinIndex), "Skin index must be between 0 and 4 includes");
         }
-        
+
         #endregion
-        
+
         ResetSkinVisibility();
-        if (SelectedSkinIndex.Value == -1) { 
-            SelectSkinServerRpc(PickRandomSkin()); 
+        if (newSkinIndex == -1)
+        {
+            SelectSkinServerRpc(PickRandomSkin());
         }
 
-        SelectSkinServerRpc(SelectedSkinIndex.Value);
-
-     
-        //_choosenSkin = _skinParent.GetChild(SelectedSkinIndex.Value).gameObject;
-        //_choosenSkin.SetActive(true);
-        
-        //playerMovement.SetRightAnimator(_choosenSkin);
+        SelectSkinServerRpc(newSkinIndex);
         playerMovement.SetPlayerSpeed(stats.speed);
 
-        
+       // OnSkinChanged(0, SelectedSkinIndex.Value);
     }
 
     [ServerRpc(RequireOwnership = false)]
     private void SelectSkinServerRpc(int index)
     {
+        Debug.Log($"------------------------- Skin Index is {index} ------------------------");
         if (index >= 0 && index < _skinParent.childCount)
         {
             SelectedSkinIndex.Value = index;
+            Debug.Log($"------------------------- new Skin Index is {SelectedSkinIndex.Value} ------------------------");
         }
     }
 
@@ -159,7 +160,7 @@ public class Player : NetworkBehaviour
 
     private void ResetSkinVisibility()
     {
-        for(int i = 0 ; i < _skinParent.childCount; i++)
+        for (int i = 0; i < _skinParent.childCount; i++)
         {
             _skinParent.GetChild(i).gameObject.SetActive(false);
         }
@@ -171,9 +172,9 @@ public class Player : NetworkBehaviour
     {
         if (interactibleObject.TryGetComponent(out InteractableObjects _interactibleObject))
         {
-            if(interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w) && _canPickupWeapon)
+            if (interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w) && _canPickupWeapon)
             {
-                if(weaponEquipied != null)
+                if (weaponEquipied != null)
                 {
                     int index = GetComponent<PlayerDeath>()._weaponPrefabs.IndexOf(weaponEquipied.spawnableObject);
                     SpawnWeaponServerRpc(transform.position, index);
@@ -183,13 +184,13 @@ public class Player : NetworkBehaviour
                 StartCoroutine(ReloadPickup());
                 return;
             }
-            else if(interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w1) && !_canPickupWeapon)
+            else if (interactibleObject.TryGetComponent<Interactible_Weapons>(out Interactible_Weapons w1) && !_canPickupWeapon)
             {
-                return; 
+                return;
             }
 
             Interact(interactibleObject, _interactibleObject);
-            
+
         }
     }
 
@@ -236,7 +237,7 @@ public class Player : NetworkBehaviour
     {
         Transform spawn = Server.instance.spawnPoints[UnityEngine.Random.Range(0, Server.instance.spawnPoints.Count)];
 
-        if(Server.instance.usedSpawnPoints.Contains(spawn))
+        if (Server.instance.usedSpawnPoints.Contains(spawn))
         {
             SetPlayerAtRandomPosition();
         }
@@ -252,7 +253,7 @@ public class Player : NetworkBehaviour
     {
         float copy = _health.Value - damage;
         TakeDamageServerRpc(damage);
-        
+
         //Flashes the sprite red for half a second when taking damage
         _choosenSkin.GetComponent<SpriteRenderer>().color = Color.red;
         TimerManager.StartTimer(0.5f, () =>
@@ -282,12 +283,12 @@ public class Player : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void SetHealthValueServerRpc(float value)
     {
-       _health.Value = value;
+        _health.Value = value;
     }
 
     private void OnHealthChanged(float previousValue, float newValue)
     {
-        if(_healthFill.transform.parent.gameObject.activeSelf)
+        if (_healthFill.transform.parent.gameObject.activeSelf)
             _healthFill.fillAmount = newValue / stats.defaultHealth.Value;
     }
 
