@@ -8575,8 +8575,6 @@ MonoBehaviour:
     spawnPosition: {x: -4, y: 0}
   - spawnedObject: {fileID: 6140665528303204465, guid: db5f58f8fd7f1af4082991e57048f041, type: 3}
     spawnPosition: {x: -2, y: 0}
-  - spawnedObject: {fileID: 6140665528303204465, guid: 33faf821017a82441892b6850d633b27, type: 3}
-    spawnPosition: {x: 2, y: 0}
   - spawnedObject: {fileID: 6140665528303204465, guid: 30844fb1cdc41ca41869cd5a7cea4eeb, type: 3}
     spawnPosition: {x: 4, y: 0}
   spawnPoints:
@@ -8596,6 +8594,7 @@ MonoBehaviour:
   - {fileID: 1034046211}
   - {fileID: 338500733}
   - {fileID: 1457598532}
+  usedSpawnPoints: []
   spawnableRandomItems:
   - {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
   - {fileID: 59200519895895491, guid: 0f03c0ab21d2e284a99dfcc357f93923, type: 3}
