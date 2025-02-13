@@ -288,7 +288,7 @@ public class Player : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void SpawnBulletServerRpc(Vector2 spawnPosition, float bulletSpeed, float fireRange, Vector2 direction, ulong throwerID, float damages)
     {
-        GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+        GameObject bullet = Instantiate(weaponEquipied.weaponData.bulletPrefab, spawnPosition, Quaternion.identity);
         bullet.GetComponent<NetworkObject>().Spawn();
         bullet.GetComponent<Bullet>().InitializeBulletClientRpc(bulletSpeed, fireRange, direction, throwerID, damages);
     }

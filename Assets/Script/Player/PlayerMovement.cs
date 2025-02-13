@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Mouse")]
     private Vector3 _mousePosition;
 
+    [Header("Gamepad")]
+    [SerializeField] private GameObject _rightStick;
+    [SerializeField] private GameObject _leftStick;
+
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
@@ -62,6 +66,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if(Application.platform == RuntimePlatform.Android)
+        {
+            
+        }
+
         _moveInput = context.ReadValue<Vector2>();
 
         if (context.started)
@@ -83,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("IsMoving", false);
             _skinAnimation.SetSprite();
         }
+
     }
 
     public GameObject GetPlayerSkin()
