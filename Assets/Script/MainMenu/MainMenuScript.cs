@@ -83,9 +83,9 @@ public class MainMenuScript : MonoBehaviour
     private void SavePlayerInfos(User user)
     {
         GameObject userInfo = new GameObject("UserInfo");
-        userInfo.AddComponent<User>();
-        userInfo.GetComponent<User>().id = user.id;
-        userInfo.GetComponent<User>().nickname = user.nickname;
+        userInfo.AddComponent<UserInfos>();
+        userInfo.GetComponent<UserInfos>().id = user.id;
+        userInfo.GetComponent<UserInfos>().nickname = user.nickname;
         DontDestroyOnLoad(userInfo);
     }
 

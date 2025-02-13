@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [System.Serializable]
-public class User : MonoBehaviour
+public class UserInfos : MonoBehaviour
 {
-    public static User Instance;
+    public static UserInfos Instance;
     
     public int id;
     public string nickname;
