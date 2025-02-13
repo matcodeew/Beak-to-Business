@@ -14,5 +14,5 @@ LibraryManager.library.GetPlayerIdCookie = function() {
 };
 
 LibraryManager.library.LogOut = function() {
-    window.location.href = "http://192.168.1.238"; // Ajout du protocole HTTP pour éviter l'erreur
+    window.location.href = "http://192.168.1.238";
 };

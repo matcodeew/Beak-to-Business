@@ -56,13 +56,11 @@ public class PlayerData : NetworkBehaviour
         Score.Value = value;
     }
 
-
-
     [ClientRpc]
     public void GetNameClientRPC(ClientRpcParams clientRpcParams = default)
     {
         //Mettre le nom r�cup�r� dans la BDD a la place de "Player"
-        GetNameServerRPC("Player");
+        GetNameServerRPC(User.Instance.nickname);
     }
 
     [ServerRpc]
