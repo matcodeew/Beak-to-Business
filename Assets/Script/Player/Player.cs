@@ -285,14 +285,16 @@ public class Player : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void ChangeSpriteColorServerRpc()
     {
-        Debug.Log("--------------------------------Change Color Server RPC----------------------------------");
-        Debug.Log($"--------------------------------ChoosenSkin name is {_choosenSkin.name}---------------------------------");
+        ChangeSpriteClientRpc();
+    }
+    [ClientRpc]
+    private void ChangeSpriteClientRpc()
+    {
         _choosenSkin.GetComponent<SpriteRenderer>().color = Color.red;
 
-        TimerManager.StartTimer(0.25f, () =>
+        TimerManager.StartTimer(0.1f, () =>
         {
             _choosenSkin.GetComponent<SpriteRenderer>().color = Color.white;
-            Debug.Log("--------------------------------Finish changing Server RPC----------------------------------");
         });
     }
 

@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+public class PlayerAnimation : NetworkBehaviour
 {
     [Header("Sprite")]
     private Sprite _lastFrame;
@@ -15,18 +16,38 @@ public class PlayerAnimation : MonoBehaviour
 
     public void SaveLastFrame()
     {
-        _lastFrame = _spriteRenderer.sprite;
+        if (_spriteRenderer != null)
+        {
+            _lastFrame = _spriteRenderer.sprite;
+        }
     }
 
     public void SetSprite()
     {
-        if (_lastFrame is null)
-        {
-            _spriteRenderer.sprite = null;
-            return;
-        }
         _animator.enabled = false;
         _spriteRenderer.sprite = _lastFrame;
-        _lastFrame = null;
     }
+
+    //[ServerRpc]
+    //public void SaveLastFrameServerRpc(Vector2 playerMovement)
+    //{
+    //    if (_spriteRenderer != null)
+    //    {
+    //        _lastFrame = _spriteRenderer.sprite;
+    //        if (playerMovement == Vector2.zero)
+    //        {
+    //            SetSpriteClientRpc(_lastFrame);
+    //        }
+    //    }
+    //}
+
+    //[ClientRpc]
+    //private void SetSpriteClientRpc(Sprite newSprite)
+    //{
+    //    if (_spriteRenderer == null)
+    //        return;
+
+    //    _animator.enabled = false;
+    //    _spriteRenderer.sprite = newSprite;
+    //}
 }

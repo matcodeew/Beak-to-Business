@@ -79,21 +79,28 @@ public class PlayerMovement : NetworkBehaviour
             _animator.enabled = true;
             _animator.SetBool("IsMoving", true);
         }
+        _skinAnimation.SaveLastFrame();
         if (context.canceled)
         {
             _moveInput = Vector2.zero;
             _rb.linearVelocity = Vector2.zero;
             _animator.SetBool("IsMoving", false);
-            SetRightAnimationAtTheEndServerRpc();
+            _skinAnimation.SetSprite();
+            _animator.enabled = false;
         }
         UpdateAnimationServerRpc(_moveInput);
     }
 
-    [ServerRpc]
-    private void SetRightAnimationAtTheEndServerRpc()
-    {
-        _skinAnimation.SetSprite();
-    }
+    //[ServerRpc]
+    //private void SetRightAnimationAtTheEndServerRpc()
+    //{
+    //    SetSpriteClientRpc();
+    //}
+    //[ClientRpc]
+    //private void SetSpriteClientRpc()
+    //{
+    //    _skinAnimation.SetSprite();
+    //}
 
     [ServerRpc]
     private void UpdateAnimationServerRpc(Vector2 moveInput)
@@ -108,7 +115,6 @@ public class PlayerMovement : NetworkBehaviour
 
         _animator.SetFloat("DirectionX", moveInput.x);
         _animator.SetFloat("DirectionY", moveInput.y);
-        _skinAnimation.SaveLastFrame();
         bool isMoving = moveInput != Vector2.zero;
         _animator.SetBool("IsMoving", isMoving);
     }
