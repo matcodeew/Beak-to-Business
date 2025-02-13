@@ -496,6 +496,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FastFood_Table4 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6031399
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3923369
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -651,6 +659,14 @@ PrefabInstance:
     - target: {fileID: 3944847159309026743, guid: f415c96466714c74f909c65f94ee10e6, type: 3}
       propertyPath: m_Name
       value: FastFood_Table7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664010463136175108, guid: f415c96466714c74f909c65f94ee10e6, type: 3}
+      propertyPath: m_Size.y
+      value: 3.665765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664010463136175108, guid: f415c96466714c74f909c65f94ee10e6, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.17345989
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2733,18 +2749,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1862649535}
     m_Modifications:
-    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
-      propertyPath: m_Size.x
-      value: 1.7768874
-      objectReference: {fileID: 0}
-    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0797565
-      objectReference: {fileID: 0}
-    - target: {fileID: 942729235620290649, guid: 60b3b963ffef1044dba470470d506362, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.34119034
-      objectReference: {fileID: 0}
     - target: {fileID: 3750376219092982157, guid: 60b3b963ffef1044dba470470d506362, type: 3}
       propertyPath: m_Name
       value: SuperMarket_Register1
@@ -2965,6 +2969,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7658124
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.43252033
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3045,11 +3057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
       propertyPath: m_Size.y
-      value: 3.764546
+      value: 2.784957
       objectReference: {fileID: 0}
     - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
       propertyPath: m_Offset.y
-      value: -0.047754467
+      value: 0.44203994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4276,6 +4288,14 @@ PrefabInstance:
     - target: {fileID: 5147349507761631655, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
       propertyPath: m_Name
       value: FastFood_Table4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7442193
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.462408
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5574,6 +5594,14 @@ PrefabInstance:
     - target: {fileID: 4893279641166471765, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6205144
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36455864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6951,6 +6979,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Size.y
+      value: 2.774109
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.44746396
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7576,6 +7612,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7889042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.40188286
+      objectReference: {fileID: 0}
     - target: {fileID: 5836798284069152120, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
       propertyPath: m_Name
       value: FastFood_Table1 (1)
@@ -7824,6 +7868,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 2050428219677792032, guid: 690f90d2537840f4899457d7a0b4168e, type: 3}
+      propertyPath: m_Size.y
+      value: 3.665764
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050428219677792032, guid: 690f90d2537840f4899457d7a0b4168e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.15436876
+      objectReference: {fileID: 0}
     - target: {fileID: 2385570199401893217, guid: 690f90d2537840f4899457d7a0b4168e, type: 3}
       propertyPath: m_Name
       value: FastFood_Table5 (1)
@@ -8920,6 +8972,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7715302
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.44875336
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9237,11 +9297,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
       propertyPath: m_Size.y
-      value: 3.700889
+      value: 2.721299
       objectReference: {fileID: 0}
     - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
       propertyPath: m_Offset.y
-      value: -0.054109633
+      value: 0.43568555
       objectReference: {fileID: 0}
     - target: {fileID: 5836798284069152120, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
       propertyPath: m_Name
@@ -10144,6 +10204,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8030327756801683954, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
+      propertyPath: m_Size.y
+      value: 3.6978555
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030327756801683954, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2146895
+      objectReference: {fileID: 0}
     - target: {fileID: 8931847809689450121, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
       propertyPath: m_Name
       value: FastFood_Table9 (1)
@@ -10455,6 +10523,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7142549
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36455888
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10473,6 +10549,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6482933
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.47218835
+      objectReference: {fileID: 0}
     - target: {fileID: 5836798284069152120, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
       propertyPath: m_Name
       value: FastFood_Table1 (3)
@@ -10951,6 +11035,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8030327756801683954, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
+      propertyPath: m_Size.y
+      value: 3.6978557
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030327756801683954, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.21468937
+      objectReference: {fileID: 0}
     - target: {fileID: 8931847809689450121, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
       propertyPath: m_Name
       value: FastFood_Table9 (2)
@@ -11187,6 +11279,14 @@ PrefabInstance:
     - target: {fileID: 6759506465081765639, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030327756801683954, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
+      propertyPath: m_Size.y
+      value: 3.7490392
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030327756801683954, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.18909764
       objectReference: {fileID: 0}
     - target: {fileID: 8931847809689450121, guid: afb4f15f531d4284ea17de7b7034f6b1, type: 3}
       propertyPath: m_Name
@@ -12049,8 +12149,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   audioSource: {fileID: 1534624713}
-  pimentAudio: {fileID: 8300000, guid: 743b07bca9d2dd64f84ade9dfa8299d6, type: 3}
-  sniperAudio: {fileID: 8300000, guid: d6dcce5927fff1045b43cda74a31aed1, type: 3}
+  _pimentAudio: {fileID: 8300000, guid: 743b07bca9d2dd64f84ade9dfa8299d6, type: 3}
+  _healAudio: {fileID: 8300000, guid: 95841b0463041df49890fbe79c13dad6, type: 3}
+  _sniperAudio: {fileID: 8300000, guid: d6dcce5927fff1045b43cda74a31aed1, type: 3}
+  _deathAudio: {fileID: 8300000, guid: 456a0cb84fb5664498058cb7516abe60, type: 3}
+  _pillsAudio: {fileID: 8300000, guid: 68ba98d6c6f00da449b73703759bccad, type: 3}
+  _rollerAudio: {fileID: 8300000, guid: 990fb8dccc2f834409cddbf53c97bd04, type: 3}
+  _equipedWeaponAudio: {fileID: 8300000, guid: 4f075b5775e277d48aa93c4a8984b383, type: 3}
 --- !u!4 &1534624715
 Transform:
   m_ObjectHideFlags: 0
@@ -12148,6 +12253,14 @@ PrefabInstance:
     - target: {fileID: 5147349507761631655, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
       propertyPath: m_Name
       value: FastFood_Table4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7442198
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.46240783
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12486,6 +12599,14 @@ PrefabInstance:
     - target: {fileID: 2560053382154817099, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6309192
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244017037789887361, guid: 0c8bcaedb311c5b478613fe0813110b6, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5190588
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13589,6 +13710,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7467215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781842561633323908, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.42297426
+      objectReference: {fileID: 0}
     - target: {fileID: 5836798284069152120, guid: d6cc8eef90cbdeb4c938b36eee7273ba, type: 3}
       propertyPath: m_Name
       value: FastFood_Table1 (2)
@@ -14087,6 +14216,14 @@ PrefabInstance:
     - target: {fileID: 5147349507761631655, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
       propertyPath: m_Name
       value: FastFood_Table4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.65001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467900315808994610, guid: 331b9a408c1f3d4419c5bac2678ef91f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.41577193
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15561,6 +15698,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7658122
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837911420223231990, guid: dc5bb807620d6f94d957f953fad5230f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.43252054
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16658,6 +16803,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19489980}
     m_Modifications:
+    - target: {fileID: 2050428219677792032, guid: 690f90d2537840f4899457d7a0b4168e, type: 3}
+      propertyPath: m_Size.y
+      value: 3.7681322
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050428219677792032, guid: 690f90d2537840f4899457d7a0b4168e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.10318446
+      objectReference: {fileID: 0}
     - target: {fileID: 2385570199401893217, guid: 690f90d2537840f4899457d7a0b4168e, type: 3}
       propertyPath: m_Name
       value: FastFood_Table5
