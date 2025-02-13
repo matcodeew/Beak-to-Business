@@ -31,19 +31,6 @@ public class PlayerData : NetworkBehaviour
             });
     }
 
-    private void Update()
-    {
-        if(IsOwner)
-        {
-            if(Input.GetKeyDown(KeyCode.V))
-            {
-                Debug.Log("Increase Score");
-                IncreaseScoreServerRpc(10);
-
-            }
-        }
-    }
-
     [ServerRpc(RequireOwnership = false)]
     public void IncreaseScoreServerRpc(int value)
     {

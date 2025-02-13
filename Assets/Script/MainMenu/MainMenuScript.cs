@@ -67,7 +67,7 @@ public class MainMenuScript : MonoBehaviour
         userName = _testUser.nickname;
         
         SetPlayerInfos();
-        
+        SavePlayerInfos(_testUser);
         _onUserLoggedIn.Invoke(userId);
         
         frontPanel.GetComponent<Animator>().SetTrigger("FadeOut");
