@@ -57,6 +57,7 @@ public class BuffManager : MonoBehaviour
         {
             case Stats.health:
                 player.HealServerRpc(player.stats.defaultHealth.Value * _value);
+                GetComponent<PlayerAudio>().PlayHealAudio();
                 break;
 
             case Stats.damage:
@@ -69,6 +70,7 @@ public class BuffManager : MonoBehaviour
 
             case Stats.fireRate:
                 _weaponStats.fireRate *= _value;
+                GetComponent<PlayerAudio>().PlayPimentAudio();
                 break;
 
             case Stats.NONE:

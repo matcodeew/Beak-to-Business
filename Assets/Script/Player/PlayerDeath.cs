@@ -90,6 +90,7 @@ public class PlayerDeath : NetworkBehaviour
         _deathUI.SetActive(true);
         _scoreText.text = _playerData.Score.Value.ToString();
         _playerData.SetScoreServerRpc(0);
+        GetComponent<PlayerAudio>().PlayDeathAudio();
     }
 
     public void PlayAgain()
