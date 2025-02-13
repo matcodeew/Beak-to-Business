@@ -20,6 +20,8 @@ public class Player : NetworkBehaviour
 
     [Header("Combat & Shooting")]
     [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private GameObject _fishBonePrefab;
+    [SerializeField] private GameObject _fishBoneWeapon;
 
     [Header("Player Health")]
     public Image _healthFill;
@@ -40,7 +42,6 @@ public class Player : NetworkBehaviour
 
     private void OnSkinChanged(int oldIndex, int newIndex)
     {
-        print("SelectedSkinIndex is " + SelectedSkinIndex.Value);
         ResetSkinVisibility();
         if (newIndex >= 0 && newIndex < _skinParent.childCount)
         {
@@ -60,11 +61,13 @@ public class Player : NetworkBehaviour
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
 
+        SetSkinIndex(UserInfos.Instance.selectedSkin);
         if (IsOwner)
         {
-            SetSkin(UserInfos.Instance.selectedSkin);
+            SetSkin();
         }
         OnHealthChanged(0f, stats.defaultHealth.Value);
+        OnSkinChanged(0, SelectedSkinIndex.Value);
 
         SetPlayerAtRandomPosition();
         _canPickupWeapon = true;
@@ -113,10 +116,11 @@ public class Player : NetworkBehaviour
     }
 
     #region Player Skin Management
+    public void SetSkinIndex(int value) => SelectSkinServerRpc(value); // Call this to set the skin index.
     private int PickRandomSkin() => UnityEngine.Random.Range(0, 5); //pick random index between 0 and 4.
 
     [ContextMenu("SetSkin")]
-    private void SetSkin(int newSkinIndex) //playerSkinIndex must be between 0 and 4 includes.
+    private void SetSkin() //playerSkinIndex must be between 0 and 4 includes.
     {
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
 
@@ -126,33 +130,29 @@ public class Player : NetworkBehaviour
         {
             throw new NullReferenceException("no component PlayerMovement on the player object");
         }
-        if (newSkinIndex > 4 || newSkinIndex < -1)
+        if (SelectedSkinIndex.Value > 4 || SelectedSkinIndex.Value < -1)
         {
-            throw new ArgumentOutOfRangeException(nameof(newSkinIndex), "Skin index must be between 0 and 4 includes");
+            throw new ArgumentOutOfRangeException(nameof(SelectedSkinIndex.Value), "Skin index must be between 0 and 4 includes");
         }
 
         #endregion
 
         ResetSkinVisibility();
-        if (newSkinIndex == -1)
+        if (SelectedSkinIndex.Value == -1)
         {
             SelectSkinServerRpc(PickRandomSkin());
         }
 
-        SelectSkinServerRpc(newSkinIndex);
+        SelectSkinServerRpc(SelectedSkinIndex.Value);
         playerMovement.SetPlayerSpeed(stats.speed);
-
-       // OnSkinChanged(0, SelectedSkinIndex.Value);
     }
 
     [ServerRpc(RequireOwnership = false)]
     private void SelectSkinServerRpc(int index)
     {
-        Debug.Log($"------------------------- Skin Index is {index} ------------------------");
         if (index >= 0 && index < _skinParent.childCount)
         {
             SelectedSkinIndex.Value = index;
-            Debug.Log($"------------------------- new Skin Index is {SelectedSkinIndex.Value} ------------------------");
         }
     }
 
@@ -255,11 +255,7 @@ public class Player : NetworkBehaviour
         TakeDamageServerRpc(damage);
 
         //Flashes the sprite red for half a second when taking damage
-        _choosenSkin.GetComponent<SpriteRenderer>().color = Color.red;
-        TimerManager.StartTimer(0.5f, () =>
-        {
-            _choosenSkin.GetComponent<SpriteRenderer>().color = Color.white;
-        });
+        //ChangeSpriteColorServerRpc();
         if (copy <= 0)
         {
             SetHealthValueServerRpc(0);
@@ -286,6 +282,20 @@ public class Player : NetworkBehaviour
         _health.Value = value;
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    private void ChangeSpriteColorServerRpc()
+    {
+        Debug.Log("--------------------------------Change Color Server RPC----------------------------------");
+        Debug.Log($"--------------------------------ChoosenSkin name is {_choosenSkin.name}---------------------------------");
+        _choosenSkin.GetComponent<SpriteRenderer>().color = Color.red;
+
+        TimerManager.StartTimer(0.25f, () =>
+        {
+            _choosenSkin.GetComponent<SpriteRenderer>().color = Color.white;
+            Debug.Log("--------------------------------Finish changing Server RPC----------------------------------");
+        });
+    }
+
     private void OnHealthChanged(float previousValue, float newValue)
     {
         if (_healthFill.transform.parent.gameObject.activeSelf)
@@ -304,14 +314,15 @@ public class Player : NetworkBehaviour
                 weaponEquipied.stats.fireRange,
                 direction,
                 OwnerClientId,
-                weaponEquipied.stats.damage);
+                weaponEquipied.stats.damage,
+                weaponEquipied.weaponData.typeIndex);
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void SpawnBulletServerRpc(Vector2 spawnPosition, float bulletSpeed, float fireRange, Vector2 direction, ulong throwerID, float damages)
+    public void SpawnBulletServerRpc(Vector2 spawnPosition, float bulletSpeed, float fireRange, Vector2 direction, ulong throwerID, float damages, int weaponID)
     {
-        GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+        GameObject bullet = Instantiate(weaponID == 1 ? _fishBonePrefab : _bulletPrefab, spawnPosition, Quaternion.identity);
         bullet.GetComponent<NetworkObject>().Spawn();
         bullet.GetComponent<Bullet>().InitializeBulletClientRpc(bulletSpeed, fireRange, direction, throwerID, damages);
     }

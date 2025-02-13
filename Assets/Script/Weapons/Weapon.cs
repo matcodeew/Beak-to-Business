@@ -10,15 +10,10 @@ public struct WeaponsStats
     public float damage;
     public Vector2 aoeRange;
 }
-public enum WeaponType
-{
-
-}
 
 public abstract class Weapon : NetworkBehaviour
 {
     public WeaponsStats stats;
-    protected WeaponType type;
     protected float cooldown;
     [SerializeField] protected LayerMask playerMask;
     public WeaponStats weaponData;
@@ -35,7 +30,6 @@ public abstract class Weapon : NetworkBehaviour
         stats.fireRange = data.fireRange;
         stats.fireRate = data.fireRate;
         stats.bulletSpeed = data.bulletSpeed;
-        
         cooldown = stats.fireRate;
     }
 

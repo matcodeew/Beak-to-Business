@@ -1518,6 +1518,7 @@ MonoBehaviour:
       m_InternalValue: 0
   weaponEquipied: {fileID: 0}
   _bulletPrefab: {fileID: 3540742513939356336, guid: 59d6f9dd7dee6eb4d9f874f379bbcb6b, type: 3}
+  _fishBonePrefab: {fileID: 3540742513939356336, guid: 5e5aab009c0fa244db1440c53b545a17, type: 3}
   _healthFill: {fileID: 6969249001280636280}
   _skinParent: {fileID: 2217227213119684928}
   SelectedSkinIndex:
