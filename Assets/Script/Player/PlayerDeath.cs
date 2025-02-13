@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 public class PlayerDeath : NetworkBehaviour
 {
@@ -30,6 +31,9 @@ public class PlayerDeath : NetworkBehaviour
     private float _currentTimer = 0f;
 
     private Player _player;
+
+    [DllImport("__Internal")]
+    public static extern void LogOut();
     
     public override void OnNetworkSpawn()
     {
@@ -134,6 +138,11 @@ public class PlayerDeath : NetworkBehaviour
         int prefabIndex = _weaponPrefabs.IndexOf(weapon);
 
         SpawnGunOnServerRpc(prefabIndex, transform.position);
+    }
+
+    public void QuitGame()
+    {
+        LogOut();
     }
 
 
