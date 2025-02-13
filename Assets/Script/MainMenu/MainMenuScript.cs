@@ -24,8 +24,8 @@ public class MainMenuScript : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         GetPlayerIdCookie();
 #endif
-        //Commentï¿½ = build Web
-        //Non commentï¿½ = nuild Windows
+        //Commenté = build Web
+        //Non commenté = nuild Windows
         GetUserId("22");
     }
 
@@ -48,9 +48,6 @@ public class MainMenuScript : MonoBehaviour
 
     [DllImport("__Internal")]
     public static extern void GetPlayerIdCookie();
-    
-    [DllImport("__Internal")]
-    public static extern void logOut();
     public void GetUserId(string _id)
     {
         StartCoroutine(GetUser(_id));
@@ -67,7 +64,6 @@ public class MainMenuScript : MonoBehaviour
         userName = _testUser.nickname;
         
         SetPlayerInfos();
-        SavePlayerInfos(_testUser);
         
         _onUserLoggedIn.Invoke(userId);
         
@@ -80,15 +76,6 @@ public class MainMenuScript : MonoBehaviour
         userNameText.text = "Username : <br>" + userName;
     }
 
-    private void SavePlayerInfos(User user)
-    {
-        GameObject userInfo = new GameObject("UserInfo");
-        userInfo.AddComponent<User>();
-        userInfo.GetComponent<User>().id = user.id;
-        userInfo.GetComponent<User>().nickname = user.nickname;
-        DontDestroyOnLoad(userInfo);
-    }
-
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -96,6 +83,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void LogOut()
     {
-        logOut();
+        
     }
 }

@@ -115,7 +115,14 @@ public static class APICaller
 }
 
 //These classes are used to format the Json from the api into a User object
-
+[System.Serializable]
+public class User
+{
+    public int id;
+    public string nickname;
+    public string email;
+    public string password;
+}
 
 [System.Serializable]
 public class Skin
