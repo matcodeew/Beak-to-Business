@@ -10,6 +10,8 @@ public class UserInfos : MonoBehaviour
     public string email;
     public string password;
 
+    public int selectedSkin;
+
     void Awake()
     {
         if (Instance != null)
