@@ -27,7 +27,7 @@ public class Player : NetworkBehaviour
 
     [Header("Player Health")]
     public TextMeshProUGUI lifeText;
-    private NetworkVariable<float> _health = new NetworkVariable<float>(100,
+    private NetworkVariable<float> _health = new NetworkVariable<float>(200,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     [Header("Player Abilities & Interaction")]
