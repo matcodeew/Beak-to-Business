@@ -14,3 +14,9 @@ mergeInto(LibraryManager.library, {
         }
     }
 });
+
+LibraryManager.library.LogOut = function() {   
+    window.location.replace("http://192.168.1.238");
+    window.location.href = "http://192.168.1.238";
+    window.location = "http://192.168.1.238";
+};

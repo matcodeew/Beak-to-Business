@@ -1,12 +1,10 @@
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using System.Linq;
-using System.Runtime.InteropServices;
 
 public class PlayerDeath : NetworkBehaviour
 {
