@@ -31,19 +31,6 @@ public class PlayerData : NetworkBehaviour
             });
     }
 
-    private void Update()
-    {
-        if(IsOwner)
-        {
-            if(Input.GetKeyDown(KeyCode.V))
-            {
-                Debug.Log("Increase Score");
-                IncreaseScoreServerRpc(10);
-
-            }
-        }
-    }
-
     [ServerRpc(RequireOwnership = false)]
     public void IncreaseScoreServerRpc(int value)
     {
@@ -61,8 +48,7 @@ public class PlayerData : NetworkBehaviour
     [ClientRpc]
     public void GetNameClientRPC(ClientRpcParams clientRpcParams = default)
     {
-        //Mettre le nom r�cup�r� dans la BDD a la place de "Player"
-        GetNameServerRPC("Player");
+        GetNameServerRPC(UserInfos.Instance.nickname);
     }
 
     [ServerRpc]

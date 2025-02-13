@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -21,56 +22,63 @@ public class Server : NetworkBehaviour
     [SerializeField] private List<SpawnableObjectOnSpawnOnServer> spawnableObjectsOnSpawn;
 
     [Header("Item Random Spawn")]
+    public List<Transform> spawnPoints;
+    [HideInInspector] public List<Transform> usedSpawnPoints;
     [SerializeField] private List<GameObject> spawnableRandomItems;
-    public Rect spawnZone;
+    //public Rect spawnZone;
 
     private bool server = false;
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(spawnZone.center, spawnZone.size);
-    }
-
 
     private void Awake()
     {
         instance = this;
     }
 
-    //void Start()
-    //{
-    //
-    //    string[] args = System.Environment.GetCommandLineArgs();
-    //
-    //    for (int i = 0; i < args.Length; i++)
-    //    {
-    //        if (args[i] == "-s")
-    //        {
-    //            server = true;
-    //            Debug.Log($"--------------- Scene {SceneManager.GetActiveScene().name} loaded ---------------");
-    //            NetworkManager.Singleton.StartServer();
-    //            NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
-    //            SpawnObjectsOnServer();
-    //            RandomSpawnObjectsOnServer();
-    //        }
-    //    }
-    //
-    //    if (!server)
-    //        ConnectToServer();
-    //
-    //}
+    void Start()
+    {
+        string[] args = System.Environment.GetCommandLineArgs();
 
+        for (int i = 0; i < args.Length; i++)
+        {
+            if (args[i] == "-s")
+            {
+                server = true;
+                Debug.Log($"--------------- Scene {SceneManager.GetActiveScene().name} loaded ---------------");
+                NetworkManager.Singleton.StartServer();
+                NetworkManager.Singleton.OnClientConnectedCallback += ClientConnect;
+                SpawnObjectsOnServer();
+                RandomSpawnObjectsOnServer();
+            }
+        }
+
+        if (!server)
+            ConnectToServer();
+    }
 
     private void RandomSpawnObjectsOnServer()
     {
         foreach (GameObject obj in spawnableRandomItems)
         {
-            Vector2 position = new Vector2(Random.Range(spawnZone.xMin, spawnZone.xMax), Random.Range(spawnZone.yMin, spawnZone.yMax));
-            GameObject gameObj = Instantiate(obj, position, Quaternion.identity);
+            SpawnObj(obj);
+            
+        }
+    }
+
+    private void SpawnObj(GameObject obj)
+    {
+        Transform spawn = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
+        if(usedSpawnPoints.Contains(spawn))
+        {
+            SpawnObj(obj);
+        }
+        else
+        {
+            usedSpawnPoints.Add(spawn);
+            GameObject gameObj = Instantiate(obj, spawn.position, Quaternion.identity);
             gameObj.GetComponent<NetworkObject>().Spawn();
         }
     }
+
     private void SpawnObjectsOnServer()
     {
         foreach (SpawnableObjectOnSpawnOnServer obj in spawnableObjectsOnSpawn)
@@ -92,7 +100,6 @@ public class Server : NetworkBehaviour
     public void ClientConnect(ulong connectionID)
     {
         Debug.Log("----------" + connectionID + " connected----------");
-        //ScoreboardManager.instance.OnPlayerEnteredRoom(connectionID);
 
     }
 
