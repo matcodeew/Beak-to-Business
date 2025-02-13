@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1190371543
+  GlobalObjectIdHash: 1912745989
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -78,7 +78,12 @@ MonoBehaviour:
     m_Bits: 8
   weaponData: {fileID: 11400000, guid: 61cc8efafec5fd2409ff37de6d6c99d5, type: 2}
   spawnableObject: {fileID: 59200519895895491, guid: 3ffbdfe59ef37cf44a7da0d7cfd167b5, type: 3}
-  _animator: {fileID: 0}
+  animator: {fileID: 3548925988203808564}
+  weaponImage: {fileID: 0}
+  _downAnim: WaterGunDown
+  _upAnim: WaterGunForward
+  _leftAnim: WaterGunLeft
+  _rightAnim: WaterGunRight
 --- !u!212 &2116799555259460334
 SpriteRenderer:
   m_ObjectHideFlags: 0

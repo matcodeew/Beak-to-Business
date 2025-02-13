@@ -211,7 +211,7 @@ public class Player : NetworkBehaviour
     {
         weaponEquipied = weapon;
         weaponEquipied.Initialize(data);
-        //_weaponRenderer.sprite = weaponEquipied.weaponImage;
+        _weaponRenderer.sprite = weaponEquipied.weaponImage;
     }
 
     public void Shoot()

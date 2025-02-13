@@ -26,9 +26,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Mouse")]
     private Vector3 _mousePosition;
-
+    public Vector3 heading;
+    
     private void Awake()
     {
+        SetComponent();
         _rb = GetComponentInParent<Rigidbody2D>();
         EventManager.OnSkinChanged += SetComponent;
     }
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (_playerCamera)
         {
             _mousePosition = _playerCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 heading = _mousePosition - transform.position;
+            heading = _mousePosition - transform.position;
             float distance = heading.magnitude;
             direction = heading / distance;
         }
@@ -53,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     private void SetComponent()
     {
         _currentSkin = GetPlayerSkin();
+        Debug.Log(_currentSkin.name);
         _skinAnimation = _currentSkin.GetComponent<PlayerAnimation>();
     }
 
@@ -78,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         if (context.canceled)
         {
             //this.enabled = false;
-            
             moveInput = Vector2.zero;
             _rb.linearVelocity = Vector2.zero;
             _animator.SetBool("IsMoving", false);
