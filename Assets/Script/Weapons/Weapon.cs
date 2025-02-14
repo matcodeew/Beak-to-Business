@@ -57,7 +57,7 @@ public abstract class Weapon : NetworkBehaviour
             cooldown -= delta; 
         }
     }
-    protected bool CanShoot() => cooldown <= 0;
+    public bool CanShoot() => cooldown <= 0;
 
     public virtual void StartAnim()
     {
