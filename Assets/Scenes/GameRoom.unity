@@ -14531,8 +14531,10 @@ MonoBehaviour:
     y: -29.92
     width: 105
     height: 50.41
-  healBuffCountOnMap: 10
-  _healPrefab: {fileID: 6140665528303204465, guid: db5f58f8fd7f1af4082991e57048f041, type: 3}
+  NumbOfEachBonus: 5
+  _healBonus: {fileID: 6140665528303204465, guid: db5f58f8fd7f1af4082991e57048f041, type: 3}
+  _speedBonus: {fileID: 6140665528303204465, guid: f347a8e237e3e4349b750abdb27df794, type: 3}
+  _speedMalus: {fileID: 6140665528303204465, guid: 5b70fd63e694da047ae003d63303fb9f, type: 3}
 --- !u!1001 &1769748078
 PrefabInstance:
   m_ObjectHideFlags: 0

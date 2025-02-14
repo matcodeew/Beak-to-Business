@@ -144,6 +144,11 @@ public class Player : NetworkBehaviour
         }
 
         SelectSkinServerRpc(SelectedSkinIndex.Value);
+        SetPlayerMovementSpeed(playerMovement);
+    }
+
+    public void SetPlayerMovementSpeed(PlayerMovement playerMovement)
+    {
         playerMovement.SetPlayerSpeed(stats.speed);
     }
 

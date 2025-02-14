@@ -111,5 +111,6 @@ public class BuffManager : MonoBehaviour
             player.weaponEquipied.stats = _weaponStats;
         }
         player.stats = _playerStats;
+        player.SetPlayerMovementSpeed(player.GetComponent<PlayerMovement>());
     }
 }

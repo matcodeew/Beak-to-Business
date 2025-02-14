@@ -8,7 +8,6 @@ public class GeneralBuff : InteractableObjects
     [SerializeField] private float _value;
     [Header("Duration of effect")]
     [SerializeField] private float _duration;
-
     public override void PlayerInteract(Player player)
     {
         base.PlayerInteract(player);

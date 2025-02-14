@@ -32,8 +32,11 @@ public class Server : NetworkBehaviour
     public Rect spawnZone;
 
     [Header("Buff")]
-    [SerializeField] private int healBuffCountOnMap = 10;
-    [SerializeField] private GameObject _healPrefab;
+    [SerializeField] private int NumbOfEachBonus = 5;
+    [SerializeField] private GameObject _healBonus;
+    [SerializeField] private GameObject _speedBonus;
+    [SerializeField] private GameObject _speedMalus;
+
 
     private void Awake()
     {
@@ -79,10 +82,16 @@ public class Server : NetworkBehaviour
 
     private void SpawnBuffsOnMap()
     {
-        for(int i =0;i < healBuffCountOnMap; i++)
+        for (int i = 0; i < NumbOfEachBonus; i++)
         {
-            GameObject buff = Instantiate(_healPrefab, GetRandomPointOnMap(), Quaternion.identity);
-            buff.GetComponent<NetworkObject>().Spawn();
+            GameObject healBonus = Instantiate(_healBonus, GetRandomPointOnMap(), Quaternion.identity);
+            healBonus.GetComponent<NetworkObject>().Spawn();
+
+            GameObject speedBonus = Instantiate(_speedBonus, GetRandomPointOnMap(), Quaternion.identity);
+            speedBonus.GetComponent<NetworkObject>().Spawn();
+
+            GameObject speedMalus = Instantiate(_speedMalus, GetRandomPointOnMap(), Quaternion.identity);
+            speedMalus.GetComponent<NetworkObject>().Spawn();
         }
     }
 
