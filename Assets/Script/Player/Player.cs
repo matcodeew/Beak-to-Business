@@ -232,7 +232,8 @@ public class Player : NetworkBehaviour
     {
         if (weaponEquipied != null)
         {
-            weaponEquipied.Shoot(this.transform);
+            if (weaponEquipied.CanShoot()) { weaponEquipied.Shoot(this.transform); }
+            
         }
     }
     #endregion
