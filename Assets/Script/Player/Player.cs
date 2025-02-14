@@ -299,7 +299,7 @@ public class Player : NetworkBehaviour
         if (IsOwner)
         {
             SpawnBulletServerRpc(spawnPosition,
-                weaponEquipied.stats.bulletSpeed,
+                weaponEquipied.stats.bulletSpeed+GetComponent<Rigidbody2D>().velocity.magnitude,
                 weaponEquipied.stats.fireRange,
                 direction,
                 OwnerClientId,
