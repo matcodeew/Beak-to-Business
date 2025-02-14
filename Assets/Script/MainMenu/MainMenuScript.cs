@@ -26,7 +26,7 @@ public class MainMenuScript : MonoBehaviour
 #endif
         //Commente = build Web
         //Non commente = nuild Windows
-        GetUserId("22");
+        //GetUserId("22");
     }
 
     private void Start()
