@@ -20,8 +20,8 @@ public class Player : NetworkBehaviour
 
     [Header("Combat & Shooting")]
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private GameObject _fishBonePrefab;
-    [SerializeField] private GameObject _fishBoneWeapon;
+    [SerializeField] private GameObject _fishBoneBullet;
+    [SerializeField] private GameObject _waterGunBullet;
 
     [Header("Player Health")]
     public Image _healthFill;
@@ -232,8 +232,7 @@ public class Player : NetworkBehaviour
     {
         if (weaponEquipied != null)
         {
-            if (weaponEquipied.CanShoot()) { weaponEquipied.Shoot(this.transform); }
-            
+            weaponEquipied.Shoot(this.transform); 
         }
     }
     #endregion
@@ -317,8 +316,9 @@ public class Player : NetworkBehaviour
     {
         if (IsOwner)
         {
+            Debug.Log(_fishBoneBullet == null? "NULL" : "c'est pas null gros FPD va ");
             SpawnBulletServerRpc(spawnPosition,
-                weaponEquipied.stats.bulletSpeed,
+                weaponEquipied.stats.bulletSpeed + GetComponent<Rigidbody2D>().linearVelocity.magnitude,
                 weaponEquipied.stats.fireRange,
                 direction,
                 OwnerClientId,
@@ -330,7 +330,22 @@ public class Player : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void SpawnBulletServerRpc(Vector2 spawnPosition, float bulletSpeed, float fireRange, Vector2 direction, ulong throwerID, float damages, int weaponID)
     {
-        GameObject bullet = Instantiate(weaponID == 1 ? _fishBonePrefab : _bulletPrefab, spawnPosition, Quaternion.identity);
+        GameObject _bulletPrefabToUse = null;
+        switch (weaponID)
+        {
+            case 0: //Nerf
+                _bulletPrefabToUse = _bulletPrefab;
+                break;
+            case 1: // FishBone
+                _bulletPrefabToUse = _fishBoneBullet;
+                break;
+            case 2: //Watergun
+                _bulletPrefabToUse = _waterGunBullet;
+                break;
+            default:
+                break;
+        }
+        GameObject bullet = Instantiate(_bulletPrefabToUse, spawnPosition, Quaternion.identity);
         bullet.GetComponent<NetworkObject>().Spawn();
         bullet.GetComponent<Bullet>().InitializeBulletClientRpc(bulletSpeed, fireRange, direction, throwerID, damages);
     }

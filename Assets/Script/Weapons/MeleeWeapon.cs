@@ -3,10 +3,9 @@ using UnityEngine;
 public class MeleeWeapon : Weapon
 {
     private RaycastHit2D[] _allHits;
-    public override void Shoot(Transform playerTransform)
+    public override bool Shoot(Transform playerTransform)
     {
-        
-        base.Shoot(playerTransform);
+       if(!base.Shoot(playerTransform)) return false;
 
         _allHits = Physics2D.BoxCastAll(playerTransform.position + transform.up * transform.localScale.x, stats.aoeRange, 0.0f, transform.up);
 
@@ -17,6 +16,7 @@ public class MeleeWeapon : Weapon
                 player.TakeDamage(stats.damage);
             }
         }
+        return true;
     }
 
     public override GameObject GetBulletPrefab()

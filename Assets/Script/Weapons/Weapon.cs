@@ -31,16 +31,20 @@ public abstract class Weapon : NetworkBehaviour
         stats.fireRate = data.fireRate;
         stats.bulletSpeed = data.bulletSpeed;
         cooldown = stats.fireRate;
+
+
+        print($"fire Rate is {stats.fireRate} && Cooldon is {cooldown}");
     }
 
     public abstract GameObject GetBulletPrefab();
 
-    public virtual void Shoot(Transform playerTransform)
+    public virtual bool Shoot(Transform playerTransform)
     {
-        if (!CanShoot()) { return; }
+        if(!CanShoot()) return false;
         cooldown = stats.fireRate;
         //GetComponent<PlayerAudio>().PlaySniperAudio();
         StartAnim();
+        return true;
     }
     public virtual void ShootFinished() { }
 
@@ -55,6 +59,6 @@ public abstract class Weapon : NetworkBehaviour
 
     public virtual void StartAnim()
     {
-        _animator.StartPlayback();
+        //_animator.StartPlayback();
     }
 }

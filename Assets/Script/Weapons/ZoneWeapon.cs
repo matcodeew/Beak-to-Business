@@ -9,12 +9,14 @@ public class ZoneWeapon : Weapon
     [SerializeField] float coolDownTimer;
     private Vector2 _startPos;
 
-    public override void Shoot(Transform playerTransform)
+    public override bool Shoot(Transform playerTransform)
     {
-        base.Shoot(playerTransform);
+        if (!base.Shoot(playerTransform)) { return false; }
+
         _isShooting = true;
         _playerGivenDamage = playerTransform.gameObject.GetComponent<Player>();
         InvokeRepeating(nameof(ApplyDamage), 0f, 0.1f);
+        return true;    
     }
 
     public override void ShootFinished()

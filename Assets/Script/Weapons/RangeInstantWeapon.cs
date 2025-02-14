@@ -13,9 +13,9 @@ public class RangeInstantWeapon : Weapon
         return null;
     }
 
-    public override void Shoot(Transform playerTransform)
+    public override bool Shoot(Transform playerTransform)
     {
-        base.Shoot(playerTransform);
+        if (!base.Shoot(playerTransform)) { return false; }
 
         _hit = Physics2D.Raycast(playerTransform.position + playerTransform.up * playerTransform.localScale.x, playerTransform.up, stats.fireRange, playerMask);
         Debug.DrawRay(playerTransform.position + playerTransform.up * playerTransform.localScale.x, playerTransform.up, Color.green, Mathf.Infinity);
@@ -28,5 +28,6 @@ public class RangeInstantWeapon : Weapon
                 print($"{player.name} take {stats.damage} by {playerTransform.gameObject.name}");
             }
         }
+        return true;
     }
 }

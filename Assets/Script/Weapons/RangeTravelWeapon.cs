@@ -1,4 +1,3 @@
-using Unity.Netcode;
 using UnityEngine;
 
 public class RangeTravelWeapon : Weapon
@@ -14,15 +13,17 @@ public class RangeTravelWeapon : Weapon
         _bulletPrefab = data.bulletPrefab;
     }
 
-    public override void Shoot(Transform playerTransform)
+    public override bool Shoot(Transform playerTransform)
     {
         //ResetData();
-        base.Shoot(playerTransform);
+
+        if (!base.Shoot(playerTransform)) { return false; }
 
         direction = playerTransform.GetComponent<PlayerMovement>().direction;
         _startPos = playerTransform.position + direction * playerTransform.localScale.x;
 
         playerTransform.GetComponent<Player>().RequestSpawnBullet(_startPos, direction);
+        return true;
     }
 
     public override GameObject GetBulletPrefab()
