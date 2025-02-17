@@ -55,7 +55,7 @@ public class BuffManager : MonoBehaviour
             _weaponStats = player.weaponEquipied.stats;
         }
     }
-    public void ApplyBuff(Stats _stat, float _duration, float _value, Player player)
+    public void ApplyBuff(Stats _stat, float _duration, float _value, Player player, Sprite sprite)
     {
         SetBaseStat(player);
 

@@ -36,6 +36,11 @@ public class Player : NetworkBehaviour
     public NetworkVariable<int> SelectedSkinIndex = new NetworkVariable<int>(-1,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private GameObject _choosenSkin;
+
+    [Header("Bonus Feedback")]
+    [SerializeField] private Image _bonusFB;
+    private float _durationTime;
+    private float _activeBonusTime;
     #endregion
 
 
@@ -61,6 +66,8 @@ public class Player : NetworkBehaviour
         _health.OnValueChanged += OnHealthChanged;
         SelectedSkinIndex.OnValueChanged += OnSkinChanged;
 
+        EventManager.OnApplyBuff += SetBonus;
+
         SetSkinIndex(UserInfos.Instance.selectedSkin);
         if (IsOwner)
         {
@@ -71,6 +78,16 @@ public class Player : NetworkBehaviour
 
         SetPlayerAtRandomPosition();
         _canPickupWeapon = true;
+    }
+
+    private void SetBonus(Stats stats, float duration,float value, Player player, Sprite feedback)
+    {
+        if (feedback is null)
+        {
+            return;
+        }
+        _bonusFB.sprite = feedback;
+
     }
 
     //private void OnApplicationQuit()
@@ -316,7 +333,6 @@ public class Player : NetworkBehaviour
     {
         if (IsOwner)
         {
-            Debug.Log(_fishBoneBullet == null? "NULL" : "c'est pas null gros FPD va ");
             SpawnBulletServerRpc(spawnPosition,
                 weaponEquipied.stats.bulletSpeed + GetComponent<Rigidbody2D>().linearVelocity.magnitude,
                 weaponEquipied.stats.fireRange,

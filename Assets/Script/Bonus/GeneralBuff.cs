@@ -8,9 +8,11 @@ public class GeneralBuff : InteractableObjects
     [SerializeField] private float _value;
     [Header("Duration of effect")]
     [SerializeField] private float _duration;
+    [Header("Feedback of buff / debuff")]
+    [SerializeField] private Sprite _feedback;
     public override void PlayerInteract(Player player)
     {
         base.PlayerInteract(player);
-        EventManager.ApplyBuff(_stats, _duration, _value, player);
+        EventManager.ApplyBuff(_stats, _duration, _value, player, _feedback);
     }
 }
